@@ -52,6 +52,11 @@ public class IdleState : SKMecanimState<PlayerCharacterController>
 				return; 
 			}
 		}
+		else if(Input.GetKeyDown(KeyCode.F))
+		{
+			_machine.changeState<DashBackState> ();
+			return;
+		}
 
 		if(Mathf.Abs(Input.GetAxisRaw ("Horizontal")) > 0.0f)
 		{

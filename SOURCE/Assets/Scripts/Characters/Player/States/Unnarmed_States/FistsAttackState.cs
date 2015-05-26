@@ -14,6 +14,11 @@ public class FistsAttackState : SKMecanimState<PlayerCharacterController>
 	{
 		base.begin ();
 
+		_machine.animator.applyRootMotion = false;
+		context.CharacterMotor.IsKinematic = false;
+		context.CharacterMotor.UseGravity = true;
+		context.CharacterMotor.StopMovement (true, false);
+
 		if(fistHighPunch_L_Behaviour == null)
 			fistHighPunch_L_Behaviour = _machine.animator.GetBehaviour<Fist_HighPunch_L_Behaviour> ();
 

@@ -24,7 +24,7 @@ public class BowArrowState :  SKMecanimState<PlayerCharacterController>
 
 		_machine.animator.applyRootMotion = false;
 		context.CharacterMotor.IsKinematic = false;
-		context.CharacterMotor.UseGravity = false;
+		context.CharacterMotor.UseGravity = true;
 		context.CharacterMotor.SetVelocity (Vector3.zero);
 
 		CrossFade ("Bow_Aim", 0.03f, 0.0f);
@@ -33,7 +33,6 @@ public class BowArrowState :  SKMecanimState<PlayerCharacterController>
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
 		isAiming = Input.GetKey (KeyCode.Mouse1);
-		_machine.animator.SetBool("isAiming", isAiming);
 
 		if(isAiming)
 		{

@@ -145,6 +145,18 @@ public class BaseCharacterMotor : MonoBehaviour
 	{
 	}
 
+	public virtual void StopMovement(bool pHorizontal, bool pVertical)
+	{
+		Vector3 velocity = Velocity;
+
+		if (pHorizontal)
+			velocity.x = 0.0f;
+		if (pVertical)
+			velocity.y = 0.0f;
+
+		SetVelocity (velocity);
+	}
+
 	public virtual Vector3 GetRollVelocity()
 	{
 		Vector3 velocity = Velocity;

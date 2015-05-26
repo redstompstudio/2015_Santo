@@ -62,6 +62,7 @@ public class PlayerCharacterController : BaseCharacterController
 
 		stateMachine.addState (new WallJumpState ());
 		stateMachine.addState (new RollState ());
+		stateMachine.addState (new DashBackState ());
 		stateMachine.addState (new SlideState ());
 		stateMachine.addState (new GrabLedgeState ());
 
@@ -70,10 +71,12 @@ public class PlayerCharacterController : BaseCharacterController
 
 		stateMachine.addState (new FistsAttackState ());
 
+#if UNITY_EDITOR
 		stateMachine.onStateChanged += () =>
 		{
 			Debug.Log(stateMachine.currentState.ToString());
 		};
+#endif	
 	}
 
 	void Update()
@@ -91,9 +94,11 @@ public class PlayerCharacterController : BaseCharacterController
 		return stateTransitionsDictionary [pStateName];
 	}
 
+#if UNITY_EDITOR
 	void OnGUI()
 	{
 		if(stateMachine != null)
 			GUILayout.Box (stateMachine.currentState.ToString());
 	}
+#endif
 }

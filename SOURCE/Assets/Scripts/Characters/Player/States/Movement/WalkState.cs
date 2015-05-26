@@ -37,37 +37,33 @@ public class WalkState :  SKMecanimState<PlayerCharacterController>
 
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
-			if (Raycaster.HitSomething (context.CharCenterPoint, context.Forward, 1.5f, context.ClimbSettings.objectsMasks)) 
-			{
-//					_machine.changeState<GrabLedgeState> ();
-				return;
-			}
-			else
-			{
-				_machine.changeState<JumpState> ();
-				return;
-			}
+			_machine.changeState<JumpState> ();
+			return;
 		}
-
-		if(Input.GetKeyDown(KeyCode.F))
+		else if(Input.GetKeyDown(KeyCode.F))
 		{
 			_machine.changeState<RollState> ();
 			return;
 		}
-
-		if(Input.GetKeyDown(KeyCode.S))
+		else if(Input.GetKeyDown(KeyCode.S))
 		{
 			_machine.changeState<SlideState> ();
 			return;
 		}
-
-		if(Input.GetKeyDown(KeyCode.Mouse0))
+		else if(Input.GetKeyDown(KeyCode.W))
 		{
-//			_machine.changeState<AttackState> ();
+			if (Raycaster.HitSomething (context.CharCenterPoint, context.Forward, 1.5f, context.ClimbSettings.objectsMasks)) 
+			{
+				_machine.changeState<GrabLedgeState> ();
+				return; 
+			}
+		}
+		else if(Input.GetKeyDown(KeyCode.Mouse0))
+		{
+			_machine.changeState<FistsAttackState> ();
 			return;
 		}
-
-		if(Input.GetKeyDown(KeyCode.Mouse1))
+		else if(Input.GetKeyDown(KeyCode.Mouse1))
 		{
 			_machine.changeState<BowArrowState>();
 			return;

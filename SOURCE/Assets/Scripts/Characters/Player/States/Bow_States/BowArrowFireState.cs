@@ -21,7 +21,6 @@ public class BowArrowFireState : SKMecanimState<PlayerCharacterController>
 
 		stateEnterAimPoint = Input.mousePosition;
 		CrossFade ("Bow_Fire", 0.03f, 0.0f);
-
 	}
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
