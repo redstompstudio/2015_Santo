@@ -71,6 +71,7 @@ public class PlayerCharacterController : BaseCharacterController
 		stateMachine.addState (new BowArrowFireState ());
 
 		stateMachine.addState (new FistsAttackState ());
+		stateMachine.addState (new FistSlamState ());
 
 #if UNITY_EDITOR
 		stateMachine.onStateChanged += () =>

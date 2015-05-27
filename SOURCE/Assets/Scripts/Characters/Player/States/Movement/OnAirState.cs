@@ -15,6 +15,12 @@ public class OnAirState :  SKMecanimState<PlayerCharacterController>
 	{
 		base.reason ();
 
+		if(context.CharacterMotor.IsGrounded)
+		{
+			_machine.changeState<LandState>();
+			return;
+		}
+
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
 			if(Raycaster.HitSomething(context.CharCenterPoint, context.Forward, 1.0f, context.wallJumpLayersMask))
@@ -23,12 +29,37 @@ public class OnAirState :  SKMecanimState<PlayerCharacterController>
 				return;
 			}
 		}
-
-		if(context.CharacterMotor.IsGrounded)
+		else if(Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Mouse0))
 		{
-			_machine.changeState<LandState>();
+			_machine.changeState<FistSlamState> ();
 			return;
 		}
+
+		/*
+		if(Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f)
+		{
+			if (Raycaster.HitSomething (context.CharCenterPoint, context.Forward, 1.5f, context.ClimbSettings.objectsMasks)) 
+			{
+				Raycaster.RaycastHitInfo hitInfo = Raycaster.GetRaycastHitInfo (context.CharCenterPoint, context.CachedTransform.forward, 1.5f, 
+					context.ClimbSettings.objectsMasks);
+
+				Vector3 climbPoint = hitInfo.hit.point;
+
+				if (hitInfo.hitSomething)
+					climbPoint = ClimbHelpers.GetColliderClimbPoint (context.Position, hitInfo.hit.collider);
+
+				float distFromFeet = Mathf.Abs(climbPoint.y - context.Position.y);
+
+				Debug.Log (distFromFeet);
+
+				if(distFromFeet < 1.5f)
+				{
+					_machine.changeState<GrabLedgeState> ();
+					return;	
+				}
+			}
+		}
+		*/
 	}
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
