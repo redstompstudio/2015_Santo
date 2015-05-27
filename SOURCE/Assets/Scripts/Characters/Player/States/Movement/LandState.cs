@@ -32,7 +32,8 @@ public class LandState : SKMecanimState<PlayerCharacterController>
 				return;
 			}
 			else
-				CrossFade (context.GetStateTransition ("Land_Tree"));
+				CrossFade("Land_Tree", 0.03f, 0.0f);
+			
 		}
 		else 
 		{

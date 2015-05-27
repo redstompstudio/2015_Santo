@@ -10,11 +10,11 @@ public class WalkState :  SKMecanimState<PlayerCharacterController>
 	{
 		base.begin ();
 
-		CrossFade (context.GetStateTransition ("Run_Tree"));
-
 		_machine.animator.applyRootMotion = false;
 		context.CharacterMotor.IsKinematic = false;
 		context.CharacterMotor.UseGravity = true;
+
+		CrossFade("Run_Tree", 0.03f, 0.0f);
 	}
 
 	public override void reason ()
@@ -47,7 +47,7 @@ public class WalkState :  SKMecanimState<PlayerCharacterController>
 		}
 		else if(Input.GetKeyDown(KeyCode.W))
 		{
-			if (Raycaster.HitSomething (context.CharCenterPoint, context.Forward, 1.5f, context.ClimbSettings.objectsMasks)) 
+			if (Raycaster.HitSomething (context.CharCenterPoint, context.Forward, 1.5f, context.CharacterSettings.climbEdgeLayers)) 
 			{
 				_machine.changeState<GrabLedgeState> ();
 				return; 
@@ -67,7 +67,7 @@ public class WalkState :  SKMecanimState<PlayerCharacterController>
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
-		context.CharacterMotor.Move (new Vector3(horizontalInput, 0.0f, 0.0f), context.CharacterMotor.MaxRunSpeed);
+		context.CharacterMotor.Move (new Vector3(horizontalInput, 0.0f, 0.0f), context.CharacterSettings.maxRunSpeed);
 		context.CharacterMotor.RotateToVelocityDirection (50.0f);
 	}
 }

@@ -33,7 +33,6 @@ public class BaseCharacterMotor : MonoBehaviour
 	protected bool useGravity;
 
 	public GroundInfo groundInfos = new GroundInfo();
-	public MotorSettings motorSettings = new MotorSettings();
 
 	public LayerMask groundLayers;
 	public Transform[] groundCheckers;
@@ -62,19 +61,6 @@ public class BaseCharacterMotor : MonoBehaviour
 	public virtual Vector3 Velocity {
 		get;
 		private set;
-	}
-
-	public virtual float MaxRunSpeed
-	{
-		get{
-			return motorSettings.maxRunSpeed;
-		}
-	}
-
-	public virtual float JumpForce{
-		get{
-			return motorSettings.jumpForce;
-		}
 	}
 
 	public bool IsGrounded{
@@ -155,16 +141,6 @@ public class BaseCharacterMotor : MonoBehaviour
 			velocity.y = 0.0f;
 
 		SetVelocity (velocity);
-	}
-
-	public virtual Vector3 GetRollVelocity()
-	{
-		Vector3 velocity = Velocity;
-
-//		if (Mathf.Abs (velocity.x) < motorSettings.minRollSpeed)
-//			velocity.x = motorSettings.minRollSpeed * Mathf.Sign (velocity.x);
-
-		return velocity;
 	}
 
 	#if UNITY_EDITOR

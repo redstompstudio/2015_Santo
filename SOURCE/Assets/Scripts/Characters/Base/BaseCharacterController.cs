@@ -10,7 +10,7 @@ public class BaseCharacterController : MonoBehaviour
 	private Vector3 charCenterPoint;
 
 	[SerializeField]
-	private CharacterGameplaySettings gamePlaySettings;
+	private CharacterSettings gamePlaySettings;
 
 	#region PROPERTIES
 	public BaseCharacterMotor CharacterMotor{
@@ -21,10 +21,10 @@ public class BaseCharacterController : MonoBehaviour
 		}
 	}
 
-	public CharacterGameplaySettings GamePlaySettings{
+	public CharacterSettings CharacterSettings{
 		get{
 			if (gamePlaySettings == null)
-				gamePlaySettings = new CharacterGameplaySettings ();
+				gamePlaySettings = new CharacterSettings ();
 			return gamePlaySettings;
 		}
 	}
@@ -70,6 +70,5 @@ public class BaseCharacterController : MonoBehaviour
 
 	protected virtual void Start()
 	{
-		
 	}
 }

@@ -20,14 +20,20 @@ public class RollState : SKMecanimState<PlayerCharacterController>
 
 		rollBehaviour.onStateExitCallback += OnStateExitRoll;
 
-		rollVelocity = context.CharacterMotor.GetRollVelocity();
-
 		CrossFade ("Roll", 0.04f, 0.0f);
 	}
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
-		rollVelocity.y = context.CharacterMotor.Velocity.y;
+	}
+
+	public override void fixedUpdate (float deltaTime, AnimatorStateInfo stateInfo)
+	{
+		base.fixedUpdate (deltaTime, stateInfo);
+
+		rollVelocity = context.CharacterMotor.Velocity;
+		rollVelocity.x = context.CharacterSettings.rollSpeed * Mathf.Sign(context.Forward.x);
+
 		context.CharacterMotor.SetVelocity (rollVelocity);
 	}
 

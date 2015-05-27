@@ -10,7 +10,6 @@ namespace Prime31.StateKit
 		internal int mecanimStateHash;
 		protected SKMecanimStateMachine<T> _machine;
 		protected T context;
-		protected StateTransitions stateTransitions;
 
 		public SKMecanimState()
 		{}
@@ -68,12 +67,6 @@ namespace Prime31.StateKit
 		public void CrossFade(string pStateName, float pTransitionTime, float pNormalizedTime)
 		{
 			_machine.animator.CrossFade (pStateName, pTransitionTime, 0, pNormalizedTime);
-		}
-
-		public virtual void CrossFade (StateTransitions pTransitions)
-		{
-			_machine.animator.CrossFade(pTransitions.stateName, 
-				pTransitions.transitionTime, 0, pTransitions.normalizedTime);
 		}
 	}
 }

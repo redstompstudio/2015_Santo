@@ -20,16 +20,13 @@ public class DashBackState : SKMecanimState<PlayerCharacterController>
 
         dashBackBehaviour.onStateExitCallback += OnStateExitRoll;
 
-		rollVelocity = context.CharacterMotor.Velocity;
-		rollVelocity.x = context.CharacterMotor.motorSettings.maxRunSpeed * -Mathf.Sign (context.Forward.x);
-
         CrossFade ("DashBack", 0.04f, 0.0f);
     }
 
     public override void update (float deltaTime, AnimatorStateInfo stateInfo)
     {
 		rollVelocity = context.CharacterMotor.Velocity;
-		rollVelocity.x = context.CharacterMotor.motorSettings.maxRunSpeed * -Mathf.Sign (context.Forward.x);
+		rollVelocity.x = context.CharacterSettings.dashBackSpeed * -Mathf.Sign (context.Forward.x);
 
         context.CharacterMotor.SetVelocity (rollVelocity);
     }

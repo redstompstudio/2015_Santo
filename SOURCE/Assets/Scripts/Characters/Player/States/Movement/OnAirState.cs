@@ -8,7 +8,11 @@ public class OnAirState :  SKMecanimState<PlayerCharacterController>
 	{
 		base.begin ();
 
-		CrossFade (context.GetStateTransition ("OnAir_Tree"));
+		_machine.animator.applyRootMotion = false;
+		context.CharacterMotor.IsKinematic = false;
+		context.CharacterMotor.UseGravity = true;
+
+		CrossFade ("OnAir_Tree", 0.03f, 0.0f);
 	}
 
 	public override void reason ()
@@ -23,7 +27,7 @@ public class OnAirState :  SKMecanimState<PlayerCharacterController>
 
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
-			if(Raycaster.HitSomething(context.CharCenterPoint, context.Forward, 1.0f, context.wallJumpLayersMask))
+			if(Raycaster.HitSomething(context.CharCenterPoint, context.Forward, 1.0f, context.CharacterSettings.wallJumpLayers))
 			{
 				_machine.changeState<WallJumpState> ();
 				return;
@@ -64,9 +68,9 @@ public class OnAirState :  SKMecanimState<PlayerCharacterController>
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
-		if(context.GamePlaySettings.hasAirControl)
+		if(context.CharacterSettings.hasAirControl)
 		{
-			context.CharacterMotor.Move (new Vector3(Input.GetAxisRaw ("Horizontal"), 0.0f, 0.0f), context.CharacterMotor.MaxRunSpeed);
+			context.CharacterMotor.Move (new Vector3(Input.GetAxisRaw ("Horizontal"), 0.0f, 0.0f), context.CharacterSettings.maxRunSpeed);
 			context.CharacterMotor.RotateToVelocityDirection (20.0f);
 		}
 

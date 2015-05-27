@@ -4,20 +4,24 @@ using Prime31.StateKit;
 
 public class IdleState : SKMecanimState<PlayerCharacterController> 
 {
+	private LayerMask climbEdgeLayers;
+
 	public override void begin ()
 	{
 		base.begin ();
 
-		CrossFade (context.GetStateTransition ("Idle"));
+		_machine.animator.applyRootMotion = false;
 
-		//context.CharacterMotor.Move (Vector3.zero, 0.0f);
 		Vector3 velocity = context.CharacterMotor.Velocity;
 		velocity.x = 0.0f;
 
 		context.CharacterMotor.SetVelocity (velocity);
-
 		context.CharacterMotor.IsKinematic = false;
 		context.CharacterMotor.UseGravity = true;
+
+		climbEdgeLayers = context.CharacterSettings.climbEdgeLayers;
+
+		CrossFade ("Idle", 0.03f, 0.0f);
 	}
 
 	public override void reason ()
@@ -46,7 +50,7 @@ public class IdleState : SKMecanimState<PlayerCharacterController>
 		}
 		else if(Input.GetKey(KeyCode.W))
 		{
-			if (Raycaster.HitSomething (context.CharCenterPoint, context.Forward, 1.5f, context.ClimbSettings.objectsMasks)) 
+			if (Raycaster.HitSomething (context.CharCenterPoint, context.Forward, 1.5f, climbEdgeLayers)) 
 			{
 				_machine.changeState<GrabLedgeState> ();
 				return; 

@@ -4,15 +4,15 @@ using Prime31.StateKit;
 
 public class GrabLedgeState : SKMecanimState<PlayerCharacterController>
 {
-	private ClimbMechanicsSettings climbSettings;
-
 	private EdgeGrab_Behaviour edgeGrabBehaviour;
 	private EdgeGrabClimb_Behaviour edgeGrabClimbBehaviour;
 
 	private Vector3 climbPoint;
-
-	private bool isHanging;
 	private bool isClimbing;
+	private bool waitForInputToClimb;
+	private LayerMask edgeLayers;
+	private float matchStartTime;
+	private float matchTargetTime;
 
 	public override void begin ()
 	{
@@ -21,9 +21,6 @@ public class GrabLedgeState : SKMecanimState<PlayerCharacterController>
 		_machine.animator.applyRootMotion = true;
 		context.CharacterMotor.IsKinematic = true;
 		context.CharacterMotor.UseGravity = false;
-
-		if (climbSettings == null)
-			climbSettings = context.ClimbSettings;
 
 		if (edgeGrabBehaviour == null) 
 		{
@@ -42,8 +39,13 @@ public class GrabLedgeState : SKMecanimState<PlayerCharacterController>
 			edgeGrabClimbBehaviour.onStateExitCallback += OnStateExitGrabClimb;
 		}
 	
+		edgeLayers = context.CharacterSettings.climbEdgeLayers;
+		waitForInputToClimb = context.CharacterSettings.waitForInputToClimb;
+		matchStartTime = context.CharacterSettings.matchStartTime;
+		matchTargetTime = context.CharacterSettings.matchTargetTime;
+
 		Raycaster.RaycastHitInfo hitInfo = Raycaster.GetRaycastHitInfo (context.CharCenterPoint, context.CachedTransform.forward, 1.5f, 
-			climbSettings.objectsMasks);
+			edgeLayers);
 
 		if (hitInfo.hitSomething)
 			climbPoint = ClimbHelpers.GetColliderClimbPoint (context.Position, hitInfo.hit.collider);
@@ -60,7 +62,7 @@ public class GrabLedgeState : SKMecanimState<PlayerCharacterController>
 	{
 		base.reason ();
 
-		if(climbSettings.waitForInputToClimb) 
+		if(waitForInputToClimb) 
 		{
 			if (!isClimbing && Input.GetKeyDown (KeyCode.V)) 
 				CrossFade ("EdgeGrab_Climb_Tree", 0.16f, 0.0f);
@@ -82,7 +84,7 @@ public class GrabLedgeState : SKMecanimState<PlayerCharacterController>
 		{
 			_machine.animator.MatchTarget (climbPoint, context.Rotation,
 				AvatarTarget.LeftHand, new MatchTargetWeightMask (new Vector3(0.0f, 1.0f, 1.0f), 0.0f), 
-				climbSettings.matchTargetStartNormalizedTime, climbSettings.matchTargetNormalizedTime);
+				matchStartTime, matchTargetTime);
 
 			Debug.DrawLine (context.Position, climbPoint, Color.blue, Time.deltaTime);
 		}
@@ -90,7 +92,7 @@ public class GrabLedgeState : SKMecanimState<PlayerCharacterController>
 
 	public void OnStateExitGrab()
 	{
-		if (!climbSettings.waitForInputToClimb) {
+		if (!waitForInputToClimb) {
 			CrossFade ("EdgeGrab_Climb_Tree", 0.16f, 0.0f);
 		}
 	}

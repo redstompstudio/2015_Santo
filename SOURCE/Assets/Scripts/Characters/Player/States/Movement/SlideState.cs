@@ -7,7 +7,6 @@ public class SlideState : SKMecanimState<PlayerCharacterController>
 	private Slide_Behaviour slideBehaviour;
 
 	private float slideSpeed;
-	private const float velocityDecreaseRate = 2.8f;
 
 	public override void begin ()
 	{
@@ -21,7 +20,7 @@ public class SlideState : SKMecanimState<PlayerCharacterController>
 			slideBehaviour = _machine.animator.GetBehaviour<Slide_Behaviour> ();
 
 		slideBehaviour.onStateExitCallback += OnStateExitSlide;
-		slideSpeed = context.CharacterMotor.motorSettings.maxRunSpeed * Mathf.Sign (context.Forward.x);
+		slideSpeed = context.CharacterSettings.slideSpeed * Mathf.Sign (context.Forward.x);
 
 		CrossFade ("Slide", 0.04f, 0.0f);
 	}
@@ -31,7 +30,7 @@ public class SlideState : SKMecanimState<PlayerCharacterController>
 		Vector3 velocity = context.CharacterMotor.Velocity;
 
 		velocity.x = slideSpeed;
-		slideSpeed += (deltaTime * velocityDecreaseRate * -Mathf.Sign (context.Forward.x));
+		slideSpeed += (deltaTime * context.CharacterSettings.slideSpeedDecreaseRate * -Mathf.Sign (context.Forward.x));
 
 		context.CharacterMotor.SetVelocity (velocity);
 	}
