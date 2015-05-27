@@ -14,6 +14,7 @@ public class PlayerCharacterController : BaseCharacterController
 
 		stateMachine = new SKMecanimStateMachine<PlayerCharacterController>( GetComponent<Animator>(), this, new IdleState() );
 
+		stateMachine.addState (new DeadState ());
 		stateMachine.addState (new WalkState());
 		stateMachine.addState (new JumpState ());
 		stateMachine.addState (new OnAirState ());
@@ -43,6 +44,9 @@ public class PlayerCharacterController : BaseCharacterController
 	void Update()
 	{
 		stateMachine.update( Time.deltaTime );
+
+		if (Health.currentHealth <= 0.0f)
+			stateMachine.changeState<DeadState> ();
 	}
 
 	void FixedUpdate()

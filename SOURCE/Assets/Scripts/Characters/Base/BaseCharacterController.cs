@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(BaseCharacterMotor))]
 public class BaseCharacterController : MonoBehaviour 
 {
 	private Transform cachedTransform;
 
+	[SerializeField]
+	private BaseHealth health;
 	private BaseCharacterMotor characterMotor;
 
 	private Vector3 charCenterPoint;
@@ -13,6 +16,14 @@ public class BaseCharacterController : MonoBehaviour
 	private CharacterSettings gamePlaySettings;
 
 	#region PROPERTIES
+	public BaseHealth Health{
+		get{
+			if (health == null)
+				health = new BaseHealth ();
+			return health;
+		}
+	}
+
 	public BaseCharacterMotor CharacterMotor{
 		get{
 			if (characterMotor == null)

@@ -38,32 +38,28 @@ public class OnAirState :  SKMecanimState<PlayerCharacterController>
 			_machine.changeState<FistSlamState> ();
 			return;
 		}
-
-		/*
-		if(Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f)
+		else if(Input.GetKey(KeyCode.W))
 		{
-			if (Raycaster.HitSomething (context.CharCenterPoint, context.Forward, 1.5f, context.ClimbSettings.objectsMasks)) 
-			{
-				Raycaster.RaycastHitInfo hitInfo = Raycaster.GetRaycastHitInfo (context.CharCenterPoint, context.CachedTransform.forward, 1.5f, 
-					context.ClimbSettings.objectsMasks);
+			Raycaster.RaycastHitInfo hitInfo = Raycaster.GetRaycastHitInfo (context.CharCenterPoint, context.CachedTransform.forward, 0.5f, 
+				context.CharacterSettings.climbEdgeLayers);
 
+			if (hitInfo.hitSomething) 
+			{
 				Vector3 climbPoint = hitInfo.hit.point;
 
 				if (hitInfo.hitSomething)
 					climbPoint = ClimbHelpers.GetColliderClimbPoint (context.Position, hitInfo.hit.collider);
 
-				float distFromFeet = Mathf.Abs(climbPoint.y - context.Position.y);
+				float distFromFeet = Mathf.Abs (climbPoint.y - context.Position.y);
 
 				Debug.Log (distFromFeet);
 
-				if(distFromFeet < 1.5f)
-				{
+				if (distFromFeet < 1.5f) {
 					_machine.changeState<GrabLedgeState> ();
 					return;	
 				}
 			}
 		}
-		*/
 	}
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
