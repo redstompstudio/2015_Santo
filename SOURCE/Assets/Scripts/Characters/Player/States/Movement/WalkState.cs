@@ -45,11 +45,6 @@ public class WalkState :  SKMecanimState<PlayerCharacterController>
 			_machine.changeState<RollState> ();
 			return;
 		}
-		else if(Input.GetKeyDown(KeyCode.S))
-		{
-			_machine.changeState<SlideState> ();
-			return;
-		}
 		else if(Input.GetKeyDown(KeyCode.W))
 		{
 			if (Raycaster.HitSomething (context.CharCenterPoint, context.Forward, 1.5f, context.ClimbSettings.objectsMasks)) 

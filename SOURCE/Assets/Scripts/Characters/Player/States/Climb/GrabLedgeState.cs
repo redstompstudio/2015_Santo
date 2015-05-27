@@ -10,6 +10,8 @@ public class GrabLedgeState : SKMecanimState<PlayerCharacterController>
 	private EdgeGrabClimb_Behaviour edgeGrabClimbBehaviour;
 
 	private Vector3 climbPoint;
+
+	private bool isHanging;
 	private bool isClimbing;
 
 	public override void begin ()
@@ -50,7 +52,6 @@ public class GrabLedgeState : SKMecanimState<PlayerCharacterController>
 		_machine.animator.SetFloat ("climbHeight", distFromFeet);
 
 		CrossFade ("EdgeGrab_Start_Tree", 0.03f, 0.0f);
-//		CrossFade ("EdgeGrab_Start", 0.03f, 0.0f);
 
 		isClimbing = false;
 	}
@@ -61,9 +62,8 @@ public class GrabLedgeState : SKMecanimState<PlayerCharacterController>
 
 		if(climbSettings.waitForInputToClimb) 
 		{
-			if (!isClimbing && Input.GetKeyDown (KeyCode.W)) 
-				CrossFade ("EdgeGrab_Climb_Tree", 0.03f, 0.0f);
-//				CrossFade ("EdgeGrab_Climb", 0.03f, 0.0f);
+			if (!isClimbing && Input.GetKeyDown (KeyCode.V)) 
+				CrossFade ("EdgeGrab_Climb_Tree", 0.16f, 0.0f);
 		}
 	}
 
@@ -91,8 +91,7 @@ public class GrabLedgeState : SKMecanimState<PlayerCharacterController>
 	public void OnStateExitGrab()
 	{
 		if (!climbSettings.waitForInputToClimb) {
-			CrossFade ("EdgeGrab_Climb_Tree", 0.03f, 0.0f);
-//			CrossFade ("EdgeGrab_Climb", 0.03f, 0.0f);
+			CrossFade ("EdgeGrab_Climb_Tree", 0.16f, 0.0f);
 		}
 	}
 	#endregion 

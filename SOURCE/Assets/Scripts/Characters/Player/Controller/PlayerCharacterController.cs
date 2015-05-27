@@ -60,6 +60,7 @@ public class PlayerCharacterController : BaseCharacterController
 		stateMachine.addState (new OnAirState ());
 		stateMachine.addState (new LandState ());
 
+		stateMachine.addState (new CrouchState ());
 		stateMachine.addState (new WallJumpState ());
 		stateMachine.addState (new RollState ());
 		stateMachine.addState (new DashBackState ());

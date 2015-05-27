@@ -5,15 +5,13 @@ using Prime31.StateKit;
 public class SlideState : SKMecanimState<PlayerCharacterController>  
 {
 	private Slide_Behaviour slideBehaviour;
-	private const float velocityDecreaseRate = 1.8f;
+
+	private float slideSpeed;
+	private const float velocityDecreaseRate = 2.8f;
 
 	public override void begin ()
 	{
 		base.begin ();
-
-//		_machine.animator.applyRootMotion = true;
-//		context.CharacterMotor.UseGravity = true;
-//		context.CharacterMotor.IsKinematic = false;
 
 		_machine.animator.applyRootMotion = false;
 		context.CharacterMotor.UseGravity = true;
@@ -23,6 +21,7 @@ public class SlideState : SKMecanimState<PlayerCharacterController>
 			slideBehaviour = _machine.animator.GetBehaviour<Slide_Behaviour> ();
 
 		slideBehaviour.onStateExitCallback += OnStateExitSlide;
+		slideSpeed = context.CharacterMotor.motorSettings.maxRunSpeed * Mathf.Sign (context.Forward.x);
 
 		CrossFade ("Slide", 0.04f, 0.0f);
 	}
@@ -30,7 +29,9 @@ public class SlideState : SKMecanimState<PlayerCharacterController>
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
 		Vector3 velocity = context.CharacterMotor.Velocity;
-		velocity.x += (deltaTime * velocityDecreaseRate * -Mathf.Sign (velocity.x));
+
+		velocity.x = slideSpeed;
+		slideSpeed += (deltaTime * velocityDecreaseRate * -Mathf.Sign (context.Forward.x));
 
 		context.CharacterMotor.SetVelocity (velocity);
 	}

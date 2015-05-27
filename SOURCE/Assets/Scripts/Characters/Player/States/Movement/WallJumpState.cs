@@ -20,7 +20,7 @@ public class WallJumpState : SKMecanimState<PlayerCharacterController>
 		_machine.animator.applyRootMotion = false;
 
 		Vector3 velocity = context.CharacterMotor.Velocity;
-		velocity = (context.Forward * -3.0f) + (Vector3.up * 8.0f);
+		velocity = (context.Forward * -6.0f) + (Vector3.up * 12.0f);
 		context.CharacterMotor.SetVelocity (velocity);
 
 		CrossFade ("WallJump", 0.03f, 0.0f);
@@ -29,15 +29,6 @@ public class WallJumpState : SKMecanimState<PlayerCharacterController>
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
 		context.CharacterMotor.RotateToVelocityDirection (30.0f);
-	}
-
-	public IEnumerator WallJumpMovement()
-	{
-		yield return new WaitForSeconds (2.0f);
-		Vector3 velocity = context.CharacterMotor.Velocity;
-
-		velocity = (context.Forward * -5.0f) + (Vector3.up * 5.0f);
-		context.CharacterMotor.SetVelocity (velocity);
 	}
 
 	public void OnStateExitWallJump()

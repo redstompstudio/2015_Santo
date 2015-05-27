@@ -44,13 +44,18 @@ public class IdleState : SKMecanimState<PlayerCharacterController>
 			OnAimInput ();
 			return;
 		}
-		else if(Input.GetKeyDown(KeyCode.W))
+		else if(Input.GetKey(KeyCode.W))
 		{
 			if (Raycaster.HitSomething (context.CharCenterPoint, context.Forward, 1.5f, context.ClimbSettings.objectsMasks)) 
 			{
 				_machine.changeState<GrabLedgeState> ();
 				return; 
 			}
+		}
+		else if(Input.GetKey(KeyCode.S))
+		{
+			_machine.changeState<CrouchState> ();
+			return;
 		}
 		else if(Input.GetKeyDown(KeyCode.F))
 		{
@@ -71,14 +76,7 @@ public class IdleState : SKMecanimState<PlayerCharacterController>
 
 	public void OnJumpInput()
 	{
-		if (Raycaster.HitSomething (context.CharCenterPoint, context.Forward, 1.5f, context.ClimbSettings.objectsMasks)) 
-		{
-//				_machine.changeState<GrabLedgeState> ();
-		}
-		else
-		{
-			_machine.changeState<JumpState> ();
-		}
+		_machine.changeState<JumpState> ();
 	}
 
 	public void OnAttackInput()

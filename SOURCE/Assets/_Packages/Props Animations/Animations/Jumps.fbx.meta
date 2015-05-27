@@ -1640,7 +1640,7 @@ ModelImporter:
     - serializedVersion: 16
       name: IdleSlide
       takeName: IdleSlide
-      firstFrame: 0
+      firstFrame: 9
       lastFrame: 45
       wrapMode: 0
       orientationOffsetY: 0
