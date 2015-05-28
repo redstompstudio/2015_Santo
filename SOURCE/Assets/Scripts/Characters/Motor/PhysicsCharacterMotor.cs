@@ -50,6 +50,13 @@ public class PhysicsCharacterMotor : BaseCharacterMotor
 		cachedRigidbody.velocity = velocity;
 	}
 
+	public override void RotateToDirection (Vector3 pDirection)
+	{
+		base.RotateToDirection (pDirection);
+
+		cachedRigidbody.rotation = Quaternion.LookRotation (pDirection);
+	}
+
 	public override void RotateToVelocityDirection(float pSpeed, bool pIgnoreY = true)
 	{
 		Vector3 direction = cachedRigidbody.velocity;

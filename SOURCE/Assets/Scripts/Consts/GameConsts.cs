@@ -1,0 +1,5 @@
+﻿public enum WEAPON_NAME
+{
+	FIST_PUNCH,
+	BOW_ARROW_BASIC,
+}

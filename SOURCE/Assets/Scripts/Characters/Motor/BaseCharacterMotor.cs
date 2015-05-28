@@ -115,6 +115,10 @@ public class BaseCharacterMotor : MonoBehaviour
 	{
 	}
 
+	public virtual void RotateToDirection(Vector3 pDirection)
+	{
+	}
+
 	public virtual void RotateToVelocityDirection(float pSpeed, bool pIgnoreY = true)
 	{
 	}

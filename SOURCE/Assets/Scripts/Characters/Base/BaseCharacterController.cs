@@ -16,7 +16,8 @@ public class BaseCharacterController : MonoBehaviour
 	private CharacterSettings gamePlaySettings;
 
 	#region PROPERTIES
-	public BaseHealth Health{
+	public BaseHealth Health
+	{
 		get{
 			if (health == null)
 				health = new BaseHealth ();

@@ -16,12 +16,10 @@ public class WallJumpState : SKMecanimState<PlayerCharacterController>
 		wallJumpBehaviour.onStateExitCallback += OnStateExitWallJump;
 
 		context.CharacterMotor.IsKinematic = false;
-		context.CharacterMotor.UseGravity = true;
+		context.CharacterMotor.UseGravity = false;
 		_machine.animator.applyRootMotion = false;
 
-		Vector3 velocity = context.CharacterMotor.Velocity;
-		velocity = (context.Forward * -6.0f) + (Vector3.up * 12.0f);
-		context.CharacterMotor.SetVelocity (velocity);
+		context.CharacterMotor.StopMovement (true, true);
 
 		CrossFade ("WallJump", 0.03f, 0.0f);
 	}
@@ -33,6 +31,12 @@ public class WallJumpState : SKMecanimState<PlayerCharacterController>
 
 	public void OnStateExitWallJump()
 	{
+		Vector3 velocity = (context.Forward * -6.0f) + (Vector3.up * 12.0f);
+		context.CharacterMotor.SetVelocity (velocity);
+
+		velocity.y = 0.0f;
+		context.CharacterMotor.RotateToDirection (velocity);
+
 		_machine.changeState<OnAirState> ();
 	}
 }

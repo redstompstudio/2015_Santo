@@ -4,9 +4,19 @@ using Prime31.StateKit;
 public class PlayerCharacterController : BaseCharacterController 
 {
 	private SKMecanimStateMachine<PlayerCharacterController> stateMachine;
+	[HideInInspector]
+	public AttackController attackController;
 
 	#region PROPERTIES
 	#endregion
+
+	protected override void Awake ()
+	{
+		base.Awake ();
+
+		if (attackController == null)
+			attackController = GetComponent<AttackController> ();
+	}
 
 	protected override void Start ()
 	{

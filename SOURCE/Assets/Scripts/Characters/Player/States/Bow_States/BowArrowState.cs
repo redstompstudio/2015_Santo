@@ -50,12 +50,6 @@ public class BowArrowState :  SKMecanimState<PlayerCharacterController>
 		}
 	}
 
-	public override void end ()
-	{
-		base.end ();
-		_machine.animator.SetBool("isAiming", false);
-	}
-
 	#region BEHAVIOUR BOW_AIM
 	public void OnStateEnterBowAim()
 	{
@@ -73,7 +67,6 @@ public class BowArrowState :  SKMecanimState<PlayerCharacterController>
 		isAiming = false;
 	}
 	#endregion
-
 
 	public void UpdateAimPoint()
 	{

@@ -59,7 +59,7 @@ public class FistsAttackState : SKMecanimState<PlayerCharacterController>
 
 	public void OnStateExitHighPunch_L()
 	{
-		if(executeNextAttack)
+		if (executeNextAttack) 
 			CrossFade ("Fist_Punch_R", 0.03f, 0.0f);
 		else
 			_machine.changeState<IdleState> ();

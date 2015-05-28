@@ -15,6 +15,7 @@ public class BowArrowFireState : SKMecanimState<PlayerCharacterController>
 		{
 			bowFireBehaviour = _machine.animator.GetBehaviour<BowFire_Behaviour> ();
 
+			bowFireBehaviour.onStateEnterCallback += OnStateEnterBowFire;
 			bowFireBehaviour.onStateIKCallback += OnStateIKBowFire;
 			bowFireBehaviour.onStateExitCallback += OnStateExitBowFire;
 		}
@@ -28,6 +29,11 @@ public class BowArrowFireState : SKMecanimState<PlayerCharacterController>
 	}
 
 	#region BEHAVIOUR BOW_FIRE
+	public void OnStateEnterBowFire()
+	{
+		context.attackController.GetWeapon (WEAPON_NAME.BOW_ARROW_BASIC).Attack ();
+	}
+
 	public void OnStateIKBowFire()
 	{
 		_machine.animator.SetLookAtWeight (1.0f, 1.0f, 1.0f);
