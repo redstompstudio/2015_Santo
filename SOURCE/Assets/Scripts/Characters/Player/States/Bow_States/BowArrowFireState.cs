@@ -4,7 +4,7 @@ using Prime31.StateKit;
 
 public class BowArrowFireState : SKMecanimState<PlayerCharacterController>
 {
-	public BowFire_Behaviour bowFireBehaviour;
+	private BowFire_Behaviour bowFireBehaviour;
 	private Vector3 stateEnterAimPoint;
 
 	public override void begin ()

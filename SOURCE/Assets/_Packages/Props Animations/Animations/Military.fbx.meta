@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: add9497ad90e1ee4e9d3b66e94ec42b0
 ModelImporter:
-  serializedVersion: 16
+  serializedVersion: 18
   fileIDToRecycleName:
     100000: chest
     100002: Cube
@@ -1002,8 +1002,8 @@ ModelImporter:
     - serializedVersion: 16
       name: ShotgunFire
       takeName: ShotgunFire
-      firstFrame: -1
-      lastFrame: 54
+      firstFrame: 0
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -5313,11 +5313,13 @@ ModelImporter:
     generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
+    keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     splitTangentsAcrossUV: 1
@@ -6097,3 +6099,5 @@ ModelImporter:
   animationType: 3
   additionalBone: 0
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

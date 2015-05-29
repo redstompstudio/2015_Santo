@@ -90,6 +90,9 @@ public class IdleState : SKMecanimState<PlayerCharacterController>
 
 	public void OnAimInput()
 	{
-		_machine.changeState<BowArrowState>();
+		if(Input.GetKey(KeyCode.LeftShift))
+			_machine.changeState<BowArrowState>();
+		else
+			_machine.changeState<RifleAimState>();
 	}
 }

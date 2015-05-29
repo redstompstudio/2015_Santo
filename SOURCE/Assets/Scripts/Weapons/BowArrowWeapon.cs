@@ -9,9 +9,21 @@ public class BowArrowWeapon : BaseWeapon
 	{
 		base.Attack ();
 
-		var arrow = TrashMan.spawn ("Arrow", arrowPosition.position, Quaternion.identity);
+		var arrow = TrashMan.spawn ("Arrow", arrowPosition.position, arrowPosition.rotation);
+
+		TrashMan.recycleBinForGameObjectName(arrow.name).onDespawnedEvent += OnDespawnArrow;
 		TrashMan.despawnAfterDelay( arrow, 3.0f );
 
-		arrow.GetComponent<Rigidbody> ().AddForce(arrowPosition.forward * 200.0f);
+		Rigidbody arrowPhysics = arrow.GetComponent<Rigidbody> ();
+
+		if(arrowPhysics != null)
+		{
+			arrowPhysics.AddForce (arrow.transform.forward * 900.0f);
+		}
+	}
+
+	void OnDespawnArrow(GameObject pGo)
+	{
+		pGo.GetComponent<Rigidbody> ().Sleep ();
 	}
 }

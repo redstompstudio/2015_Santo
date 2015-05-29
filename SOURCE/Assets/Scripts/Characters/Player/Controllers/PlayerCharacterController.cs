@@ -40,6 +40,9 @@ public class PlayerCharacterController : BaseCharacterController
 		stateMachine.addState (new BowArrowState ());
 		stateMachine.addState (new BowArrowFireState ());
 
+		stateMachine.addState (new RifleAimState ());
+		stateMachine.addState (new RifleFireState ());
+
 		stateMachine.addState (new FistsAttackState ());
 		stateMachine.addState (new FistSlamState ());
 

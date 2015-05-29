@@ -60,7 +60,11 @@ public class WalkState :  SKMecanimState<PlayerCharacterController>
 		}
 		else if(Input.GetKeyDown(KeyCode.Mouse1))
 		{
-			_machine.changeState<BowArrowState>();
+			if(Input.GetKey(KeyCode.LeftShift))
+				_machine.changeState<BowArrowState>();
+			else
+				_machine.changeState<RifleAimState>();
+			
 			return;
 		}
 	}
