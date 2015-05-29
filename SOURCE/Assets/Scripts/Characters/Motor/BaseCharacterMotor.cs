@@ -5,6 +5,7 @@ using System.Collections;
 public class GroundInfo
 {
 	public bool isGrounded;
+	public bool isTouchingCeiling;
 
 	public Collider groundCollider;
 	public Vector3 positionOnGround;
@@ -28,6 +29,10 @@ public class MotorSettings
 public class BaseCharacterMotor : MonoBehaviour 
 {
 	protected Transform cachedTransform;
+	protected BoxCollider cachedCollider;
+
+	private Vector3 initialColliderCenter;
+	private Vector3 initialColliderSize;
 
 	protected bool isKinematic;
 	protected bool useGravity;
@@ -67,11 +72,31 @@ public class BaseCharacterMotor : MonoBehaviour
 		get{return groundInfos.isGrounded;}
 	}
 
-	public Transform Transform{
+	public Transform CachedTransform{
 		get{
 			if (cachedTransform == null)
 				cachedTransform = transform;
 			return cachedTransform;
+		}
+	}
+
+	public BoxCollider CachedCollider{
+		get{
+			if (cachedCollider == null)
+				cachedCollider = GetComponent<BoxCollider> ();
+			return cachedCollider;
+		}
+	}
+
+	public Vector3 InitialColliderSize{
+		get{
+			return initialColliderSize;
+		}
+	}
+
+	public Vector3 InitialColliderCenter{
+		get{
+			return initialColliderCenter;
 		}
 	}
 	#endregion
@@ -80,6 +105,9 @@ public class BaseCharacterMotor : MonoBehaviour
 	{
 		if (groundInfos == null)
 			groundInfos = new GroundInfo ();	
+
+		initialColliderCenter = CachedCollider.center;
+		initialColliderSize = CachedCollider.size;
 	}
 
 	protected virtual void Update()
@@ -147,12 +175,48 @@ public class BaseCharacterMotor : MonoBehaviour
 		SetVelocity (velocity);
 	}
 
+	public bool IsTouchingCeiling()
+	{
+		if (groundCheckers != null) 
+		{
+			for (int i = 0; i < groundCheckers.Length; i++) 
+			{
+				Ray ray = new Ray (groundCheckers [i].position, CachedTransform.up);
+				RaycastHit hit;
+
+				if (Physics.Raycast (ray, out hit, InitialColliderSize.y, groundLayers)) 
+				{
+					return true;
+				}
+			}
+		}
+
+		return false;
+	}
+
 	#if UNITY_EDITOR
 	void OnDrawGizmos()
 	{
 		Gizmos.color = Color.red;
 		for(int i = 0; i < groundCheckers.Length; i++)
-			Gizmos.DrawRay (groundCheckers [i].position, -Transform.up * groundCheckDistance);
+			Gizmos.DrawRay (groundCheckers [i].position, -CachedTransform.up * groundCheckDistance);
 	}
 	#endif
+
+	public void ResetColliderValues()
+	{
+		CachedCollider.size = InitialColliderSize;
+		CachedCollider.center = InitialColliderCenter;
+	}
+
+	public void ResizeCollider(Vector3 pSize)
+	{
+		//CachedCollider.center = pCenter;
+		CachedCollider.size = pSize;
+
+		Vector3 center = CachedCollider.center;
+		center.y = CachedCollider.size.y / 2.0f;
+
+		CachedCollider.center = center;
+	}
 }

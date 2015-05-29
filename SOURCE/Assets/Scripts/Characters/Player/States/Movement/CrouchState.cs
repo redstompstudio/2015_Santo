@@ -8,6 +8,14 @@ public class CrouchState : SKMecanimState<PlayerCharacterController>
 	{
 		base.begin ();
 
+		_machine.animator.applyRootMotion = false;
+		context.CharacterMotor.IsKinematic = false;
+		context.CharacterMotor.UseGravity = true;
+
+		Vector3 size = context.CharacterMotor.InitialColliderSize;
+		size.y = context.CharacterSettings.crouchColliderSizeY;
+		context.CharacterMotor.ResizeCollider (size);
+
 		CrossFade ("Crouch", 0.03f, 0.0f);
 	}
 
@@ -15,10 +23,13 @@ public class CrouchState : SKMecanimState<PlayerCharacterController>
 	{
 		base.reason ();
 
-		if(!Input.GetKey(KeyCode.S))
+		if (!context.CharacterMotor.IsTouchingCeiling ()) 
 		{
-			_machine.changeState<IdleState> ();
-			return;
+			if(!Input.GetKey(KeyCode.S))
+			{
+				_machine.changeState<IdleState> ();
+				return;
+			}
 		}
 
 		if(Input.GetKeyDown(KeyCode.Space))
@@ -31,6 +42,4 @@ public class CrouchState : SKMecanimState<PlayerCharacterController>
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
 	}
-
-
 }

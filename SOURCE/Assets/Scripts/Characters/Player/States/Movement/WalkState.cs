@@ -13,6 +13,7 @@ public class WalkState :  SKMecanimState<PlayerCharacterController>
 		_machine.animator.applyRootMotion = false;
 		context.CharacterMotor.IsKinematic = false;
 		context.CharacterMotor.UseGravity = true;
+		context.CharacterMotor.ResetColliderValues ();
 
 		CrossFade("Run_Tree", 0.03f, 0.0f);
 	}

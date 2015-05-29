@@ -18,6 +18,7 @@ public class IdleState : SKMecanimState<PlayerCharacterController>
 		context.CharacterMotor.SetVelocity (velocity);
 		context.CharacterMotor.IsKinematic = false;
 		context.CharacterMotor.UseGravity = true;
+		context.CharacterMotor.ResetColliderValues ();
 
 		climbEdgeLayers = context.CharacterSettings.climbEdgeLayers;
 

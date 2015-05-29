@@ -15,6 +15,10 @@ public class RollState : SKMecanimState<PlayerCharacterController>
 		context.CharacterMotor.UseGravity = true;
 		context.CharacterMotor.IsKinematic = false;
 
+		Vector3 size = context.CharacterMotor.InitialColliderSize;
+		size.y = context.CharacterSettings.rollColliderSizeY;
+		context.CharacterMotor.ResizeCollider (size);
+
 		if (rollBehaviour == null)
 			rollBehaviour = _machine.animator.GetBehaviour<Roll_Behaviour> ();
 
@@ -40,7 +44,10 @@ public class RollState : SKMecanimState<PlayerCharacterController>
 	#region STATE_BEHAVIOUR ROLL
 	public void OnStateExitRoll()
 	{
-		_machine.changeState<IdleState> ();
+		if (context.CharacterMotor.IsTouchingCeiling()) 
+			_machine.changeState<CrouchState> ();
+		else
+			_machine.changeState<IdleState> ();
 	}
 	#endregion
 }

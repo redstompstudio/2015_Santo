@@ -1641,7 +1641,7 @@ ModelImporter:
       name: IdleSlide
       takeName: IdleSlide
       firstFrame: 9
-      lastFrame: 45
+      lastFrame: 37
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -1659,17 +1659,17 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves:
-      - name: Curve
+      - name: colliderSize
         curve:
           serializedVersion: 2
           curve:
           - time: 0
-            value: 0
+            value: .99000001
             inSlope: 0
             outSlope: 0
             tangentMode: 0
           - time: 1
-            value: 1
+            value: .99000001
             inSlope: 0
             outSlope: 0
             tangentMode: 0
@@ -3779,13 +3779,13 @@ ModelImporter:
       name: Roll
       takeName: Roll
       firstFrame: 0
-      lastFrame: 40
+      lastFrame: 28
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1

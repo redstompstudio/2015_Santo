@@ -16,10 +16,14 @@ public class SlideState : SKMecanimState<PlayerCharacterController>
 		context.CharacterMotor.UseGravity = true;
 		context.CharacterMotor.IsKinematic = false;
 
+		Vector3 size = context.CharacterMotor.InitialColliderSize;
+		size.y = context.CharacterSettings.slideColliderSizeY;
+		context.CharacterMotor.ResizeCollider (size);
+
 		if (slideBehaviour == null)
 			slideBehaviour = _machine.animator.GetBehaviour<Slide_Behaviour> ();
 
-		slideBehaviour.onStateExitCallback += OnStateExitSlide;
+		slideBehaviour.onStateExitCallback = OnStateExitSlide;
 		slideSpeed = context.CharacterSettings.slideSpeed * Mathf.Sign (context.Forward.x);
 
 		CrossFade ("Slide", 0.04f, 0.0f);
@@ -37,6 +41,9 @@ public class SlideState : SKMecanimState<PlayerCharacterController>
 
 	void OnStateExitSlide ()
 	{
-		_machine.changeState<IdleState> ();
+		if (context.CharacterMotor.IsTouchingCeiling())
+			_machine.changeState<CrouchState> ();
+		else 
+			_machine.changeState<IdleState> ();
 	}
 }

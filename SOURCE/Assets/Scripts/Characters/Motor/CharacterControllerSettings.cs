@@ -18,14 +18,20 @@ public class CharacterSettings
 	[Header("WALL JUMP SETTINGS")]
 	public LayerMask wallJumpLayers;
 
+	[Header("CROUCH SETTINGS")]
+	public float crouchColliderSizeY = 0.95f;
+
 	[Header("SLIDE SETTINGS")]
+	public float slideColliderSizeY = 0.95f;
 	public float slideSpeed = 5.0f;
 	public float slideSpeedDecreaseRate = 2.8f;
 
 	[Header("ROLL SETTINGS")]
+	public float rollColliderSizeY = 0.95f;
 	public float rollSpeed = 6.0f;
 
 	[Header("DASH BACK SETTINGS")]
+	public float dashBackColliderSizeY = 0.95f;
 	public float dashBackSpeed = 5.0f;
 
 	[Header("CLIMB EDGE SETTINGS")]
