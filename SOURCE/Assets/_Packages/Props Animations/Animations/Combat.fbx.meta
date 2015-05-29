@@ -183,7 +183,7 @@ ModelImporter:
     - serializedVersion: 16
       name: IdleFaceHit
       takeName: IdleFaceHit
-      firstFrame: -1
+      firstFrame: 0
       lastFrame: 39
       wrapMode: 0
       orientationOffsetY: 0
@@ -328,7 +328,14 @@ ModelImporter:
             tangentMode: 10
           preInfinity: 2
           postInfinity: 2
-      events: []
+      events:
+      - time: .513888896
+        functionName: OnReceivedAttackEvent
+        data: POW!
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 0
       maskSource: {instanceID: 0}
@@ -370,7 +377,14 @@ ModelImporter:
             tangentMode: 10
           preInfinity: 2
           postInfinity: 2
-      events: []
+      events:
+      - time: .538888872
+        functionName: OnReceivedAttackEvent
+        data: "P\xC1!"
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 0
       maskSource: {instanceID: 0}
@@ -1760,7 +1774,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: .577777743
+        functionName: OnReceivedAttackEvent
+        data: CRUSH!!
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

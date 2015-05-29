@@ -19,7 +19,7 @@ public class RifleFireState : SKMecanimState<PlayerCharacterController>
 			rifleFireBehaviour.onStateIKCallback += OnStateIKRifleFire;
 			rifleFireBehaviour.onStateExitCallback += OnStateExitRifleFire;
 		}
-
+		
 		stateEnterAimPoint = Input.mousePosition;
 		CrossFade ("Rifle_Fire", 0.03f, 0.0f);
 	}
@@ -49,6 +49,7 @@ public class RifleFireState : SKMecanimState<PlayerCharacterController>
 		}
 		else
 		{
+			context.attackController.UnequipWeapon ();
 			_machine.changeState<IdleState> ();
 			return;
 		}

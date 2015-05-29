@@ -15,6 +15,22 @@ public class AttackController : MonoBehaviour
 			weaponsDictionary.Add (weapon.weaponName, weapon);
 	}
 
+	public virtual void EquipWeapon(WEAPON_NAME pName)
+	{
+		UnequipWeapon ();
+
+		equippedWeapon = GetWeapon (pName);
+		equippedWeapon.Equip ();
+	}
+
+	public virtual void UnequipWeapon()
+	{
+		if (equippedWeapon != null)
+			equippedWeapon.Unequip ();
+
+		equippedWeapon = null;
+	}
+
 	public BaseWeapon GetWeapon(WEAPON_NAME pName)
 	{
 		if (weaponsDictionary.ContainsKey (pName))
@@ -22,4 +38,26 @@ public class AttackController : MonoBehaviour
 		else
 			return null;
 	}
+
+	#region ANIMATION EVENTS
+	public virtual void OnReceivedAttackEvent(string pMessage)
+	{
+		if (equippedWeapon != null)
+			equippedWeapon.OnReceivedAttackEvent(pMessage);
+		#if UNITY_EDITOR
+		else
+			Debug.LogError("Received an attack event but there is no equipped weapon!?");
+		#endif
+	}
+
+	public virtual void OnReceivedAttackEvent(int pParam)
+	{
+		if (equippedWeapon != null)
+			equippedWeapon.OnReceivedAttackEvent(pParam);
+		#if UNITY_EDITOR
+		else
+			Debug.LogError("Received an attack event but there is no equipped weapon!?");
+		#endif
+	}
+	#endregion
 }

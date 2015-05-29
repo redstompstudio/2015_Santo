@@ -44,12 +44,12 @@ public class BowArrowFireState : SKMecanimState<PlayerCharacterController>
 	{
 		if(Input.GetKey(KeyCode.Mouse1))
 		{
-			//CrossFade ("Bow_Aim", 0.03f, 0.0f);
 			_machine.changeState<BowArrowState>();
 			return;
 		}
 		else
 		{
+			context.attackController.UnequipWeapon ();
 			_machine.changeState<IdleState> ();
 			return;
 		}

@@ -9,6 +9,8 @@ public class RifleAimState : SKMecanimState<PlayerCharacterController>
 	private bool isAiming;
 	private Vector3 aimPoint;
 
+	private BaseWeapon rifle;
+
 	public override void begin ()
 	{
 		base.begin ();
@@ -25,6 +27,10 @@ public class RifleAimState : SKMecanimState<PlayerCharacterController>
 		rifleAimBehaviour.onStateIKCallback += OnStateIKRifleAim;
 		rifleAimBehaviour.onStateExitCallback += OnStateExitRifleAim;
 
+		if (rifle == null)
+			rifle = context.attackController.GetWeapon (WEAPON_NAME.RIFLE_BASIC);
+
+		context.attackController.EquipWeapon (rifle.weaponName);
 		CrossFade ("Rifle_Aim", 0.03f, 0.0f);
 	}
 
@@ -44,6 +50,7 @@ public class RifleAimState : SKMecanimState<PlayerCharacterController>
 		}
 		else
 		{
+			context.attackController.UnequipWeapon ();
 			_machine.changeState<IdleState> ();	
 		}
 	}
@@ -73,7 +80,7 @@ public class RifleAimState : SKMecanimState<PlayerCharacterController>
 		Ray ray = Camera.main.ScreenPointToRay (pointerPosition);
 		ray.origin = new Vector3 (ray.origin.x, ray.origin.y, context.Position.z);
 
-		Vector3 dir = ray.direction * 100.0f;
+		Vector3 dir = ray.direction * rifle.Range;
 		dir.z = context.Position.z;
 
 		aimPoint = context.Position + dir;

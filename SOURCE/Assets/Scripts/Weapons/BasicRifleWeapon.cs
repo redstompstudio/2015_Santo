@@ -13,14 +13,13 @@ public class BasicRifleWeapon : BaseWeapon
 		direction.z = 0.0f;
 
 		Ray ray = new Ray (riflePoint.position, direction);
-
 		RaycastHit hit;
 
-		Debug.DrawRay (ray.origin, ray.direction * 100.0f, Color.red, 2.5f);
+		Debug.DrawRay (ray.origin, ray.direction * Range, Color.red, 2.5f);
 
-		if(Physics.Raycast(ray, out hit, 100.0f))
+		if(Physics.Raycast(ray, out hit, Range))
 		{
-			var particle = TrashMan.spawn ("Rifle_HitGround", hit.point, Quaternion.LookRotation (hit.normal));	
+			var particle = TrashMan.spawn ("Rifle_HitGround_FX", hit.point, Quaternion.LookRotation (hit.normal));	
 			TrashMan.despawnAfterDelay (particle, 2.0f);
 		}
 	}

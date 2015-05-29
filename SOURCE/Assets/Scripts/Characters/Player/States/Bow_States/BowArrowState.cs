@@ -9,6 +9,8 @@ public class BowArrowState :  SKMecanimState<PlayerCharacterController>
 	private bool isAiming;
 	private Vector3 aimPoint;
 
+	private BaseWeapon bowArrow;
+
 	public override void begin ()
 	{
 		base.begin ();
@@ -27,6 +29,10 @@ public class BowArrowState :  SKMecanimState<PlayerCharacterController>
 		context.CharacterMotor.UseGravity = true;
 		context.CharacterMotor.SetVelocity (Vector3.zero);
 
+		if (bowArrow == null)
+			bowArrow = context.attackController.GetWeapon (WEAPON_NAME.BOW_ARROW_BASIC);
+
+		context.attackController.EquipWeapon (bowArrow.weaponName);
 		CrossFade ("Bow_Aim", 0.03f, 0.0f);
 	}
 
@@ -46,6 +52,7 @@ public class BowArrowState :  SKMecanimState<PlayerCharacterController>
 		}
 		else
 		{
+			context.attackController.UnequipWeapon ();
 			_machine.changeState<IdleState> ();	
 		}
 	}
