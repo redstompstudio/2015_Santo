@@ -261,8 +261,8 @@ ModelImporter:
     - serializedVersion: 16
       name: PistolFire
       takeName: PistolFire
-      firstFrame: -1
-      lastFrame: 55
+      firstFrame: 0
+      lastFrame: 12
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

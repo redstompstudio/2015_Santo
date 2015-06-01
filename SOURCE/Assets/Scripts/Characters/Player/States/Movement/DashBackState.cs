@@ -15,6 +15,10 @@ public class DashBackState : SKMecanimState<PlayerCharacterController>
         context.CharacterMotor.UseGravity = true;
         context.CharacterMotor.IsKinematic = false;
 
+		Vector3 size = context.CharacterMotor.InitialColliderSize;
+		size.y = context.CharacterSettings.dashBackColliderSizeY;
+		context.CharacterMotor.ResizeCollider (size);
+
         if (dashBackBehaviour == null)
             dashBackBehaviour = _machine.animator.GetBehaviour<DashBack_Behaviour> ();
 
@@ -34,7 +38,10 @@ public class DashBackState : SKMecanimState<PlayerCharacterController>
     #region STATE_BEHAVIOUR ROLL
     public void OnStateExitRoll()
     {
-        _machine.changeState<IdleState> ();
+		if (context.CharacterMotor.IsTouchingCeiling()) 
+			_machine.changeState<CrouchState> ();
+		else
+			_machine.changeState<IdleState> ();
     }
     #endregion
 }

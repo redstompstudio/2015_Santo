@@ -9,7 +9,10 @@ public class UnarmedFistWeapon : BaseWeapon
 	{
 		base.OnReceivedAttackEvent (pMessage);
 
-		var particle = TrashMan.spawn ("Punch_Hit_FX", handPosition.position, Quaternion.identity);	
+		var particle = TrashMan.spawn ("Punch_HitText_FX", handPosition.position, Quaternion.identity);	
+		TrashMan.despawnAfterDelay (particle, 2.0f);
+
+		particle = TrashMan.spawn ("Punch_Hit_FX", handPosition.position, Quaternion.identity);	
 		TrashMan.despawnAfterDelay (particle, 2.0f);
 	}
 }

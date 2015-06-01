@@ -10,6 +10,7 @@ public class CharacterSettings
 	public bool hasAirControl = false;
 
 	[Header("LAND SETTINGS")]
+	public float landHorizontalForceToRoll = 0.55f;
 	public float interruptForceOnLand = -0.3f;
 
 	[Header("JUMP SETTINGS")]

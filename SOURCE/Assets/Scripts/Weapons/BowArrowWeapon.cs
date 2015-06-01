@@ -15,6 +15,8 @@ public class BowArrowWeapon : BaseWeapon
 		TrashMan.despawnAfterDelay( arrow, 3.0f );
 
 		Rigidbody arrowPhysics = arrow.GetComponent<Rigidbody> ();
+		arrowPhysics.isKinematic = false;
+		arrowPhysics.useGravity = true;
 
 		if(arrowPhysics != null)
 		{

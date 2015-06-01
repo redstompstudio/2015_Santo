@@ -20,20 +20,18 @@ public class LandState : SKMecanimState<PlayerCharacterController>
 			landBehaviour.onStateExitCallback+= OnStateExitLand;
 		}
 
-		//_machine.animator.SetTrigger ("OnBeginLand");
 		float landForce = _machine.animator.GetFloat("airSpeed");
 		float horizontaAir = _machine.animator.GetFloat("airSpeedHorizontal");
 
-		if (landForce < -0.25f) 
+		if (landForce < context.CharacterSettings.interruptForceOnLand) 
 		{
-			if (Mathf.Abs( horizontaAir ) > 0.4f)
+			if (Mathf.Abs( horizontaAir ) > context.CharacterSettings.landHorizontalForceToRoll)
 			{
 				_machine.changeState<RollState> ();
 				return;
 			}
 			else
 				CrossFade("Land_Tree", 0.03f, 0.0f);
-			
 		}
 		else 
 		{
