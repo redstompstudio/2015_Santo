@@ -10,10 +10,11 @@ public class LandState : SKMecanimState<PlayerCharacterController>
 	{
 		base.begin ();
 
-		const bool b = false;
-		_machine.animator.applyRootMotion = b;
+		_machine.animator.applyRootMotion = false;
 		context.CharacterMotor.IsKinematic = false;
 		context.CharacterMotor.UseGravity = true;
+
+		context.CharacterSettings.enableAirControl = true;
 
 		if(landBehaviour == null)
 		{

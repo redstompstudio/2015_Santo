@@ -14,6 +14,8 @@ public class WallJumpState : SKMecanimState<PlayerCharacterController>
 		context.CharacterMotor.IsKinematic = false;
 		context.CharacterMotor.UseGravity = true;
 
+		context.CharacterSettings.enableAirControl = false;
+
 		if (wallJumpBehaviour == null)
 			wallJumpBehaviour = _machine.animator.GetBehaviour<WallJump_Behaviour> ();
 

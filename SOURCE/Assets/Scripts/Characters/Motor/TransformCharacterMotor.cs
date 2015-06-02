@@ -140,8 +140,8 @@ public class TransformCharacterMotor : BaseCharacterMotor
 	public int totalVerticalRays = 4;
 
 	// horizontal/vertical movement data
-	private float _verticalDistanceBetweenRays;
-	private float _horizontalDistanceBetweenRays;
+	private float verticalDistanceBetweenRays;
+	private float horizontalDistanceBetweenRays;
 
 #endregion
 
@@ -176,7 +176,7 @@ public class TransformCharacterMotor : BaseCharacterMotor
 		set
 		{
 			skinWidth = value;
-			RecalculateDistanceBetweenRays();
+			RecalculateCollider();
 		}
 	}
 
@@ -252,22 +252,38 @@ public class TransformCharacterMotor : BaseCharacterMotor
 	{
 		velocity = pVelocity;
 	}
+
+	public override bool IsTouchingCeiling ()
+	{
+		Vector3 offset = new Vector3(CachedCollider.size.x / 2.0f, 0.0f, 0.0f);
+		for(int i = -1; i < 2; i++)
+		{
+			Vector3 point = CachedTransform.position + (offset * i);
+
+#if UNITY_EDITOR
+			Debug.DrawRay (point, Vector3.up * InitialColliderSize.y, Color.red, 4.0f);
+#endif
+			if(Physics.Raycast(point, cachedTransform.up, InitialColliderSize.y, platformMask))
+				return true;
+		}
+
+		return false;
+	}
 #endregion
 
 	/// <summary>
 	/// this should be called anytime you have to modify the BoxCollider2D at runtime. It will recalculate the distance between the rays used for collision detection.
 	/// It is also used in the SkinWidth setter in case it is changed at runtime.
 	/// </summary>
-	public void RecalculateDistanceBetweenRays()
+	public override void RecalculateCollider()
 	{
-		// figure out the distance between our rays in both directions
-		// horizontal
-		var colliderUseableHeight = CachedCollider.size.y * Mathf.Abs( transform.localScale.y ) - ( 2f * skinWidth );
-		_verticalDistanceBetweenRays = colliderUseableHeight / ( totalHorizontalRays - 1 );
+		// Horizontal
+		var colliderUseableHeight = CachedCollider.size.y * Mathf.Abs( CachedTransform.localScale.y ) - ( 2f * skinWidth );
+		verticalDistanceBetweenRays = colliderUseableHeight / ( totalHorizontalRays - 1 );
 
-		// vertical
-		var colliderUseableWidth = CachedCollider.size.x * Mathf.Abs( transform.localScale.x ) - ( 2f * skinWidth );
-		_horizontalDistanceBetweenRays = colliderUseableWidth / ( totalVerticalRays - 1 );
+		// Vertical
+		var colliderUseableWidth = CachedCollider.size.x * Mathf.Abs( CachedTransform.localScale.x ) - ( 2f * skinWidth );
+		horizontalDistanceBetweenRays = colliderUseableWidth / ( totalVerticalRays - 1 );
 	}
 
 	/// <summary>
@@ -304,7 +320,7 @@ public class TransformCharacterMotor : BaseCharacterMotor
 
 		CachedTransform.Translate( deltaMovement, Space.World );
 
-			// only calculate velocity if we have a non-zero deltaTime
+		// only calculate velocity if we have a non-zero deltaTime
 		if( Time.deltaTime > 0 )
 			velocity = deltaMovement / Time.deltaTime;
 
@@ -442,7 +458,7 @@ public class TransformCharacterMotor : BaseCharacterMotor
 
 		for( var i = 0; i < totalHorizontalRays; i++ )
 		{
-			Vector3 ray = new Vector3( initialRayOrigin.x, initialRayOrigin.y + i * _verticalDistanceBetweenRays, CachedTransform.position.z );
+			Vector3 ray = new Vector3( initialRayOrigin.x, initialRayOrigin.y + i * verticalDistanceBetweenRays, CachedTransform.position.z );
 
 			DrawRay( ray, rayDirection * rayDistance, Color.red );
 
@@ -508,7 +524,7 @@ public class TransformCharacterMotor : BaseCharacterMotor
 
 		for( var i = 0; i < totalVerticalRays; i++ )
 		{
-			Vector3 ray = new Vector3( initialRayOrigin.x + i * _horizontalDistanceBetweenRays, initialRayOrigin.y, CachedTransform.position.z );
+			Vector3 ray = new Vector3( initialRayOrigin.x + i * horizontalDistanceBetweenRays, initialRayOrigin.y, CachedTransform.position.z );
 
 			DrawRay( ray, rayDirection * rayDistance, Color.red );
 

@@ -3100,8 +3100,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Wall_Jump
       takeName: VertWallRun
-      firstFrame: 36
-      lastFrame: 49
+      firstFrame: 34
+      lastFrame: 36
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

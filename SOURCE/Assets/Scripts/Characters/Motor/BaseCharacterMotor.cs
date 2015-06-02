@@ -135,6 +135,11 @@ public class BaseCharacterMotor : MonoBehaviour
 		return false;
 	}
 
+	public virtual void RecalculateCollider()
+	{
+		
+	}
+
 	public virtual void Move(Vector3 pVelocity, float pSpeed)
 	{
 	}
@@ -180,16 +185,17 @@ public class BaseCharacterMotor : MonoBehaviour
 	{
 		CachedCollider.size = InitialColliderSize;
 		CachedCollider.center = InitialColliderCenter;
+		RecalculateCollider ();
 	}
 
 	public void ResizeCollider(Vector3 pSize)
 	{
-		//CachedCollider.center = pCenter;
 		CachedCollider.size = pSize;
 
 		Vector3 center = CachedCollider.center;
 		center.y = CachedCollider.size.y / 2.0f;
 
 		CachedCollider.center = center;
+		RecalculateCollider ();
 	}
 }
