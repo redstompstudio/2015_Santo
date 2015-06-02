@@ -13,6 +13,7 @@ public class WalkState :  SKMecanimState<PlayerCharacterController>
 		_machine.animator.applyRootMotion = false;
 		context.CharacterMotor.IsKinematic = false;
 		context.CharacterMotor.UseGravity = true;
+
 		context.CharacterMotor.ResetColliderValues ();
 
 		CrossFade("Run_Tree", 0.03f, 0.0f);
@@ -72,7 +73,7 @@ public class WalkState :  SKMecanimState<PlayerCharacterController>
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
-		context.CharacterMotor.Move (new Vector3(horizontalInput, 0.0f, 0.0f), context.CharacterSettings.maxRunSpeed);
-		context.CharacterMotor.RotateToVelocityDirection (50.0f);
+		context.CharacterMotor.Move (new Vector3(horizontalInput, 0.0f, 0.0f), context.CharacterSettings.maxRunSpeed * deltaTime);
+		context.CharacterMotor.RotateToVelocityDirection (float.PositiveInfinity);
 	}
 }

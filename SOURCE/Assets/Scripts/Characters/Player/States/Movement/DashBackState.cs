@@ -12,8 +12,9 @@ public class DashBackState : SKMecanimState<PlayerCharacterController>
         base.begin ();
 
         _machine.animator.applyRootMotion = false;
-        context.CharacterMotor.UseGravity = true;
-        context.CharacterMotor.IsKinematic = false;
+
+		context.CharacterMotor.UseGravity = true;
+		context.CharacterMotor.IsKinematic = false;
 
 		Vector3 size = context.CharacterMotor.InitialColliderSize;
 		size.y = context.CharacterSettings.dashBackColliderSizeY;
@@ -22,7 +23,7 @@ public class DashBackState : SKMecanimState<PlayerCharacterController>
         if (dashBackBehaviour == null)
             dashBackBehaviour = _machine.animator.GetBehaviour<DashBack_Behaviour> ();
 
-        dashBackBehaviour.onStateExitCallback += OnStateExitRoll;
+        dashBackBehaviour.onStateExitCallback = OnStateExitRoll;
 
         CrossFade ("DashBack", 0.04f, 0.0f);
     }

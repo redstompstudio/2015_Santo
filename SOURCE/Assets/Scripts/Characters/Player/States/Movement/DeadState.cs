@@ -8,6 +8,10 @@ public class DeadState : SKMecanimState<PlayerCharacterController>
 	{
 		base.begin ();
 
+		_machine.animator.applyRootMotion = false;
+		context.CharacterMotor.IsKinematic = true;
+		context.CharacterMotor.UseGravity = true;
+
 		CrossFade ("Death", 0.03f, 0.0f);
 	}
 

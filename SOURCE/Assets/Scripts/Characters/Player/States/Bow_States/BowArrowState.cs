@@ -15,6 +15,11 @@ public class BowArrowState :  SKMecanimState<PlayerCharacterController>
 	{
 		base.begin ();
 
+		_machine.animator.applyRootMotion = false;
+		context.CharacterMotor.IsKinematic = false;
+		context.CharacterMotor.UseGravity = true;
+		context.CharacterMotor.SetVelocity (Vector3.zero);
+
 		if(bowAimBehaviour == null)
 		{
 			bowAimBehaviour = _machine.animator.GetBehaviour<BowAim_Behaviour> ();
@@ -23,11 +28,6 @@ public class BowArrowState :  SKMecanimState<PlayerCharacterController>
 			bowAimBehaviour.onStateIKCallback += OnStateIKBowAim;
 			bowAimBehaviour.onStateExitCallback+= OnStateExitBowAim;
 		}
-
-		_machine.animator.applyRootMotion = false;
-		context.CharacterMotor.IsKinematic = false;
-		context.CharacterMotor.UseGravity = true;
-		context.CharacterMotor.SetVelocity (Vector3.zero);
 
 		if (bowArrow == null)
 			bowArrow = context.attackController.GetWeapon (WEAPON_NAME.BOW_ARROW_BASIC);

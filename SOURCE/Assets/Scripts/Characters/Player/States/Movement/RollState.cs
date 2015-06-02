@@ -12,8 +12,8 @@ public class RollState : SKMecanimState<PlayerCharacterController>
 		base.begin ();
 
 		_machine.animator.applyRootMotion = false;
-		context.CharacterMotor.UseGravity = true;
 		context.CharacterMotor.IsKinematic = false;
+		context.CharacterMotor.UseGravity = true;
 
 		Vector3 size = context.CharacterMotor.InitialColliderSize;
 		size.y = context.CharacterSettings.rollColliderSizeY;
@@ -22,19 +22,13 @@ public class RollState : SKMecanimState<PlayerCharacterController>
 		if (rollBehaviour == null)
 			rollBehaviour = _machine.animator.GetBehaviour<Roll_Behaviour> ();
 
-		rollBehaviour.onStateExitCallback += OnStateExitRoll;
+		rollBehaviour.onStateExitCallback = OnStateExitRoll;
 
 		CrossFade ("Roll", 0.04f, 0.0f);
 	}
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
-	}
-
-	public override void fixedUpdate (float deltaTime, AnimatorStateInfo stateInfo)
-	{
-		base.fixedUpdate (deltaTime, stateInfo);
-
 		rollVelocity = context.CharacterMotor.Velocity;
 		rollVelocity.x = context.CharacterSettings.rollSpeed * Mathf.Sign(context.Forward.x);
 

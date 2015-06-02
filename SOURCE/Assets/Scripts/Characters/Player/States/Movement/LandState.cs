@@ -10,7 +10,8 @@ public class LandState : SKMecanimState<PlayerCharacterController>
 	{
 		base.begin ();
 
-		_machine.animator.applyRootMotion = false;
+		const bool b = false;
+		_machine.animator.applyRootMotion = b;
 		context.CharacterMotor.IsKinematic = false;
 		context.CharacterMotor.UseGravity = true;
 
@@ -41,14 +42,13 @@ public class LandState : SKMecanimState<PlayerCharacterController>
 				_machine.changeState<IdleState> ();
 		}
 
-		context.CharacterMotor.SetVelocity (Vector3.zero);
+		if(context.CharacterSettings.stopMovementOnLand)
+			context.CharacterMotor.SetVelocity (Vector3.zero);
 	}
 
-	#region implemented abstract members of SKMecanimState
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
 	}
-	#endregion
 
 	public void OnStateExitLand()
 	{
