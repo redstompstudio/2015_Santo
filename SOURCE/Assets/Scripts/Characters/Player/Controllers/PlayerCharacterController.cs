@@ -49,7 +49,7 @@ public class PlayerCharacterController : BaseCharacterController
 #if UNITY_EDITOR
 		stateMachine.onStateChanged += () =>
 		{
-			Debug.Log(stateMachine.currentState.ToString());
+			//Debug.Log(stateMachine.currentState.ToString());
 		};
 #endif	
 	}

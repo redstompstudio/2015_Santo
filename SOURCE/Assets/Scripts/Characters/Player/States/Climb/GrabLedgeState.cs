@@ -21,6 +21,7 @@ public class GrabLedgeState : SKMecanimState<PlayerCharacterController>
 		_machine.animator.applyRootMotion = true;
 		context.CharacterMotor.IsKinematic = true;
 		context.CharacterMotor.UseGravity = false;
+		context.CharacterMotor.SetVelocity (Vector3.zero);
 
 		if (edgeGrabBehaviour == null) 
 		{

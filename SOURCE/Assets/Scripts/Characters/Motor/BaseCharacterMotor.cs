@@ -26,10 +26,13 @@ public class MotorSettings
 	public MotorSettings(){}
 }
 
+[RequireComponent(typeof(BoxCollider), typeof(Rigidbody))]
 public class BaseCharacterMotor : MonoBehaviour 
 {
+	protected GameObject cachedGameObject;
 	protected Transform cachedTransform;
 	protected BoxCollider cachedCollider;
+	protected Rigidbody cachedRigidbody;
 
 	private Vector3 initialColliderCenter;
 	private Vector3 initialColliderSize;
@@ -38,10 +41,6 @@ public class BaseCharacterMotor : MonoBehaviour
 	protected bool useGravity;
 
 	public GroundInfo groundInfos = new GroundInfo();
-
-	public LayerMask groundLayers;
-	public Transform[] groundCheckers;
-	public float groundCheckDistance;
 
 	#region PROPERTIES
 	public virtual bool IsKinematic
@@ -68,8 +67,16 @@ public class BaseCharacterMotor : MonoBehaviour
 		private set;
 	}
 
-	public bool IsGrounded{
+	public virtual bool IsGrounded{
 		get{return groundInfos.isGrounded;}
+	}
+
+	public GameObject CachedGameObject{
+		get{
+			if (cachedGameObject == null)
+				cachedGameObject = gameObject;
+			return cachedGameObject;
+		}
 	}
 
 	public Transform CachedTransform{
@@ -85,6 +92,14 @@ public class BaseCharacterMotor : MonoBehaviour
 			if (cachedCollider == null)
 				cachedCollider = GetComponent<BoxCollider> ();
 			return cachedCollider;
+		}
+	}
+
+	public Rigidbody CachedRigidbody{
+		get{
+			if (cachedRigidbody == null)
+				cachedRigidbody = GetComponent<Rigidbody> ();
+			return cachedRigidbody;
 		}
 	}
 
@@ -117,26 +132,7 @@ public class BaseCharacterMotor : MonoBehaviour
 		
 	public virtual bool CheckGround()
 	{
-		groundInfos.isGrounded = false;
-
-		if(groundCheckers != null)
-		{
-			for(int i = 0; i < groundCheckers.Length; i++)
-			{
-				Ray ray = new Ray (groundCheckers [i].position, Vector3.down);
-				RaycastHit hit;
-
-				if(Physics.Raycast(ray, out hit, groundCheckDistance, groundLayers))
-				{
-					groundInfos.isGrounded = true;
-					groundInfos.groundCollider = hit.collider;
-					groundInfos.positionOnGround = hit.point;
-					groundInfos.groundNormal = hit.normal;
-				}
-			}
-		}
-
-		return groundInfos.isGrounded;
+		return false;
 	}
 
 	public virtual void Move(Vector3 pVelocity, float pSpeed)
@@ -175,33 +171,10 @@ public class BaseCharacterMotor : MonoBehaviour
 		SetVelocity (velocity);
 	}
 
-	public bool IsTouchingCeiling()
+	public virtual bool IsTouchingCeiling()
 	{
-		if (groundCheckers != null) 
-		{
-			for (int i = 0; i < groundCheckers.Length; i++) 
-			{
-				Ray ray = new Ray (groundCheckers [i].position, CachedTransform.up);
-				RaycastHit hit;
-
-				if (Physics.Raycast (ray, out hit, InitialColliderSize.y, groundLayers)) 
-				{
-					return true;
-				}
-			}
-		}
-
 		return false;
 	}
-
-	#if UNITY_EDITOR
-	void OnDrawGizmos()
-	{
-		Gizmos.color = Color.red;
-		for(int i = 0; i < groundCheckers.Length; i++)
-			Gizmos.DrawRay (groundCheckers [i].position, -CachedTransform.up * groundCheckDistance);
-	}
-	#endif
 
 	public void ResetColliderValues()
 	{

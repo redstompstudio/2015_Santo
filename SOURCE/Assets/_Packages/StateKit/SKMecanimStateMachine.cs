@@ -74,18 +74,18 @@ namespace Prime31.StateKit
 
 		public void fixedUpdate( float deltaTime )
 		{
-			var currentStateInfo = animator.GetCurrentAnimatorStateInfo( 0 );
-
-			// only call the states update method if we are in that state or if it's mecanimStateHash is 0 meaning it doesn't want us to limit the calls
-			if( _currentState.mecanimStateHash == 0 || currentStateInfo.fullPathHash == _currentState.mecanimStateHash )
-			{
-				var tempState = _currentState;
-				_currentState.reason();
-
-				// we might have changed state in reason so we make sure we are still on the same state here
-				if( tempState == _currentState )
-					_currentState.fixedUpdate( deltaTime, currentStateInfo );
-			}
+//			var currentStateInfo = animator.GetCurrentAnimatorStateInfo( 0 );
+//
+//			// only call the states update method if we are in that state or if it's mecanimStateHash is 0 meaning it doesn't want us to limit the calls
+//			if( _currentState.mecanimStateHash == 0 || currentStateInfo.fullPathHash == _currentState.mecanimStateHash )
+//			{
+//				var tempState = _currentState;
+//				_currentState.reason();
+//
+//				// we might have changed state in reason so we make sure we are still on the same state here
+//				if( tempState == _currentState )
+//					_currentState.fixedUpdate( deltaTime, currentStateInfo );
+//			}
 		}
 
 		/// <summary>

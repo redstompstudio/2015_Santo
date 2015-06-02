@@ -27,10 +27,20 @@ public class OnAirState :  SKMecanimState<PlayerCharacterController>
 
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
-			if(Raycaster.HitSomething(context.CharCenterPoint, context.Forward, 1.0f, context.CharacterSettings.wallJumpLayers))
+			for(int i = -1; i < 2; i++)
 			{
-				_machine.changeState<WallJumpState> ();
-				return;
+				Vector3 offset = ((context.CharacterMotor.CachedCollider.size / 2.0f) * i);
+				offset.x = offset.z = 0.0f;
+
+				Vector3 point = context.CharCenterPoint + offset;
+#if UNITY_EDITOR
+				Debug.DrawRay (point, context.Forward * context.CharacterSettings.maxDistanceFromWall, Color.blue, 4.0f);
+#endif
+				if(Raycaster.HitSomething(point, context.Forward, context.CharacterSettings.maxDistanceFromWall, context.CharacterSettings.wallJumpLayers))
+				{
+					_machine.changeState<WallJumpState> ();
+					return;
+				}
 			}
 		}
 		else if(Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Mouse0))
@@ -64,10 +74,12 @@ public class OnAirState :  SKMecanimState<PlayerCharacterController>
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
-		if(context.CharacterSettings.hasAirControl)
+		if(context.CharacterSettings.enableAirControl)
 		{
-			context.CharacterMotor.Move (new Vector3(Input.GetAxisRaw ("Horizontal"), 0.0f, 0.0f), context.CharacterSettings.maxRunSpeed);
-			context.CharacterMotor.RotateToVelocityDirection (20.0f);
+			context.CharacterMotor.Move (new Vector3(Input.GetAxisRaw ("Horizontal") * context.CharacterSettings.maxRunSpeed, context.CharacterMotor.Velocity.y, 0.0f), 
+				deltaTime);
+			
+			context.CharacterMotor.RotateToVelocityDirection (float.PositiveInfinity);
 		}
 
 		float airSpeed = ValuesMapping.Map (context.CharacterMotor.Velocity.y, -15.0f, 15.0f, -1.0f, 1.0f);

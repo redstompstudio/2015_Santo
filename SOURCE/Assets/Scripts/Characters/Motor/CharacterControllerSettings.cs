@@ -7,9 +7,10 @@ public class CharacterSettings
 	public float maxRunSpeed = 5.0f;
 
 	[Header("AIR SETTINGS")]
-	public bool hasAirControl = false;
+	public bool enableAirControl = false;
 
 	[Header("LAND SETTINGS")]
+	public bool stopMovementOnLand = false;
 	public float landHorizontalForceToRoll = 0.55f;
 	public float interruptForceOnLand = -0.3f;
 
@@ -18,6 +19,9 @@ public class CharacterSettings
 
 	[Header("WALL JUMP SETTINGS")]
 	public LayerMask wallJumpLayers;
+	public float maxDistanceFromWall = 0.85f;
+	public float wallJumpHorizontalForce = 9.0f;
+	public float wallJumpVerticalForce = 12.0f;
 
 	[Header("CROUCH SETTINGS")]
 	public float crouchColliderSizeY = 0.95f;

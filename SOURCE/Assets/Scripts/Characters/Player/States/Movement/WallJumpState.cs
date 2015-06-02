@@ -10,32 +10,40 @@ public class WallJumpState : SKMecanimState<PlayerCharacterController>
 	{
 		base.begin ();
 
+		_machine.animator.applyRootMotion = false;
+		context.CharacterMotor.IsKinematic = false;
+		context.CharacterMotor.UseGravity = true;
+
 		if (wallJumpBehaviour == null)
 			wallJumpBehaviour = _machine.animator.GetBehaviour<WallJump_Behaviour> ();
 
-		wallJumpBehaviour.onStateExitCallback += OnStateExitWallJump;
-
-		context.CharacterMotor.IsKinematic = false;
-		context.CharacterMotor.UseGravity = false;
-		_machine.animator.applyRootMotion = false;
+		wallJumpBehaviour.onStateExitCallback = OnStateExitWallJump;
 
 		context.CharacterMotor.StopMovement (true, true);
+
+		Vector3 velocity = (context.Forward * context.CharacterSettings.wallJumpHorizontalForce) + 
+			(Vector3.up * context.CharacterSettings.wallJumpVerticalForce);
+		
+		context.CharacterMotor.SetVelocity (velocity);
+
+		velocity.y = 0.0f;
+		context.CharacterMotor.RotateToDirection (velocity);
 
 		CrossFade ("WallJump", 0.03f, 0.0f);
 	}
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
-		context.CharacterMotor.RotateToVelocityDirection (30.0f);
+		context.CharacterMotor.RotateToVelocityDirection (50.0f);
 	}
 
 	public void OnStateExitWallJump()
 	{
-		Vector3 velocity = (context.Forward * -6.0f) + (Vector3.up * 12.0f);
-		context.CharacterMotor.SetVelocity (velocity);
-
-		velocity.y = 0.0f;
-		context.CharacterMotor.RotateToDirection (velocity);
+//		Vector3 velocity = (context.Forward * -6.0f) + (Vector3.up * 12.0f);
+//		context.CharacterMotor.SetVelocity (velocity);
+//
+//		velocity.y = 0.0f;
+//		context.CharacterMotor.RotateToDirection (velocity);
 
 		_machine.changeState<OnAirState> ();
 	}
