@@ -8,10 +8,6 @@ using System.Collections.Generic;
 public class TransformCharacterMotor : BaseCharacterMotor
 {
 #region COMPONENTS
-	[Header("COMPONENTS SETTINGS")]
-	[HideInInspector][NonSerialized]
-	public CharacterCollisionState2D collisionState = new CharacterCollisionState2D();
-
 	/// <summary>
 	/// holder for our raycast origin corners (TR, TL, BR, BL)
 	/// </summary>
@@ -27,37 +23,6 @@ public class TransformCharacterMotor : BaseCharacterMotor
 		public Vector3 bottomLeft;
 	}
 
-	public class CharacterCollisionState2D
-	{
-		public bool right;
-		public bool left;
-		public bool above;
-		public bool below;
-		public bool becameGroundedThisFrame;
-		public bool wasGroundedLastFrame;
-		public bool movingDownSlope;
-		public float slopeAngle;
-
-
-		public bool HasCollision()
-		{
-			return below || right || left || above;
-		}
-
-
-		public void Reset()
-		{
-			right = left = above = below = becameGroundedThisFrame = movingDownSlope = false;
-			slopeAngle = 0f;
-		}
-
-
-		public override string ToString()
-		{
-			return string.Format( "[CharacterCollisionState2D] r: {0}, l: {1}, a: {2}, b: {3}, movingDownSlope: {4}, angle: {5}, wasGroundedLastFrame: {6}, becameGroundedThisFrame: {7}",
-				right, left, above, below, movingDownSlope, slopeAngle, wasGroundedLastFrame, becameGroundedThisFrame );
-		}
-	}
 #endregion
 
 	public event Action<RaycastHit> onControllerCollidedEvent;

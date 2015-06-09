@@ -220,6 +220,66 @@ ModelImporter:
       has translation animation. It is not supported.
 
 
+      MuscleClip ''Santo''conversion warning: ''Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Thumb1Def_R''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''Santo''conversion warning: ''Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Thumb1Def_R''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''Santo''conversion warning: ''Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Thumb1Def_R''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''Santo''conversion warning: ''Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Middle1Def_L''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''Santo''conversion warning: ''Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Thumb1Def_L''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''Santo''conversion warning: ''Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Ring1Def_L''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''Santo''conversion warning: ''Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Pinky1Def_L''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''Santo''conversion warning: ''Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Index1Def_L''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''Santo''conversion warning: ''Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Thumb1Def_R''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''Santo''conversion warning: ''Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Middle1Def_L''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''Santo''conversion warning: ''Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Thumb1Def_L''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''Santo''conversion warning: ''Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Ring1Def_L''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''Santo''conversion warning: ''Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Pinky1Def_L''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''Santo''conversion warning: ''Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Index1Def_L''
+      has translation animation. It is not supported.
+
+
+      MuscleClip ''Santo''conversion warning: ''Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Thumb1Def_R''
+      has translation animation. It is not supported.
+
+
       MuscleClip ''Santo''conversion warning: ''Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Middle1Def_L''
       has translation animation. It is not supported.
 
@@ -3457,7 +3517,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Jump_Wall
       takeName: Jump_Wall
-      firstFrame: 0
+      firstFrame: 1
       lastFrame: 14
       wrapMode: 0
       orientationOffsetY: 0
@@ -3469,7 +3529,7 @@ ModelImporter:
       loopBlendOrientation: 0
       loopBlendPositionY: 1
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
+      keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 1
       heightFromFeet: 0

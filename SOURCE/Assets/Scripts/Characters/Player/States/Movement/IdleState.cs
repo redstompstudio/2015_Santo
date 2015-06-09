@@ -4,7 +4,14 @@ using Prime31.StateKit;
 
 public class IdleState : SKMecanimState<PlayerCharacterController> 
 {
+	private Idle_Behaviour idleBehaviour;
 	private LayerMask climbEdgeLayers;
+
+	private Raycaster.RaycastHitInfo handRayInfo;
+	private float horizontalInput;
+
+	private bool useHandIK;
+	private Vector3 handPosition;
 
 	public override void begin ()
 	{
@@ -19,6 +26,11 @@ public class IdleState : SKMecanimState<PlayerCharacterController>
 		context.CharacterMotor.IsKinematic = false;
 		context.CharacterMotor.UseGravity = true;
 		context.CharacterMotor.ResetColliderValues ();
+
+		if (idleBehaviour == null)
+			idleBehaviour = _machine.animator.GetBehaviour<Idle_Behaviour> ();
+
+		//idleBehaviour.onStateIKCallback += OnStateIKIdle;
 
 		climbEdgeLayers = context.CharacterSettings.climbEdgeLayers;
 
@@ -74,10 +86,27 @@ public class IdleState : SKMecanimState<PlayerCharacterController>
 			return;
 		}
 
-		if(Mathf.Abs(Input.GetAxisRaw ("Horizontal")) > 0.0f)
+		horizontalInput = Input.GetAxisRaw ("Horizontal");
+		if(Mathf.Abs(horizontalInput) > 0.0f)
 		{
-			_machine.changeState<WalkState> ();
-			return;
+			handRayInfo = Raycaster.GetRaycastHitInfo (context.CharCenterPoint, 
+				context.Forward * horizontalInput, 1.0f, context.CharacterSettings.wallJumpLayers);
+
+			if(handRayInfo.hitSomething)
+			{
+				useHandIK = true;
+				handPosition = handRayInfo.hit.point + Vector3.up * 0.7f;
+			} 
+			else 
+			{
+				useHandIK = false;
+				_machine.changeState<WalkState> ();
+				return;
+			}
+		}
+		else
+		{
+			useHandIK = false;
 		}
 	}
 
@@ -91,5 +120,18 @@ public class IdleState : SKMecanimState<PlayerCharacterController>
 			_machine.changeState<BowArrowState>();
 		else
 			_machine.changeState<RifleAimState>();
+	}
+
+	private void OnStateIKIdle()
+	{
+		if(useHandIK)
+		{
+			Debug.Log ("IK");
+			Vector3 curHandPos = _machine.animator.GetIKPosition (AvatarIKGoal.LeftHand);
+			curHandPos = Vector3.Lerp (curHandPos, handPosition, Time.deltaTime * 10.0f);
+
+			_machine.animator.SetIKPositionWeight (AvatarIKGoal.LeftHand, 1.0f);
+			_machine.animator.SetIKPosition(AvatarIKGoal.LeftHand, curHandPos);
+		}
 	}
 }

@@ -1,6 +1,38 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public class CharacterCollisionState
+{
+	public bool right;
+	public bool left;
+	public bool above;
+	public bool below;
+	public bool becameGroundedThisFrame;
+	public bool wasGroundedLastFrame;
+	public bool movingDownSlope;
+	public float slopeAngle;
+
+
+	public bool HasCollision()
+	{
+		return below || right || left || above;
+	}
+
+
+	public void Reset()
+	{
+		right = left = above = below = becameGroundedThisFrame = movingDownSlope = false;
+		slopeAngle = 0f;
+	}
+
+
+	public override string ToString()
+	{
+		return string.Format( "[CharacterCollisionState] r: {0}, l: {1}, a: {2}, b: {3}, movingDownSlope: {4}, angle: {5}, wasGroundedLastFrame: {6}, becameGroundedThisFrame: {7}",
+			right, left, above, below, movingDownSlope, slopeAngle, wasGroundedLastFrame, becameGroundedThisFrame );
+	}
+}
+
 [System.Serializable]
 public class GroundInfo
 {
@@ -34,12 +66,17 @@ public class BaseCharacterMotor : MonoBehaviour
 	protected BoxCollider cachedCollider;
 	protected Rigidbody cachedRigidbody;
 
+	[Header("COMPONENTS SETTINGS")]
+	[HideInInspector]
+	public CharacterCollisionState collisionState = new CharacterCollisionState();
+
 	private Vector3 initialColliderCenter;
 	private Vector3 initialColliderSize;
 
 	protected bool isKinematic;
 	protected bool useGravity;
 
+	[Header("GROUND INFOs")]
 	public GroundInfo groundInfos = new GroundInfo();
 
 	#region PROPERTIES
