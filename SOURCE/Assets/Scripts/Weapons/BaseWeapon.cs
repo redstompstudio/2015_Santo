@@ -3,21 +3,31 @@
 [System.Serializable]
 public class BaseWeapon : MonoBehaviour
 {
+	private Transform cachedTransform;
+
 	private bool isEquipped;
 
 	public WEAPON_NAME weaponName;
 
-	public float baseDamage;
+	public int baseDamage;
 	public float baseRange;
 
 	#region PROPERTIES
+	public Transform CachedTransform{
+		get{
+			if (cachedTransform == null)
+				cachedTransform = transform;
+			return cachedTransform;
+		}
+	}
+
 	public bool IsEquipped{
 		get{
 			return isEquipped;
 		}
 	}
 
-	public float Damage{
+	public int Damage{
 		get{
 			return baseDamage;
 		}

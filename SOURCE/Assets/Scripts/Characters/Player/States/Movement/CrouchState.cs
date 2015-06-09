@@ -41,5 +41,11 @@ public class CrouchState : SKMecanimState<PlayerCharacterController>
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
+		float horizontalInput = Input.GetAxisRaw ( "Horizontal" );
+
+		if(Mathf.Abs(horizontalInput) > 0.0f)
+		{
+			context.CharacterMotor.RotateToDirection ( Vector3.right * horizontalInput );
+		}
 	}
 }

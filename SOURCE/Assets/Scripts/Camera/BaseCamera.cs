@@ -13,10 +13,11 @@ public class BaseCamera : MonoBehaviour
 			return cachedTransform;
 		}
 	}
+
+
 	#endregion
 
 	protected virtual void Awake()
 	{
-		
 	}
 }

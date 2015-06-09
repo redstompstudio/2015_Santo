@@ -22,7 +22,7 @@ public class IdleState : SKMecanimState<PlayerCharacterController>
 
 		climbEdgeLayers = context.CharacterSettings.climbEdgeLayers;
 
-		CrossFade ("Idle", 0.03f, 0.0f);
+		CrossFade ("Idle", 0.13f, 0.0f);
 	}
 
 	public override void reason ()
@@ -37,11 +37,12 @@ public class IdleState : SKMecanimState<PlayerCharacterController>
 
 		if (Input.GetKeyDown (KeyCode.Space)) 
 		{
-			OnJumpInput ();
+			_machine.changeState<JumpState> ();
+			return;
 		}
 		else if(Input.GetKeyDown(KeyCode.Mouse0))
 		{
-			OnAttackInput ();
+			_machine.changeState<KnifeAttackState> ();
 			return;
 		}
 		else if(Input.GetKeyDown(KeyCode.Mouse1))
@@ -62,9 +63,14 @@ public class IdleState : SKMecanimState<PlayerCharacterController>
 			_machine.changeState<CrouchState> ();
 			return;
 		}
-		else if(Input.GetKeyDown(KeyCode.F))
+		else if(Input.GetKeyDown(KeyCode.LeftControl))
 		{
 			_machine.changeState<DashBackState> ();
+			return;
+		}
+		else if(Input.GetKeyDown(KeyCode.E))
+		{
+			_machine.changeState<PullGroundLeverState> ();
 			return;
 		}
 
@@ -77,16 +83,6 @@ public class IdleState : SKMecanimState<PlayerCharacterController>
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
-	}
-
-	public void OnJumpInput()
-	{
-		_machine.changeState<JumpState> ();
-	}
-
-	public void OnAttackInput()
-	{
-		_machine.changeState<FistsAttackState> ();
 	}
 
 	public void OnAimInput()

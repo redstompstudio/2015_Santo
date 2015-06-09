@@ -26,6 +26,8 @@ public class WallJumpState : SKMecanimState<PlayerCharacterController>
 		Vector3 velocity = (context.Forward * context.CharacterSettings.wallJumpHorizontalForce) + 
 			(Vector3.up * context.CharacterSettings.wallJumpVerticalForce);
 		
+		velocity.z = 0.0f;
+
 		context.CharacterMotor.SetVelocity (velocity);
 
 		velocity.y = 0.0f;

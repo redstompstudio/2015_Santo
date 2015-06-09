@@ -25,15 +25,18 @@ public class OnAirState :  SKMecanimState<PlayerCharacterController>
 			return;
 		}
 
+
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
 			for(int i = -1; i < 2; i++)
 			{
 				Vector3 offset = ((context.CharacterMotor.CachedCollider.size / 2.0f) * i);
-				offset.x = offset.z = 0.0f;
+				offset.z = 0.0f;
+				offset.x = 0.0f;
 
 				Vector3 point = context.CharCenterPoint + offset;
 #if UNITY_EDITOR
+				Debug.DrawRay(context.CharCenterPoint, Vector3.up, Color.magenta, 4.0f);
 				Debug.DrawRay (point, context.Forward * context.CharacterSettings.maxDistanceFromWall, Color.blue, 4.0f);
 #endif
 				if(Raycaster.HitSomething(point, context.Forward, context.CharacterSettings.maxDistanceFromWall, context.CharacterSettings.wallJumpLayers))
@@ -43,10 +46,18 @@ public class OnAirState :  SKMecanimState<PlayerCharacterController>
 				}
 			}
 		}
-		else if(Input.GetKey(KeyCode.S) && Input.GetKeyDown(KeyCode.Mouse0))
+		else if(Input.GetKeyDown(KeyCode.Mouse0))
 		{
-			_machine.changeState<FistSlamState> ();
-			return;
+			if(Input.GetKey(KeyCode.S))
+			{
+				//_machine.changeState<FistSlamState> ();
+				return;
+			}
+			else
+			{
+				_machine.changeState<KnifeAttackState> ();
+				return;
+			}
 		}
 		else if(Input.GetKey(KeyCode.W))
 		{
@@ -62,7 +73,9 @@ public class OnAirState :  SKMecanimState<PlayerCharacterController>
 
 				float distFromFeet = Mathf.Abs (climbPoint.y - context.Position.y);
 
+#if UNITY_EDITOR
 				Debug.Log (distFromFeet);
+#endif
 
 				if (distFromFeet < 1.5f) {
 					_machine.changeState<GrabLedgeState> ();
@@ -76,7 +89,8 @@ public class OnAirState :  SKMecanimState<PlayerCharacterController>
 	{
 		if(context.CharacterSettings.enableAirControl)
 		{
-			context.CharacterMotor.Move (new Vector3(Input.GetAxisRaw ("Horizontal") * context.CharacterSettings.maxRunSpeed, context.CharacterMotor.Velocity.y, 0.0f), 
+			context.CharacterMotor.Move (new Vector3(Input.GetAxisRaw ("Horizontal") * context.CharacterSettings.maxRunSpeed * context.CharacterSettings.airSpeedRatio, 
+				context.CharacterMotor.Velocity.y, 0.0f), 
 				deltaTime);
 			
 			context.CharacterMotor.RotateToVelocityDirection (float.PositiveInfinity);

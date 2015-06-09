@@ -243,6 +243,11 @@ public class TransformCharacterMotor : BaseCharacterMotor
 				Quaternion.LookRotation (direction), Time.deltaTime * pSpeed);
 	}
 
+	public override void RotateToDirection (Vector3 pDirection, bool pIgnoreY = true)
+	{
+		CachedTransform.rotation = Quaternion.LookRotation ( pDirection );
+	}
+
 	public override void AddVelocity (Vector3 pVelocity)
 	{
 		velocity += pVelocity;
