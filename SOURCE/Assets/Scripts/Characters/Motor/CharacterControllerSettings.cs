@@ -8,6 +8,8 @@ public class CharacterSettings
 
 	[Header("AIR SETTINGS")]
 	public bool enableAirControl = false;
+	[Range(0.0f, 1.0f)]
+	public float airSpeedRatio = 1.0f;
 
 	[Header("LAND SETTINGS")]
 	public bool stopMovementOnLand = false;

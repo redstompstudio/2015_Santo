@@ -16,7 +16,7 @@ public class WalkState :  SKMecanimState<PlayerCharacterController>
 
 		context.CharacterMotor.ResetColliderValues ();
 
-		CrossFade("Run_Tree", 0.03f, 0.0f);
+		CrossFade("Run_Tree", 0.1f, 0.0f);
 	}
 
 	public override void reason ()
@@ -42,7 +42,7 @@ public class WalkState :  SKMecanimState<PlayerCharacterController>
 			_machine.changeState<JumpState> ();
 			return;
 		}
-		else if(Input.GetKeyDown(KeyCode.F))
+		else if(Input.GetKeyDown(KeyCode.LeftControl))
 		{
 			_machine.changeState<RollState> ();
 			return;
@@ -57,7 +57,7 @@ public class WalkState :  SKMecanimState<PlayerCharacterController>
 		}
 		else if(Input.GetKeyDown(KeyCode.Mouse0))
 		{
-			_machine.changeState<FistsAttackState> ();
+			_machine.changeState<KnifeAttackState> ();
 			return;
 		}
 		else if(Input.GetKeyDown(KeyCode.Mouse1))

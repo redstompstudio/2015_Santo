@@ -87,7 +87,7 @@ public class PhysicsCharacterMotor : BaseCharacterMotor
 		CachedRigidbody.velocity = velocity;
 	}
 
-	public override void RotateToDirection (Vector3 pDirection)
+	public override void RotateToDirection (Vector3 pDirection, bool pIgnoreY = true)
 	{
 		base.RotateToDirection (pDirection);
 

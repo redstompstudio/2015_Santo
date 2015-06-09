@@ -114,6 +114,18 @@ public class BaseCharacterMotor : MonoBehaviour
 			return initialColliderCenter;
 		}
 	}
+
+	public Vector3 CurrentColliderSize{
+		get{
+			return CachedCollider.size;
+		}
+	}
+
+	public Vector3 CurrentColliderCenter{
+		get{
+			return CachedCollider.center;
+		}
+	}
 	#endregion
 
 	protected virtual void Awake()	
@@ -144,7 +156,7 @@ public class BaseCharacterMotor : MonoBehaviour
 	{
 	}
 
-	public virtual void RotateToDirection(Vector3 pDirection)
+	public virtual void RotateToDirection(Vector3 pDirection, bool pIgnoreY = true)
 	{
 	}
 

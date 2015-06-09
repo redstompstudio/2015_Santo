@@ -1,30 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Prime31.StateKit;
 
 [RequireComponent(typeof(BaseCharacterMotor))]
-public class BaseCharacterController : MonoBehaviour 
+public class BaseCharacterController : BaseActor 
 {
-	private Transform cachedTransform;
-
-	[SerializeField]
-	private BaseHealth health;
 	private BaseCharacterMotor characterMotor;
+	[SerializeField]
+	private CharacterSettings characterSettings;
 
 	private Vector3 charCenterPoint;
 
-	[SerializeField]
-	private CharacterSettings gamePlaySettings;
-
 	#region PROPERTIES
-	public BaseHealth Health
-	{
-		get{
-			if (health == null)
-				health = new BaseHealth ();
-			return health;
-		}
-	}
-
 	public BaseCharacterMotor CharacterMotor{
 		get{
 			if (characterMotor == null)
@@ -35,52 +22,29 @@ public class BaseCharacterController : MonoBehaviour
 
 	public CharacterSettings CharacterSettings{
 		get{
-			if (gamePlaySettings == null)
-				gamePlaySettings = new CharacterSettings ();
-			return gamePlaySettings;
+			if (characterSettings == null)
+				characterSettings = new CharacterSettings ();
+			return characterSettings;
 		}
-	}
-
-	public Transform CachedTransform {
-		get{
-			if (cachedTransform == null)
-				cachedTransform = transform;
-			return cachedTransform;
-		}
-	}
-
-	public Vector3 Position{
-		get{return CachedTransform.position;}
-	}
-
-	public Quaternion Rotation{
-		get{return CachedTransform.rotation;}
-	}
-
-	public Vector3 LocalScale{
-		get{return CachedTransform.localScale;}
-	}
-
-	public Vector3 Forward{
-		get{return CachedTransform.forward;}
 	}
 
 	public Vector3 CharCenterPoint{
 		get{
-			charCenterPoint = CachedTransform.position + Vector3.up;
+			Vector3 offset = CharacterMotor.CurrentColliderSize / 2.0f;
+			offset.x = offset.z = 0.0f;
+
+			charCenterPoint = CachedTransform.position + offset;
 			return charCenterPoint;
 		}
 	}
 
 	#endregion
 
-	protected virtual void Awake()
+	protected override void Awake()
 	{
-		if (characterMotor == null)
-			characterMotor = GetComponent<BaseCharacterMotor> ();
 	}
 
-	protected virtual void Start()
+	protected override void Start()
 	{
 	}
 }

@@ -58,6 +58,4 @@ public class LandState : SKMecanimState<PlayerCharacterController>
 		else
 			_machine.changeState<IdleState> ();
 	}
-
-
 }

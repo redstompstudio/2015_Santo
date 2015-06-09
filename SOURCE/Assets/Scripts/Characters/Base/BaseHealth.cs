@@ -4,19 +4,19 @@ using System.Collections;
 [System.Serializable]
 public class BaseHealth 
 {
-	public float baseMaxHealth = 100.0f;			//The health with no modifiers.
-	public float maxHealthBoost = 0.0f;				//The max Health boosted by itens or powers.
+	public int baseMaxHealth = 100;			//The health with no modifiers.
+	public int maxHealthBoost = 0;				//The max Health boosted by itens or powers.
 
-	public float currentHealth;						//The player current health.
+	public int currentHealth = 100;						//The player current health.
 
 	#region PROPERTIES
-	public float MaxHealth{
+	public int MaxHealth{
 		get{
 			return baseMaxHealth + maxHealthBoost;
 		}
 	}
 
-	public float CurrentHealth {
+	public int CurrentHealth {
 		get{
 			if (currentHealth > MaxHealth)
 				currentHealth = MaxHealth;
@@ -25,4 +25,14 @@ public class BaseHealth
 		}
 	}
 	#endregion
+
+	public void DoDamage(int pDamage)
+	{
+		currentHealth = CurrentHealth - pDamage;
+	}
+
+	public void Heal(int pAmount)
+	{
+		currentHealth = CurrentHealth + pAmount;
+	}
 }
