@@ -7,6 +7,7 @@ public class KnifeAttackState : SKMecanimState<PlayerCharacterController>
 	private Knife_UpperSlash_Behaviour upperSlashBehaviour;
 	private Knife_HorizontalSlash_Behaviour horSlashBehaviour;
 	private Knife_HorizontalSlashAir_Behaviour horSlashAirBehaviour;
+	private Knife_CrouchHorStab_Behaviour crouchStabBehaviour;
 
 	private bool executeNextAttack;
 	private BaseWeapon knife;
@@ -51,9 +52,21 @@ public class KnifeAttackState : SKMecanimState<PlayerCharacterController>
 			horSlashAirBehaviour.onStateExitCallback = OnStateExitHorSlashAir;
 		}
 
+		if(crouchStabBehaviour == null)
+		{
+			crouchStabBehaviour = _machine.animator.GetBehaviour<Knife_CrouchHorStab_Behaviour> ();
+
+			crouchStabBehaviour.onStateEnterCallback += OnStateEnterCrouchStab;
+			crouchStabBehaviour.onStateUpdateCallback += OnStateUpdateCrouchStab;
+			crouchStabBehaviour.onStateExitCallback += OnStateExitCrouchStab;
+		}
+
 		if (context.CharacterMotor.IsGrounded) 
 		{
-			CrossFade ("Knife_Attack_01", 0.01f, 0.0f);
+			if(Input.GetKey(KeyCode.S))
+				CrossFade ("Attack_Knife_Crouch_01", 0.01f, 0.0f);
+			else
+				CrossFade ("Knife_Attack_01", 0.01f, 0.0f);
 		} 
 		else 
 		{
@@ -138,6 +151,30 @@ public class KnifeAttackState : SKMecanimState<PlayerCharacterController>
 		else
 		{
 			_machine.changeState<OnAirState> ();	
+		}
+	}
+
+	private void OnStateEnterCrouchStab ()
+	{
+		executeNextAttack = false;
+	}
+
+	private void OnStateUpdateCrouchStab ()
+	{
+	}
+
+	private void OnStateExitCrouchStab ()
+	{
+//		if (executeNextAttack)
+//			CrossFade ("Knife_Attack_01", 0.03f, 0.0f);
+//		else 
+		{
+			context.attackController.UnequipWeapon ();
+
+			if (Input.GetKey (KeyCode.S))
+				_machine.changeState<CrouchState> ();
+			else
+				_machine.changeState<IdleState> ();
 		}
 	}
 	#endregion

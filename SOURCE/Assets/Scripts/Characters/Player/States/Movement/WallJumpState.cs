@@ -31,14 +31,13 @@ public class WallJumpState : SKMecanimState<PlayerCharacterController>
 		context.CharacterMotor.SetVelocity (velocity);
 
 		velocity.y = 0.0f;
-		//context.CharacterMotor.RotateToDirection (velocity);
+		context.CharacterMotor.RotateToDirection (velocity);
 
 		CrossFade ("WallJump", 0.03f, 0.0f);
 	}
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
-		//context.CharacterMotor.RotateToVelocityDirection (50.0f);
 	}
 
 	public void OnStateExitWallJump()

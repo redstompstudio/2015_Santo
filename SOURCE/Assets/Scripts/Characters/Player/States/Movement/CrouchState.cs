@@ -37,6 +37,11 @@ public class CrouchState : SKMecanimState<PlayerCharacterController>
 			_machine.changeState<SlideState> ();
 			return;
 		}
+		else if(Input.GetKeyDown(KeyCode.Mouse0))
+		{
+			_machine.changeState<KnifeAttackState> ();
+			return;
+		}
 	}
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
