@@ -47,7 +47,7 @@ public class PlayerCharacterController : BaseCharacterController
 #if UNITY_EDITOR
 		stateMachine.onStateChanged += () =>
 		{
-			//Debug.Log(stateMachine.currentState.ToString());
+			
 		};
 #endif	
 	}
@@ -58,6 +58,15 @@ public class PlayerCharacterController : BaseCharacterController
 
 		if (Health.currentHealth <= 0.0f)
 			stateMachine.changeState<DeadState> ();
+
+		if(Input.GetKeyDown(KeyCode.F5))
+		{
+			XMLSerializer.Save<CharacterSettings>(CharacterSettings, "Player_CharSettings.xml");
+		}
+		else if(Input.GetKeyDown(KeyCode.F9))
+		{
+			CharacterSettings = XMLSerializer.Load<CharacterSettings> ("Player_CharSettings.xml");
+		}
 	}
 
 	void FixedUpdate()

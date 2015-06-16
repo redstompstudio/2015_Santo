@@ -61,6 +61,10 @@ namespace Prime31.StateKit
 		{
 		}
 
+		public virtual void OnGizmos()
+		{
+		}
+
 		public virtual void end()
 		{}
 

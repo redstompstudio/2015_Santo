@@ -1,0 +1,717 @@
+fileFormatVersion: 2
+guid: dfd9447abe99779458596e34c69e52a9
+timeCreated: 1431665072
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: //RootNode
+    100004: Curupira
+    100006: Def_Chest
+    100008: Def_ClothBack1
+    100010: Def_ClothBack2
+    100012: Def_ClothFront1
+    100014: Def_ClothFront2
+    100016: Def_Foot_L
+    100018: Def_Foot_R
+    100020: Def_HairBot1
+    100022: Def_HairBot2
+    100024: Def_HairSide1_L
+    100026: Def_HairSide1_R
+    100028: Def_HairSide2_L
+    100030: Def_HairSide2_R
+    100032: Def_HairTop1
+    100034: Def_HairTop2
+    100036: Def_Hand_L
+    100038: Def_Hand_R
+    100040: Def_Head
+    100042: Def_Hips
+    100044: Def_Index1_L
+    100046: Def_Index1_R
+    100048: Def_Index2_L
+    100050: Def_Index2_R
+    100052: Def_Index3_L
+    100054: Def_Index3_R
+    100056: Def_Knife
+    100058: Def_LwrArm_L
+    100060: Def_LwrArm_R
+    100062: Def_LwrLeg_L
+    100064: Def_LwrLeg_L_001
+    100066: Def_LwrLeg_R
+    100068: Def_LwrLeg_R_001
+    100070: Def_Middle1_L
+    100072: Def_Middle1_R
+    100074: Def_Middle2_L
+    100076: Def_Middle2_R
+    100078: Def_Middle3_L
+    100080: Def_Middle3_R
+    100082: Def_Neck
+    100084: Def_Pinky1_L
+    100086: Def_Pinky1_R
+    100088: Def_Pinky2_L
+    100090: Def_Pinky2_R
+    100092: Def_Pinky3_L
+    100094: Def_Pinky3_R
+    100096: Def_Ring1_L
+    100098: Def_Ring1_R
+    100100: Def_Ring2_L
+    100102: Def_Ring2_R
+    100104: Def_Ring3_L
+    100106: Def_Ring3_R
+    100108: Def_Shoulder_L
+    100110: Def_Shoulder_R
+    100112: Def_Spine
+    100114: Def_Thumb1_L
+    100116: Def_Thumb1_R
+    100118: Def_Thumb2_L
+    100120: Def_Thumb2_R
+    100122: Def_Thumb3_L
+    100124: Def_Thumb3_R
+    100126: Def_Toe_L
+    100128: Def_Toe_R
+    100130: Def_UprArm_L
+    100132: Def_UprArm_R
+    100134: Def_UprLeg_L
+    100136: Def_UprLeg_R
+    100138: Mesh
+    100140: Root
+    400000: Armature
+    400002: //RootNode
+    400004: Curupira
+    400006: Def_Chest
+    400008: Def_ClothBack1
+    400010: Def_ClothBack2
+    400012: Def_ClothFront1
+    400014: Def_ClothFront2
+    400016: Def_Foot_L
+    400018: Def_Foot_R
+    400020: Def_HairBot1
+    400022: Def_HairBot2
+    400024: Def_HairSide1_L
+    400026: Def_HairSide1_R
+    400028: Def_HairSide2_L
+    400030: Def_HairSide2_R
+    400032: Def_HairTop1
+    400034: Def_HairTop2
+    400036: Def_Hand_L
+    400038: Def_Hand_R
+    400040: Def_Head
+    400042: Def_Hips
+    400044: Def_Index1_L
+    400046: Def_Index1_R
+    400048: Def_Index2_L
+    400050: Def_Index2_R
+    400052: Def_Index3_L
+    400054: Def_Index3_R
+    400056: Def_Knife
+    400058: Def_LwrArm_L
+    400060: Def_LwrArm_R
+    400062: Def_LwrLeg_L
+    400064: Def_LwrLeg_L_001
+    400066: Def_LwrLeg_R
+    400068: Def_LwrLeg_R_001
+    400070: Def_Middle1_L
+    400072: Def_Middle1_R
+    400074: Def_Middle2_L
+    400076: Def_Middle2_R
+    400078: Def_Middle3_L
+    400080: Def_Middle3_R
+    400082: Def_Neck
+    400084: Def_Pinky1_L
+    400086: Def_Pinky1_R
+    400088: Def_Pinky2_L
+    400090: Def_Pinky2_R
+    400092: Def_Pinky3_L
+    400094: Def_Pinky3_R
+    400096: Def_Ring1_L
+    400098: Def_Ring1_R
+    400100: Def_Ring2_L
+    400102: Def_Ring2_R
+    400104: Def_Ring3_L
+    400106: Def_Ring3_R
+    400108: Def_Shoulder_L
+    400110: Def_Shoulder_R
+    400112: Def_Spine
+    400114: Def_Thumb1_L
+    400116: Def_Thumb1_R
+    400118: Def_Thumb2_L
+    400120: Def_Thumb2_R
+    400122: Def_Thumb3_L
+    400124: Def_Thumb3_R
+    400126: Def_Toe_L
+    400128: Def_Toe_R
+    400130: Def_UprArm_L
+    400132: Def_UprArm_R
+    400134: Def_UprLeg_L
+    400136: Def_UprLeg_R
+    400138: Mesh
+    400140: Root
+    4300000: Mesh
+    7400000: Idle
+    7400002: Tackle
+    7400004: Possession
+    9500000: //RootNode
+    13700000: Mesh
+  materials:
+    importMaterials: 0
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 1
+      lastFrame: 2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Curupira
+        weight: 1
+      - path: Curupira/Armature
+        weight: 1
+      - path: Curupira/Armature/Def_Hips
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_ClothBack1
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_ClothBack1/Def_ClothBack2
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_ClothFront1
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_ClothFront1/Def_ClothFront2
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairBot1
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairBot1/Def_HairBot2
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairSide1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairSide1_L/Def_HairSide2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairSide1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairSide1_R/Def_HairSide2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairTop1
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairTop1/Def_HairTop2
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Index1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Index1_L/Def_Index2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Index1_L/Def_Index2_L/Def_Index3_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Middle1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Middle1_L/Def_Middle2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Middle1_L/Def_Middle2_L/Def_Middle3_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Pinky1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Pinky1_L/Def_Pinky2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Pinky1_L/Def_Pinky2_L/Def_Pinky3_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Ring1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Ring1_L/Def_Ring2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Ring1_L/Def_Ring2_L/Def_Ring3_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Thumb1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Thumb1_L/Def_Thumb2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Thumb1_L/Def_Thumb2_L/Def_Thumb3_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Index1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Index1_R/Def_Index2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Index1_R/Def_Index2_R/Def_Index3_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Middle1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Middle1_R/Def_Middle2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Middle1_R/Def_Middle2_R/Def_Middle3_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Pinky1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Pinky1_R/Def_Pinky2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Pinky1_R/Def_Pinky2_R/Def_Pinky3_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Ring1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Ring1_R/Def_Ring2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Ring1_R/Def_Ring2_R/Def_Ring3_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Thumb1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Thumb1_R/Def_Thumb2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Thumb1_R/Def_Thumb2_R/Def_Thumb3_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L/Def_LwrLeg_L_001
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L/Def_LwrLeg_L_001/Def_Foot_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L/Def_LwrLeg_L_001/Def_Foot_L/Def_Toe_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_LwrLeg_R_001
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_LwrLeg_R_001/Def_Foot_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_LwrLeg_R_001/Def_Foot_R/Def_Toe_R
+        weight: 1
+      - path: Curupira/Armature/Root
+        weight: 1
+      - path: Curupira/Armature/Root/Def_Knife
+        weight: 1
+      - path: Mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Tackle
+      takeName: Tackle
+      firstFrame: 1
+      lastFrame: 106
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Curupira
+        weight: 1
+      - path: Curupira/Armature
+        weight: 1
+      - path: Curupira/Armature/Def_Hips
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_ClothBack1
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_ClothBack1/Def_ClothBack2
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_ClothFront1
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_ClothFront1/Def_ClothFront2
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairBot1
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairBot1/Def_HairBot2
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairSide1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairSide1_L/Def_HairSide2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairSide1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairSide1_R/Def_HairSide2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairTop1
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairTop1/Def_HairTop2
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Index1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Index1_L/Def_Index2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Index1_L/Def_Index2_L/Def_Index3_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Middle1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Middle1_L/Def_Middle2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Middle1_L/Def_Middle2_L/Def_Middle3_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Pinky1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Pinky1_L/Def_Pinky2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Pinky1_L/Def_Pinky2_L/Def_Pinky3_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Ring1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Ring1_L/Def_Ring2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Ring1_L/Def_Ring2_L/Def_Ring3_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Thumb1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Thumb1_L/Def_Thumb2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Thumb1_L/Def_Thumb2_L/Def_Thumb3_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Index1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Index1_R/Def_Index2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Index1_R/Def_Index2_R/Def_Index3_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Middle1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Middle1_R/Def_Middle2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Middle1_R/Def_Middle2_R/Def_Middle3_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Pinky1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Pinky1_R/Def_Pinky2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Pinky1_R/Def_Pinky2_R/Def_Pinky3_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Ring1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Ring1_R/Def_Ring2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Ring1_R/Def_Ring2_R/Def_Ring3_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Thumb1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Thumb1_R/Def_Thumb2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Thumb1_R/Def_Thumb2_R/Def_Thumb3_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L/Def_LwrLeg_L_001
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L/Def_LwrLeg_L_001/Def_Foot_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L/Def_LwrLeg_L_001/Def_Foot_L/Def_Toe_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_LwrLeg_R_001
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_LwrLeg_R_001/Def_Foot_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_LwrLeg_R_001/Def_Foot_R/Def_Toe_R
+        weight: 1
+      - path: Curupira/Armature/Root
+        weight: 1
+      - path: Curupira/Armature/Root/Def_Knife
+        weight: 1
+      - path: Mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Possession
+      takeName: Possession
+      firstFrame: 1
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Curupira
+        weight: 1
+      - path: Curupira/Armature
+        weight: 1
+      - path: Curupira/Armature/Def_Hips
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_ClothBack1
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_ClothBack1/Def_ClothBack2
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_ClothFront1
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_ClothFront1/Def_ClothFront2
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairBot1
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairBot1/Def_HairBot2
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairSide1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairSide1_L/Def_HairSide2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairSide1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairSide1_R/Def_HairSide2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairTop1
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_HairTop1/Def_HairTop2
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Index1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Index1_L/Def_Index2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Index1_L/Def_Index2_L/Def_Index3_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Middle1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Middle1_L/Def_Middle2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Middle1_L/Def_Middle2_L/Def_Middle3_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Pinky1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Pinky1_L/Def_Pinky2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Pinky1_L/Def_Pinky2_L/Def_Pinky3_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Ring1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Ring1_L/Def_Ring2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Ring1_L/Def_Ring2_L/Def_Ring3_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Thumb1_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Thumb1_L/Def_Thumb2_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_Thumb1_L/Def_Thumb2_L/Def_Thumb3_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Index1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Index1_R/Def_Index2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Index1_R/Def_Index2_R/Def_Index3_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Middle1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Middle1_R/Def_Middle2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Middle1_R/Def_Middle2_R/Def_Middle3_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Pinky1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Pinky1_R/Def_Pinky2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Pinky1_R/Def_Pinky2_R/Def_Pinky3_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Ring1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Ring1_R/Def_Ring2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Ring1_R/Def_Ring2_R/Def_Ring3_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Thumb1_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Thumb1_R/Def_Thumb2_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_Thumb1_R/Def_Thumb2_R/Def_Thumb3_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L/Def_LwrLeg_L_001
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L/Def_LwrLeg_L_001/Def_Foot_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L/Def_LwrLeg_L_001/Def_Foot_L/Def_Toe_L
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_LwrLeg_R_001
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_LwrLeg_R_001/Def_Foot_R
+        weight: 1
+      - path: Curupira/Armature/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_LwrLeg_R_001/Def_Foot_R/Def_Toe_R
+        weight: 1
+      - path: Curupira/Armature/Root
+        weight: 1
+      - path: Curupira/Armature/Root/Def_Knife
+        weight: 1
+      - path: Mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

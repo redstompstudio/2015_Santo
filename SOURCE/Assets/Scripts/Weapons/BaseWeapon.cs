@@ -12,6 +12,8 @@ public class BaseWeapon : MonoBehaviour
 	public int baseDamage;
 	public float baseRange;
 
+	public LayerMask attackLayers;
+
 	#region PROPERTIES
 	public Transform CachedTransform{
 		get{

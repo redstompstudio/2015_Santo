@@ -3,7 +3,21 @@ using System.Collections;
 
 public class BasicRifleWeapon : BaseWeapon
 {
+	private SpawnPool hitGroundFXPool;
+	private const string hitGroundFXName = "Rifle_HitGroundFX_Pool";
+
 	public Transform riflePoint;
+
+	#region PROPERTIES
+	public SpawnPool HitGroundFXPool{
+		get{
+			if (hitGroundFXPool == null)
+				hitGroundFXPool = PoolManager.Instance.GetPool (hitGroundFXName);
+
+			return hitGroundFXPool;
+		}
+	}
+	#endregion
 
 	public override void Attack ()
 	{
@@ -21,8 +35,7 @@ public class BasicRifleWeapon : BaseWeapon
 
 		if(Physics.Raycast(ray, out hit, Range))
 		{
-			var particle = TrashMan.spawn ("Rifle_HitGround_FX", hit.point, Quaternion.LookRotation (hit.normal));	
-			TrashMan.despawnAfterDelay (particle, 2.0f);
+			HitGroundFXPool.Spawn<ParticlePoolObject>(hit.point, Quaternion.LookRotation(hit.normal));
 
 			BaseActor hitActor = hit.transform.GetComponent<BaseActor> ();
 

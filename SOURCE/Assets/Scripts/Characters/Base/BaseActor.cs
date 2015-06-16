@@ -33,6 +33,7 @@ public class BaseActor : MonoBehaviour
 		get{
 			if (health == null)
 				health = new BaseHealth ();
+			
 			return health;
 		}
 	}
@@ -59,6 +60,10 @@ public class BaseActor : MonoBehaviour
 	}
 
 	protected virtual void Start()
+	{
+	}
+
+	public virtual void Kill()
 	{
 	}
 }
