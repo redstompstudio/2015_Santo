@@ -12,11 +12,13 @@ public class SkullBulletController : MonoBehaviour, IPoolObject
 	private SpawnPool myPool;
 
 	private SpawnPool despawnFXPool;
-	private const string despawnFXName = "SkullProjectile_DespawnFX_Pool";
+	private const string despawnFXName = "SkullProjectile_DestroyFX_Pool";
 
 	public float movementSpeed = 10.0f;
-
 	public List<string> tagsList = new List<string>();
+
+	public ParticleSystem[] trailFX;
+	public GameObject[] goRenderers;
 
 	#region Properties
 	public SpawnPool DespawnFXPool{
@@ -72,12 +74,15 @@ public class SkullBulletController : MonoBehaviour, IPoolObject
 	public void OnSpawn (SpawnPool pMyPool)
 	{
 		myPool = pMyPool;
+		ResetProjectile ();
 	}
 
 	public void Despawn ()
 	{
 		DespawnFXPool.Spawn<ParticlePoolObject> (cachedTransform.position, Quaternion.identity);
-		myPool.Despawn (cachedGameObject);
+		myPool.DespawnIn(cachedGameObject, 1.5f);
+
+		OnStartDestroy ();
 	}
 
 	public void DespawnIn (float fDelay)
@@ -88,4 +93,31 @@ public class SkullBulletController : MonoBehaviour, IPoolObject
 	{
 	}
 	#endregion
+
+	private void ResetProjectile()
+	{
+		foreach(GameObject go in goRenderers)
+			go.SetActive (true);
+
+		foreach (ParticleSystem particle in trailFX)
+			particle.enableEmission = true;
+
+		cachedRigidbody.isKinematic = false;
+		cachedCollider.enabled = true;
+	}
+
+	private void OnStartDestroy()
+	{
+		foreach(GameObject go in goRenderers)
+			go.SetActive (false);
+
+		foreach (ParticleSystem particle in trailFX)
+			particle.enableEmission = false;
+
+		cachedRigidbody.velocity = Vector3.zero;
+		cachedRigidbody.angularVelocity = Vector3.zero;
+		cachedRigidbody.isKinematic = true;
+
+		cachedCollider.enabled = false;
+	}
 }

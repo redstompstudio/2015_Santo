@@ -7,7 +7,7 @@ public class SkullSpitterController : MonoBehaviour
 	private Collider cachedCollider;
 
 	private SpawnPool skullPool;
-	private const string poolName = "SkullProjectile_Pool";
+	public string poolName = "SkullProjectile_Pool";
 
 	public Transform spawnPosition;
 	public float spitInterval = 2.0f;
