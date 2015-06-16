@@ -95,8 +95,9 @@ public class OnAirState :  SKMecanimState<PlayerCharacterController>
 			context.CharacterMotor.Move (new Vector3(direction.x * context.CharacterSettings.maxRunSpeed * context.CharacterSettings.airSpeedRatio, 
 				context.CharacterMotor.Velocity.y, 0.0f), 
 				deltaTime);
-			
-			context.CharacterMotor.RotateToDirection(direction);
+
+			if(direction != Vector3.zero)
+				context.CharacterMotor.RotateToDirection(direction);
 		}
 
 		float airSpeed = ValuesMapping.Map (context.CharacterMotor.Velocity.y, -5.0f, 5.0f, -1.0f, 1.0f);

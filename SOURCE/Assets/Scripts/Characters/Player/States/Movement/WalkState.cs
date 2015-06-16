@@ -75,6 +75,8 @@ public class WalkState :  SKMecanimState<PlayerCharacterController>
 	{
 		Vector3 direction = new Vector3 (horizontalInput, 0.0f, 0.0f);
 		context.CharacterMotor.Move (direction, context.CharacterSettings.maxRunSpeed * deltaTime);
-		context.CharacterMotor.RotateToDirection (direction, true);
+
+		if(direction != Vector3.zero)
+			context.CharacterMotor.RotateToDirection (direction, true);
 	}
 }
