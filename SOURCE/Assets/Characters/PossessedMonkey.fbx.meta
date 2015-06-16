@@ -1,0 +1,757 @@
+fileFormatVersion: 2
+guid: e8bddb3508885d74bb017229e1a9374b
+timeCreated: 1431665078
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Def_Chest
+    100004: Def_FingerIndex1_L
+    100006: Def_FingerIndex1_R
+    100008: Def_FingerIndex2_L
+    100010: Def_FingerIndex2_R
+    100012: Def_FingerIndex3_L
+    100014: Def_FingerIndex3_R
+    100016: Def_FingerMiddle1_L
+    100018: Def_FingerMiddle1_R
+    100020: Def_FingerMiddle2_L
+    100022: Def_FingerMiddle2_R
+    100024: Def_FingerMiddle3_L
+    100026: Def_FingerMiddle3_R
+    100028: Def_FingerPinky1_L
+    100030: Def_FingerPinky1_R
+    100032: Def_FingerPinky2_L
+    100034: Def_FingerPinky2_R
+    100036: Def_FingerPinky3_L
+    100038: Def_FingerPinky3_R
+    100040: Def_FingerRing1_L
+    100042: Def_FingerRing1_R
+    100044: Def_FingerRing2_L
+    100046: Def_FingerRing2_R
+    100048: Def_FingerRing3_L
+    100050: Def_FingerRing3_R
+    100052: Def_FingerThumb1_L
+    100054: Def_FingerThumb1_R
+    100056: Def_FingerThumb2_L
+    100058: Def_FingerThumb2_R
+    100060: Def_FingerThumb3_L
+    100062: Def_FingerThumb3_R
+    100064: Def_Foot_L
+    100066: Def_Foot_R
+    100068: Def_Hand_L
+    100070: Def_Hand_R
+    100072: Def_Head
+    100074: Def_Hips
+    100076: Def_Jaw
+    100078: Def_LwrArm_L
+    100080: Def_LwrArm_R
+    100082: Def_LwrLeg_L
+    100084: Def_LwrLeg_R
+    100086: Def_Neck
+    100088: Def_Shoulder_L
+    100090: Def_Shoulder_R
+    100092: Def_Spine
+    100094: Def_Toe_L
+    100096: Def_Toe_R
+    100098: Def_UprArm_L
+    100100: Def_UprArm_R
+    100102: Def_UprLeg_L
+    100104: Def_UprLeg_R
+    100106: Main
+    100108: Mesh
+    100110: //RootNode
+    100112: PossessedMonkey
+    100114: Root
+    400000: Armature
+    400002: Def_Chest
+    400004: Def_FingerIndex1_L
+    400006: Def_FingerIndex1_R
+    400008: Def_FingerIndex2_L
+    400010: Def_FingerIndex2_R
+    400012: Def_FingerIndex3_L
+    400014: Def_FingerIndex3_R
+    400016: Def_FingerMiddle1_L
+    400018: Def_FingerMiddle1_R
+    400020: Def_FingerMiddle2_L
+    400022: Def_FingerMiddle2_R
+    400024: Def_FingerMiddle3_L
+    400026: Def_FingerMiddle3_R
+    400028: Def_FingerPinky1_L
+    400030: Def_FingerPinky1_R
+    400032: Def_FingerPinky2_L
+    400034: Def_FingerPinky2_R
+    400036: Def_FingerPinky3_L
+    400038: Def_FingerPinky3_R
+    400040: Def_FingerRing1_L
+    400042: Def_FingerRing1_R
+    400044: Def_FingerRing2_L
+    400046: Def_FingerRing2_R
+    400048: Def_FingerRing3_L
+    400050: Def_FingerRing3_R
+    400052: Def_FingerThumb1_L
+    400054: Def_FingerThumb1_R
+    400056: Def_FingerThumb2_L
+    400058: Def_FingerThumb2_R
+    400060: Def_FingerThumb3_L
+    400062: Def_FingerThumb3_R
+    400064: Def_Foot_L
+    400066: Def_Foot_R
+    400068: Def_Hand_L
+    400070: Def_Hand_R
+    400072: Def_Head
+    400074: Def_Hips
+    400076: Def_Jaw
+    400078: Def_LwrArm_L
+    400080: Def_LwrArm_R
+    400082: Def_LwrLeg_L
+    400084: Def_LwrLeg_R
+    400086: Def_Neck
+    400088: Def_Shoulder_L
+    400090: Def_Shoulder_R
+    400092: Def_Spine
+    400094: Def_Toe_L
+    400096: Def_Toe_R
+    400098: Def_UprArm_L
+    400100: Def_UprArm_R
+    400102: Def_UprLeg_L
+    400104: Def_UprLeg_R
+    400106: Main
+    400108: Mesh
+    400110: //RootNode
+    400112: PossessedMonkey
+    400114: Root
+    4300000: Mesh
+    7400000: Attack
+    7400002: Hit
+    7400004: Idle
+    7400006: Walk
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Mesh
+  materials:
+    importMaterials: 0
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Attack
+      takeName: Attack
+      firstFrame: 1
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: PossessedMonkey
+        weight: 1
+      - path: PossessedMonkey/Armature
+        weight: 1
+      - path: PossessedMonkey/Armature/Root
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_Jaw
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerIndex1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerIndex1_L/Def_FingerIndex2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerIndex1_L/Def_FingerIndex2_L/Def_FingerIndex3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerMiddle1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerMiddle1_L/Def_FingerMiddle2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerMiddle1_L/Def_FingerMiddle2_L/Def_FingerMiddle3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerPinky1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerPinky1_L/Def_FingerPinky2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerPinky1_L/Def_FingerPinky2_L/Def_FingerPinky3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerRing1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerRing1_L/Def_FingerRing2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerRing1_L/Def_FingerRing2_L/Def_FingerRing3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerThumb1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerThumb1_L/Def_FingerThumb2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerThumb1_L/Def_FingerThumb2_L/Def_FingerThumb3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerIndex1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerIndex1_R/Def_FingerIndex2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerIndex1_R/Def_FingerIndex2_R/Def_FingerIndex3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerMiddle1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerMiddle1_R/Def_FingerMiddle2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerMiddle1_R/Def_FingerMiddle2_R/Def_FingerMiddle3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerPinky1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerPinky1_R/Def_FingerPinky2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerPinky1_R/Def_FingerPinky2_R/Def_FingerPinky3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerRing1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerRing1_R/Def_FingerRing2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerRing1_R/Def_FingerRing2_R/Def_FingerRing3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerThumb1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerThumb1_R/Def_FingerThumb2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerThumb1_R/Def_FingerThumb2_R/Def_FingerThumb3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L/Def_Foot_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L/Def_Foot_L/Def_Toe_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_Foot_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_Foot_R/Def_Toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Hit
+      takeName: Hit
+      firstFrame: 1
+      lastFrame: 8
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: PossessedMonkey
+        weight: 1
+      - path: PossessedMonkey/Armature
+        weight: 1
+      - path: PossessedMonkey/Armature/Root
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_Jaw
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerIndex1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerIndex1_L/Def_FingerIndex2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerIndex1_L/Def_FingerIndex2_L/Def_FingerIndex3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerMiddle1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerMiddle1_L/Def_FingerMiddle2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerMiddle1_L/Def_FingerMiddle2_L/Def_FingerMiddle3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerPinky1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerPinky1_L/Def_FingerPinky2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerPinky1_L/Def_FingerPinky2_L/Def_FingerPinky3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerRing1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerRing1_L/Def_FingerRing2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerRing1_L/Def_FingerRing2_L/Def_FingerRing3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerThumb1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerThumb1_L/Def_FingerThumb2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerThumb1_L/Def_FingerThumb2_L/Def_FingerThumb3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerIndex1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerIndex1_R/Def_FingerIndex2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerIndex1_R/Def_FingerIndex2_R/Def_FingerIndex3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerMiddle1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerMiddle1_R/Def_FingerMiddle2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerMiddle1_R/Def_FingerMiddle2_R/Def_FingerMiddle3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerPinky1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerPinky1_R/Def_FingerPinky2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerPinky1_R/Def_FingerPinky2_R/Def_FingerPinky3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerRing1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerRing1_R/Def_FingerRing2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerRing1_R/Def_FingerRing2_R/Def_FingerRing3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerThumb1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerThumb1_R/Def_FingerThumb2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerThumb1_R/Def_FingerThumb2_R/Def_FingerThumb3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L/Def_Foot_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L/Def_Foot_L/Def_Toe_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_Foot_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_Foot_R/Def_Toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 0
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: PossessedMonkey
+        weight: 1
+      - path: PossessedMonkey/Armature
+        weight: 1
+      - path: PossessedMonkey/Armature/Root
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_Jaw
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerIndex1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerIndex1_L/Def_FingerIndex2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerIndex1_L/Def_FingerIndex2_L/Def_FingerIndex3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerMiddle1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerMiddle1_L/Def_FingerMiddle2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerMiddle1_L/Def_FingerMiddle2_L/Def_FingerMiddle3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerPinky1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerPinky1_L/Def_FingerPinky2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerPinky1_L/Def_FingerPinky2_L/Def_FingerPinky3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerRing1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerRing1_L/Def_FingerRing2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerRing1_L/Def_FingerRing2_L/Def_FingerRing3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerThumb1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerThumb1_L/Def_FingerThumb2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerThumb1_L/Def_FingerThumb2_L/Def_FingerThumb3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerIndex1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerIndex1_R/Def_FingerIndex2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerIndex1_R/Def_FingerIndex2_R/Def_FingerIndex3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerMiddle1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerMiddle1_R/Def_FingerMiddle2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerMiddle1_R/Def_FingerMiddle2_R/Def_FingerMiddle3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerPinky1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerPinky1_R/Def_FingerPinky2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerPinky1_R/Def_FingerPinky2_R/Def_FingerPinky3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerRing1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerRing1_R/Def_FingerRing2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerRing1_R/Def_FingerRing2_R/Def_FingerRing3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerThumb1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerThumb1_R/Def_FingerThumb2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerThumb1_R/Def_FingerThumb2_R/Def_FingerThumb3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L/Def_Foot_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L/Def_Foot_L/Def_Toe_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_Foot_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_Foot_R/Def_Toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Walk
+      takeName: Walk
+      firstFrame: 1
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Mesh
+        weight: 1
+      - path: PossessedMonkey
+        weight: 1
+      - path: PossessedMonkey/Armature
+        weight: 1
+      - path: PossessedMonkey/Armature/Root
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Def_Jaw
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerIndex1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerIndex1_L/Def_FingerIndex2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerIndex1_L/Def_FingerIndex2_L/Def_FingerIndex3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerMiddle1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerMiddle1_L/Def_FingerMiddle2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerMiddle1_L/Def_FingerMiddle2_L/Def_FingerMiddle3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerPinky1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerPinky1_L/Def_FingerPinky2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerPinky1_L/Def_FingerPinky2_L/Def_FingerPinky3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerRing1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerRing1_L/Def_FingerRing2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerRing1_L/Def_FingerRing2_L/Def_FingerRing3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerThumb1_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerThumb1_L/Def_FingerThumb2_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Def_FingerThumb1_L/Def_FingerThumb2_L/Def_FingerThumb3_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerIndex1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerIndex1_R/Def_FingerIndex2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerIndex1_R/Def_FingerIndex2_R/Def_FingerIndex3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerMiddle1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerMiddle1_R/Def_FingerMiddle2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerMiddle1_R/Def_FingerMiddle2_R/Def_FingerMiddle3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerPinky1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerPinky1_R/Def_FingerPinky2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerPinky1_R/Def_FingerPinky2_R/Def_FingerPinky3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerRing1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerRing1_R/Def_FingerRing2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerRing1_R/Def_FingerRing2_R/Def_FingerRing3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerThumb1_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerThumb1_R/Def_FingerThumb2_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Def_FingerThumb1_R/Def_FingerThumb2_R/Def_FingerThumb3_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L/Def_Foot_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_L/Def_LwrLeg_L/Def_Foot_L/Def_Toe_L
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_Foot_R
+        weight: 1
+      - path: PossessedMonkey/Armature/Root/Main/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_Foot_R/Def_Toe_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

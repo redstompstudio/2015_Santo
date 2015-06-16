@@ -161,13 +161,14 @@ public class KnifeAttackState : SKMecanimState<PlayerCharacterController>
 
 	private void OnStateUpdateCrouchStab ()
 	{
+		executeNextAttack |= Input.GetKeyDown (KeyCode.Mouse0);
 	}
 
 	private void OnStateExitCrouchStab ()
 	{
-//		if (executeNextAttack)
-//			CrossFade ("Knife_Attack_01", 0.03f, 0.0f);
-//		else 
+		if (executeNextAttack)
+			CrossFade ("Attack_Knife_Crouch_01", 0.03f, 0.0f);
+		else 
 		{
 			context.attackController.UnequipWeapon ();
 
