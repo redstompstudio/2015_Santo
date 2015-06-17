@@ -76,6 +76,7 @@ ModelImporter:
     100136: Thumb2Def_R
     100138: Thumb3Def_L
     100140: Thumb3Def_R
+    100142: Machete
     400000: Armature
     400002: Def_Chest
     400004: Def_Foot_L
@@ -147,10 +148,14 @@ ModelImporter:
     400136: Thumb2Def_R
     400138: Thumb3Def_L
     400140: Thumb3Def_R
+    400142: Machete
     2300000: //RootNode
+    2300002: Machete
     3300000: //RootNode
+    3300002: Machete
     4300000: Knife
     4300002: Knife_Machete
+    4300004: Machete
     7400000: Air_Falling
     7400002: Air_Rising
     7400004: Attack_Knife_Air_1
@@ -192,6 +197,10 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
