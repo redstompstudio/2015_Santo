@@ -75,6 +75,14 @@ public class IdleState : SKMecanimState<PlayerCharacterController>
 		}
 		else if(Input.GetKeyDown(KeyCode.E))
 		{
+			Raycaster.RaycastHitInfo info = Raycaster.GetRaycastHitInfo (context.CharCenterPoint, context.Forward, 
+				                                1.0f, context.CharacterSettings.interactiveLayer);
+
+			if(info.hitSomething)
+			{
+				
+			}
+
 			_machine.changeState<PullGroundLeverState> ();
 			return;
 		}

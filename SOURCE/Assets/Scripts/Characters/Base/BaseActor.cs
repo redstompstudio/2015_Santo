@@ -63,6 +63,11 @@ public class BaseActor : MonoBehaviour
 	{
 	}
 
+	protected virtual void Reset()
+	{
+		health.currentHealth = health.baseMaxHealth;
+	}
+
 	public virtual void Kill()
 	{
 	}
