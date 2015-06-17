@@ -4,7 +4,7 @@ using System.Collections;
 public class SkullWallController : BaseActor
 {
 	private SpawnPool destroyFXPool;
-	private const string destroyFXName = "SkullWall_DestroyFX_Pool";
+	public string destroyFXName = "SkullWall_DestroyFX_Pool";
 
 	#region PROPERTIES
 	public SpawnPool DestroyFXPool{

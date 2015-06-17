@@ -80,11 +80,15 @@ public class IdleState : SKMecanimState<PlayerCharacterController>
 
 			if(info.hitSomething)
 			{
-				
-			}
+				BaseInteractable interactable = info.hit.transform.GetComponent<BaseInteractable> ();
 
-			_machine.changeState<PullGroundLeverState> ();
-			return;
+				if(interactable)
+				{
+					interactable.OnStartedInteraction ();	
+					_machine.changeState<PullGroundLeverState> ();
+					return;
+				}
+			}
 		}
 
 		horizontalInput = Input.GetAxisRaw ("Horizontal");

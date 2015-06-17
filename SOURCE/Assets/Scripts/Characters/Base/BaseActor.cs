@@ -65,6 +65,8 @@ public class BaseActor : MonoBehaviour
 
 	protected virtual void Reset()
 	{
+		cachedGameObject.SetActive (true);
+
 		health.currentHealth = health.baseMaxHealth;
 	}
 

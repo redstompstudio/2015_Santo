@@ -48,4 +48,16 @@ public class SkullSpitterController : MonoBehaviour
 		SkullBulletController skullController = SkullPool.Spawn<SkullBulletController> (spawnPosition.position,
 			                                        cachedTransform.rotation);
 	}
+
+	#if UNITY_EDITOR
+	void OnDrawGizmos()
+	{
+		Gizmos.color = Color.blue;
+
+		RaycastHit hit;
+		Physics.Raycast (spawnPosition.position, transform.forward, out hit, 1000.0f);
+
+		Gizmos.DrawLine (spawnPosition.position, hit.point);
+	}
+	#endif
 }
