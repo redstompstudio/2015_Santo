@@ -54,6 +54,9 @@ public class PlayerCharacterController : BaseCharacterController
 
 	void Update()
 	{
+		if (Input.GetKeyDown (KeyCode.J))
+			Debug.Break ();
+
 		stateMachine.update( Time.deltaTime );
 
 		if (Health.currentHealth <= 0.0f)
@@ -79,6 +82,16 @@ public class PlayerCharacterController : BaseCharacterController
 	{
 		if(stateMachine != null)
 			GUILayout.Box (stateMachine.currentState.ToString());
+	}
+
+//	Vector3 point;
+
+	void OnDrawGizmos()
+	{
+//		Gizmos.DrawLine (transform.position, point);
+
+		if(stateMachine != null)
+			stateMachine.OnGizmos ();
 	}
 #endif
 }
