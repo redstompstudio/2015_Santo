@@ -90,6 +90,12 @@ public class PlayerCharacterController : BaseCharacterController
 		CachedTransform.position = CheckpointManager.Instance.CurrentCheckpoint.transform.position;
 	}
 
+	public override void Kill ()
+	{
+		base.Kill ();
+		CachedGameObject.SetActive (false);
+	}
+
 #if UNITY_EDITOR
 	void OnGUI()
 	{
