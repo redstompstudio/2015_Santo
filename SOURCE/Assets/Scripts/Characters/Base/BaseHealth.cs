@@ -9,6 +9,9 @@ public class BaseHealth
 
 	public int currentHealth = 100;						//The player current health.
 
+	public delegate void OnDeathDelegate ();
+	public OnDeathDelegate onDeathCallback;
+
 	#region PROPERTIES
 	public int MaxHealth{
 		get{
@@ -29,6 +32,12 @@ public class BaseHealth
 	public void DoDamage(int pDamage)
 	{
 		currentHealth = CurrentHealth - pDamage;
+
+		if (currentHealth <= 0.0f) 
+		{
+			if(onDeathCallback != null)
+				onDeathCallback ();
+		}
 	}
 
 	public void Heal(int pAmount)

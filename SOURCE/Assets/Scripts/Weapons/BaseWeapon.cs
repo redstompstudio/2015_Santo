@@ -4,13 +4,16 @@
 public class BaseWeapon : MonoBehaviour
 {
 	private Transform cachedTransform;
-
 	private bool isEquipped;
 
 	public WEAPON_NAME weaponName;
 
 	public int baseDamage;
 	public float baseRange;
+
+	public LayerMask attackLayers;
+
+	public Transform weaponPoint;
 
 	#region PROPERTIES
 	public Transform CachedTransform{
@@ -39,6 +42,10 @@ public class BaseWeapon : MonoBehaviour
 		}
 	}
 	#endregion
+
+	protected virtual void Awake()
+	{
+	}
 
 	public virtual void Equip()
 	{

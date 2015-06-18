@@ -73,7 +73,10 @@ public class WalkState :  SKMecanimState<PlayerCharacterController>
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
-		context.CharacterMotor.Move (new Vector3(horizontalInput, 0.0f, 0.0f), context.CharacterSettings.maxRunSpeed * deltaTime);
-		context.CharacterMotor.RotateToVelocityDirection (float.PositiveInfinity);
+		Vector3 direction = new Vector3 (horizontalInput, 0.0f, 0.0f);
+		context.CharacterMotor.Move (direction, context.CharacterSettings.maxRunSpeed * deltaTime);
+
+		if(direction != Vector3.zero)
+			context.CharacterMotor.RotateToDirection (direction, true);
 	}
 }

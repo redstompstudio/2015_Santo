@@ -5,7 +5,7 @@ using Prime31.StateKit;
 public class RifleAimState : SKMecanimState<PlayerCharacterController> 
 {
 	private RifleAim_Behaviour rifleAimBehaviour;
-
+	private BaseCamera mainCamera;
 	private bool isAiming;
 	private Vector3 aimPoint;
 
@@ -30,8 +30,11 @@ public class RifleAimState : SKMecanimState<PlayerCharacterController>
 		if (rifle == null)
 			rifle = context.attackController.GetWeapon (WEAPON_NAME.RIFLE_BASIC);
 
+		if (mainCamera == null)
+			mainCamera = SceneManager.Instance.MainCamera;
+
 		context.attackController.EquipWeapon (rifle.weaponName);
-		CrossFade ("Rifle_Aim", 0.03f, 0.0f);
+		CrossFade ("Rifle_Aim_Tree", 0.03f, 0.0f);
 	}
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
@@ -75,15 +78,16 @@ public class RifleAimState : SKMecanimState<PlayerCharacterController>
 
 	public void UpdateAimPoint()
 	{
-		Vector3 pointerPosition = Input.mousePosition;
+		Vector3 position = Input.mousePosition;
+		position.z = -mainCamera.positionOffset.z;
+		aimPoint = Camera.main.ScreenToWorldPoint(position);
+	}
 
-		Ray ray = Camera.main.ScreenPointToRay (pointerPosition);
-		ray.origin = new Vector3 (ray.origin.x, ray.origin.y, context.Position.z);
+	public override void OnGizmos ()
+	{
+		base.OnGizmos ();
 
-		Vector3 dir = ray.direction * rifle.Range;
-		dir.z = context.Position.z;
-
-		aimPoint = context.Position + dir;
-		Debug.DrawRay (ray.origin, dir, Color.green, Time.deltaTime);
+		Gizmos.color = Color.yellow;
+		Gizmos.DrawWireSphere (aimPoint, 0.3f);
 	}
 }

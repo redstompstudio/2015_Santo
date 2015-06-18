@@ -33,6 +33,7 @@ public class BaseActor : MonoBehaviour
 		get{
 			if (health == null)
 				health = new BaseHealth ();
+			
 			return health;
 		}
 	}
@@ -59,6 +60,16 @@ public class BaseActor : MonoBehaviour
 	}
 
 	protected virtual void Start()
+	{
+	}
+
+	protected virtual void Reset()
+	{
+		CachedGameObject.SetActive (true);
+		health.currentHealth = health.baseMaxHealth;
+	}
+
+	public virtual void Kill()
 	{
 	}
 }

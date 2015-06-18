@@ -47,17 +47,34 @@ public class PlayerCharacterController : BaseCharacterController
 #if UNITY_EDITOR
 		stateMachine.onStateChanged += () =>
 		{
-			//Debug.Log(stateMachine.currentState.ToString());
+			
 		};
 #endif	
 	}
 
 	void Update()
 	{
+#if UNITY_EDITOR
+		if (Input.GetKeyDown (KeyCode.J))
+			Debug.Break ();
+#endif
+
+		if(Input.GetKeyDown(KeyCode.H))
+			Reset ();
+
 		stateMachine.update( Time.deltaTime );
 
 		if (Health.currentHealth <= 0.0f)
 			stateMachine.changeState<DeadState> ();
+
+		if(Input.GetKeyDown(KeyCode.F5))
+		{
+			XMLSerializer.Save<CharacterSettings>(CharacterSettings, "Player_CharSettings.xml");
+		}
+		else if(Input.GetKeyDown(KeyCode.F9))
+		{
+			CharacterSettings = XMLSerializer.Load<CharacterSettings> ("Player_CharSettings.xml");
+		}
 	}
 
 	void FixedUpdate()
@@ -65,11 +82,25 @@ public class PlayerCharacterController : BaseCharacterController
 		stateMachine.fixedUpdate (Time.deltaTime);
 	}
 
+	protected override void Reset ()
+	{
+		base.Reset ();
+		stateMachine.changeState<IdleState> ();
+
+		CachedTransform.position = CheckpointManager.Instance.CurrentCheckpoint.transform.position;
+	}
+
 #if UNITY_EDITOR
 	void OnGUI()
 	{
 		if(stateMachine != null)
 			GUILayout.Box (stateMachine.currentState.ToString());
+	}
+
+	void OnDrawGizmos()
+	{
+		if(stateMachine != null)
+			stateMachine.OnGizmos ();
 	}
 #endif
 }

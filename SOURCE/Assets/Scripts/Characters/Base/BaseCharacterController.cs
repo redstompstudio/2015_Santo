@@ -20,11 +20,15 @@ public class BaseCharacterController : BaseActor
 		}
 	}
 
-	public CharacterSettings CharacterSettings{
-		get{
+	public CharacterSettings CharacterSettings {
+		get {
 			if (characterSettings == null)
 				characterSettings = new CharacterSettings ();
 			return characterSettings;
+		}
+
+		protected set{
+			characterSettings = value;
 		}
 	}
 
@@ -46,5 +50,10 @@ public class BaseCharacterController : BaseActor
 
 	protected override void Start()
 	{
+	}
+
+	protected override void Reset ()
+	{
+		base.Reset ();
 	}
 }
