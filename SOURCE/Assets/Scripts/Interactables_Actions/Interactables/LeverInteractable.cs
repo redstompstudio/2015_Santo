@@ -3,7 +3,7 @@ using System.Collections;
 
 public class LeverInteractable : BaseInteractable 
 {
-	public BaseAction door;
+	public BaseAction[] actions;
 
 	public override void OnStartedInteraction ()
 	{
@@ -12,16 +12,21 @@ public class LeverInteractable : BaseInteractable
 		if (!canInteract)
 			return;
 
-		door.StartAction ();
+		foreach(BaseAction action in actions)
+			action.StartAction ();
 	}
 
 	#if UNITY_EDITOR
 	void OnDrawGizmos()
 	{
-		if(door != null)
+		if(actions != null)
 		{
 			Gizmos.color = Color.green;
-			Gizmos.DrawLine (transform.position, door.transform.position);
+
+			for(int i = 0; i < actions.Length; i++)
+			{
+				Gizmos.DrawLine (transform.position, actions[i].transform.position);	
+			}
 		}
 	}
 	#endif

@@ -4,15 +4,15 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Rigidbody))]
 public class SkullBulletController : MonoBehaviour, IPoolObject
 {
-	private GameObject cachedGameObject;
-	private Transform cachedTransform;
-	private Rigidbody cachedRigidbody;
-	private Collider cachedCollider;
+	protected GameObject cachedGameObject;
+	protected Transform cachedTransform;
+	protected Rigidbody cachedRigidbody;
+	protected Collider cachedCollider;
 
-	private SpawnPool myPool;
+	protected SpawnPool myPool;
 
-	private SpawnPool despawnFXPool;
-	private const string despawnFXName = "SkullProjectile_DestroyFX_Pool";
+	protected SpawnPool despawnFXPool;
+	public string despawnFXName = "SkullProjectile_DestroyFX_Pool";
 
 	public float movementSpeed = 10.0f;
 	public List<string> tagsList = new List<string>();
@@ -31,7 +31,7 @@ public class SkullBulletController : MonoBehaviour, IPoolObject
 	}
 	#endregion
 
-	private void Awake()
+	protected virtual void Awake()
 	{
 		if (cachedGameObject == null)
 			cachedGameObject = gameObject;
@@ -52,12 +52,12 @@ public class SkullBulletController : MonoBehaviour, IPoolObject
 		cachedCollider.isTrigger = true;
 	}
 
-	private void FixedUpdate()
+	protected virtual void FixedUpdate()
 	{
 		cachedRigidbody.velocity = cachedTransform.forward * movementSpeed;
 	}
 
-	void OnTriggerEnter(Collider pOther)
+	protected virtual void OnTriggerEnter(Collider pOther)
 	{
 		if(tagsList.Contains(pOther.tag))
 		{
@@ -71,13 +71,13 @@ public class SkullBulletController : MonoBehaviour, IPoolObject
 	}
 
 	#region IPoolObject implementation
-	public void OnSpawn (SpawnPool pMyPool)
+	public virtual void OnSpawn (SpawnPool pMyPool)
 	{
 		myPool = pMyPool;
 		ResetProjectile ();
 	}
 
-	public void Despawn ()
+	public virtual void Despawn ()
 	{
 		DespawnFXPool.Spawn<ParticlePoolObject> (cachedTransform.position, Quaternion.identity);
 		myPool.DespawnIn(cachedGameObject, 1.5f);
@@ -85,16 +85,16 @@ public class SkullBulletController : MonoBehaviour, IPoolObject
 		OnStartDestroy ();
 	}
 
-	public void DespawnIn (float fDelay)
+	public virtual void DespawnIn (float fDelay)
 	{
 	}
 
-	public void OnDespawn ()
+	public virtual void OnDespawn ()
 	{
 	}
 	#endregion
 
-	private void ResetProjectile()
+	protected virtual void ResetProjectile()
 	{
 		foreach(GameObject go in goRenderers)
 			go.SetActive (true);
@@ -106,7 +106,7 @@ public class SkullBulletController : MonoBehaviour, IPoolObject
 		cachedCollider.enabled = true;
 	}
 
-	private void OnStartDestroy()
+	protected virtual void OnStartDestroy()
 	{
 		foreach(GameObject go in goRenderers)
 			go.SetActive (false);
