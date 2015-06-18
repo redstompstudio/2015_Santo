@@ -68,9 +68,9 @@ namespace Prime31.StateKit
 		public virtual void end()
 		{}
 
-		public void CrossFade(string pStateName, float pTransitionTime, float pNormalizedTime)
+		public void CrossFade(string pStateName, float pTransitionTime, float pNormalizedTime, int pLayer = 0)
 		{
-			_machine.animator.CrossFade (pStateName, pTransitionTime, 0, pNormalizedTime);
+			_machine.animator.CrossFade (pStateName, pTransitionTime, pLayer, pNormalizedTime);
 		}
 	}
 }

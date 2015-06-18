@@ -5,6 +5,19 @@ public class SceneManager : MonoBehaviour
 {
 	private static SceneManager instance;
 
+	private BaseCamera mainCamera;
+
+	#region PROPERTIES
+	public BaseCamera MainCamera{
+		get{
+			if (mainCamera == null)
+				mainCamera = Camera.main.GetComponent<BaseCamera>();
+			
+			return mainCamera;
+		}
+	}
+	#endregion
+
 	public static SceneManager Instance
 	{
 		get{

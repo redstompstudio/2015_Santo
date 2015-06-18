@@ -3,6 +3,8 @@ using System.Collections;
 
 public class BasicRifleWeapon : BaseWeapon
 {
+	private BaseCamera mainCamera;
+
 	private SpawnPool hitGroundFXPool;
 	private const string hitGroundFXName = "Rifle_HitGroundFX_Pool";
 
@@ -18,6 +20,11 @@ public class BasicRifleWeapon : BaseWeapon
 		}
 	}
 	#endregion
+
+	protected override void Awake()
+	{
+		mainCamera = SceneManager.Instance.MainCamera;	
+	}
 
 	public override void Attack ()
 	{
@@ -40,22 +47,15 @@ public class BasicRifleWeapon : BaseWeapon
 			BaseActor hitActor = hit.transform.GetComponent<BaseActor> ();
 
 			if(hitActor != null)
-			{
 				hitActor.Health.DoDamage ( Damage );
-			}
 		}
 	}
 
 	public Vector3 GetAimPoint()
 	{
-		Vector3 pointerPosition = Input.mousePosition;
+		Vector3 position = Input.mousePosition;
+		position.z = -mainCamera.positionOffset.z;
 
-		Ray ray = Camera.main.ScreenPointToRay (pointerPosition);
-		ray.origin = new Vector3 (ray.origin.x, ray.origin.y, CachedTransform.position.z);
-
-		Vector3 dir = ray.direction * Range;
-		dir.z = CachedTransform.position.z;
-
-		return CachedTransform.position + dir;
+		return Camera.main.ScreenToWorldPoint(position);
 	}
 }

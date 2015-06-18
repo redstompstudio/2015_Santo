@@ -5,6 +5,7 @@ using Prime31.StateKit;
 public class RifleFireState : SKMecanimState<PlayerCharacterController>  
 {
 	private RifleFire_Behaviour rifleFireBehaviour;
+	private BaseCamera mainCamera;
 	private Vector3 stateEnterAimPoint;
 
 	public override void begin ()
@@ -19,9 +20,13 @@ public class RifleFireState : SKMecanimState<PlayerCharacterController>
 			rifleFireBehaviour.onStateIKCallback += OnStateIKRifleFire;
 			rifleFireBehaviour.onStateExitCallback += OnStateExitRifleFire;
 		}
-		
+
+		if (mainCamera == null)
+			mainCamera = SceneManager.Instance.MainCamera;
+
 		stateEnterAimPoint = Input.mousePosition;
-		CrossFade ("Rifle_Fire", 0.03f, 0.0f);
+		//CrossFade ("Rifle_Fire", 0.03f, 0.0f);
+		CrossFade ("Rifle_Shoot", 0.03f, 0.0f, 1);
 	}
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
@@ -58,15 +63,8 @@ public class RifleFireState : SKMecanimState<PlayerCharacterController>
 
 	public Vector3 GetAimPoint()
 	{
-		Vector3 pointerPosition = stateEnterAimPoint;
-
-		Ray ray = Camera.main.ScreenPointToRay (pointerPosition);
-		ray.origin = new Vector3 (ray.origin.x, ray.origin.y, context.Position.z);
-
-		Vector3 dir = ray.direction * 100.0f;
-		dir.z = context.Position.z;
-
-		Debug.DrawRay (ray.origin, dir, Color.green, Time.deltaTime);
-		return (context.Position + dir);	
+		Vector3 position = Input.mousePosition;
+		position.z = -mainCamera.positionOffset.z;
+		return Camera.main.ScreenToWorldPoint(position);
 	}
 }

@@ -51,4 +51,9 @@ public class BaseCharacterController : BaseActor
 	protected override void Start()
 	{
 	}
+
+	protected override void Reset ()
+	{
+		base.Reset ();
+	}
 }

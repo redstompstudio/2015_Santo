@@ -54,6 +54,14 @@ public class PlayerCharacterController : BaseCharacterController
 
 	void Update()
 	{
+#if UNITY_EDITOR
+		if (Input.GetKeyDown (KeyCode.J))
+			Debug.Break ();
+#endif
+
+		if(Input.GetKeyDown(KeyCode.H))
+			Reset ();
+
 		stateMachine.update( Time.deltaTime );
 
 		if (Health.currentHealth <= 0.0f)
@@ -74,11 +82,25 @@ public class PlayerCharacterController : BaseCharacterController
 		stateMachine.fixedUpdate (Time.deltaTime);
 	}
 
+	protected override void Reset ()
+	{
+		base.Reset ();
+		stateMachine.changeState<IdleState> ();
+
+		CachedTransform.position = CheckpointManager.Instance.CurrentCheckpoint.transform.position;
+	}
+
 #if UNITY_EDITOR
 	void OnGUI()
 	{
 		if(stateMachine != null)
 			GUILayout.Box (stateMachine.currentState.ToString());
+	}
+
+	void OnDrawGizmos()
+	{
+		if(stateMachine != null)
+			stateMachine.OnGizmos ();
 	}
 #endif
 }

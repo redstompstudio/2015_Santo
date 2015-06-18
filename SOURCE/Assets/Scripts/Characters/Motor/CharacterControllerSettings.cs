@@ -46,4 +46,8 @@ public class CharacterSettings
 	public bool waitForInputToClimb = false;
 	public float matchStartTime = 0.0f;
 	public float matchTargetTime = 0.95f;
+
+	[Header("Interaction Settings")]
+	public LayerMask interactiveLayer;
+	public float interactionDistance = 1.0f;
 }
