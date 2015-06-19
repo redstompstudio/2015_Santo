@@ -8,8 +8,8 @@ public class PlayerCharacterController : BaseCharacterController
 	private SpawnPool lightDamageFXPool;
 	private SpawnPool heavyDamageFXPool;
 
-	public const string lightDamageFXName = "Santo_DamageLight_FX_Pool";
-	public const string heavyDamageFXName = "Santo_DamageHeavy_FX_Pool";
+	public string lightDamageFXName = "Santo_DamageLight_FX_Pool";
+	public string heavyDamageFXName = "Santo_DamageHeavy_FX_Pool";
 
 	[HideInInspector]
 	public AttackController attackController;
@@ -122,7 +122,8 @@ public class PlayerCharacterController : BaseCharacterController
 
 		base.ReceiveDamage (pCauser, pDamage, pDamageType, pPosition);
 
-		PlayerUI.Instance.UpdateLifeBar (Health.MaxHealth, Health.CurrentHealth);
+		if(PlayerUI.Instance != null)
+			PlayerUI.Instance.UpdateLifeBar (Health.MaxHealth, Health.CurrentHealth);
 	}
 
 	public override void Kill ()

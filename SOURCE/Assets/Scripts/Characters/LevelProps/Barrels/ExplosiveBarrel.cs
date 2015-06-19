@@ -23,6 +23,12 @@ public class ExplosiveBarrel : BaseActor
 	}
 	#endregion
 
+	public override void ReceiveDamage (BaseActor pCauser, int pDamage, DAMAGE_TYPE pDamageType, Vector3 pPosition)
+	{
+		if(canReceiveDamageFrom.Contains(pDamageType))
+			base.ReceiveDamage (pCauser, pDamage, pDamageType, pPosition);
+	}
+
 	public override void Kill ()
 	{
 		ExplosionFXPool.Spawn<ParticlePoolObject> (CachedTransform.position, Quaternion.identity);
