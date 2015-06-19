@@ -9,9 +9,11 @@ public class PossessedMonkeyController : BaseEnemy
 	{
 		base.Start ();
 
-		stateMachine = new SKMecanimStateMachine<PossessedMonkeyController>( GetComponent<Animator>(), this, new MonkeyIdleState() );
+		stateMachine = new SKMecanimStateMachine<PossessedMonkeyController>( GetComponent<Animator>(), this, new MonkeyScoutState() );
 
-		stateMachine.addState (new MonkeyWalkState ());
+		stateMachine.addState (new MonkeyScoutState ());
+		stateMachine.addState (new MonkeyIdleState());
+		stateMachine.addState (new MonkeyChaseState ());
 		stateMachine.addState (new MonkeyMeleeAttackState ());
 	}
 

@@ -10,6 +10,8 @@ public class BaseEnemy : BaseCharacterController
 	public TriggerHandler visionRange;
 	public float stopDistance = 1.5f;
 
+	public Transform[] scoutPoints;
+
 	//[HideInInspector] 
 	public List<BaseActor> enemiesOnVisionRange = new List<BaseActor>();
 

@@ -6,6 +6,7 @@ public class SceneManager : MonoBehaviour
 	private static SceneManager instance;
 
 	private BaseCamera mainCamera;
+	private PlayerCharacterController player;
 
 	#region PROPERTIES
 	public BaseCamera MainCamera{
@@ -14,6 +15,15 @@ public class SceneManager : MonoBehaviour
 				mainCamera = Camera.main.GetComponent<BaseCamera>();
 			
 			return mainCamera;
+		}
+	}
+
+	public PlayerCharacterController Player{
+		get{
+			if (player == null)
+				player = FindObjectOfType (typeof(PlayerCharacterController)) as PlayerCharacterController;
+
+			return player;
 		}
 	}
 	#endregion
@@ -27,6 +37,12 @@ public class SceneManager : MonoBehaviour
 		}
 	}
 
+	private void Awake()
+	{
+		if (player == null)
+			player = FindObjectOfType (typeof(PlayerCharacterController)) as PlayerCharacterController;
+	}
+
 	private void Update()
 	{
 		if (Input.GetKeyDown (KeyCode.Escape))
@@ -34,5 +50,17 @@ public class SceneManager : MonoBehaviour
 
 		if (Input.GetKeyDown (KeyCode.R))
 			Application.LoadLevel (Application.loadedLevelName);
+	}
+
+	public void OnPlayerDeath()
+	{
+		StartCoroutine (RespawnPlayer ());	
+	}
+
+	private IEnumerator RespawnPlayer()
+	{
+		yield return new WaitForSeconds (2.0f);
+
+		player.Reset ();
 	}
 }

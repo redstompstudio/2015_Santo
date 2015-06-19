@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Prime31.StateKit;
 
-public class MonkeyWalkState : SKMecanimState<PossessedMonkeyController> 
+public class MonkeyChaseState : SKMecanimState<PossessedMonkeyController> 
 {
 	public override void begin ()
 	{
@@ -56,27 +56,25 @@ public class MonkeyWalkState : SKMecanimState<PossessedMonkeyController>
 
 	public void OnEnterVisionRange(Collider pOther)
 	{
-		Debug.Log ("Idle: Enter Vision Range");
-
-		BaseActor actor = pOther.GetComponent<BaseActor> ();
-
-		if(actor != null)
-		{
-			if(context.TargetActor == null)
-				context.TargetActor = actor;
-		}
+//		BaseActor actor = pOther.GetComponent<BaseActor> ();
+//
+//		if(actor != null)
+//		{
+//			if(context.TargetActor == null)
+//				context.TargetActor = actor;
+//		}
 	}
 
 	public void OnExitVisionRange(Collider pOther)
 	{
-		Debug.Log ("Idle: Exit Vision Range");
-
 		BaseActor actor = pOther.GetComponent<BaseActor> ();
 
 		if(actor != null)
 		{
-			if(context.TargetActor == actor)
+			if (context.TargetActor == actor) {
 				context.TargetActor = null;
+				_machine.changeState<MonkeyIdleState> ();
+			}
 		}
 	}
 

@@ -17,7 +17,7 @@ public class DeadState : SKMecanimState<PlayerCharacterController>
 		context.CharacterMotor.IsKinematic = true;
 		context.CharacterMotor.UseGravity = true;
 
-		santoRagdollPool.Spawn (context.Position, context.Rotation);
+		santoRagdollPool.Spawn<ParticlePoolObject> (context.Position, context.Rotation);
 		context.Kill ();
 	}
 

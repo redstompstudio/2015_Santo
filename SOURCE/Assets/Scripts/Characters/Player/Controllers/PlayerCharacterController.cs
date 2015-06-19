@@ -83,13 +83,9 @@ public class PlayerCharacterController : BaseCharacterController
 			Debug.Break ();
 
 		if(Input.GetKeyDown(KeyCode.F5))
-		{
 			XMLSerializer.Save<CharacterSettings>(CharacterSettings, "Player_CharSettings.xml");
-		}
 		else if(Input.GetKeyDown(KeyCode.F9))
-		{
 			CharacterSettings = XMLSerializer.Load<CharacterSettings> ("Player_CharSettings.xml");
-		}
 #endif
 
 		if(Input.GetKeyDown(KeyCode.H))
@@ -103,7 +99,7 @@ public class PlayerCharacterController : BaseCharacterController
 		stateMachine.fixedUpdate (Time.deltaTime);
 	}
 
-	protected override void Reset ()
+	public override void Reset ()
 	{
 		base.Reset ();
 
@@ -117,23 +113,16 @@ public class PlayerCharacterController : BaseCharacterController
 		int mediumDamageBase = (int)(Health.MaxHealth * 0.3f);
 		int highDamageBase = (int)(Health.MaxHealth);
 
-		Debug.Log (pDamage);
-
 		if(pDamage <= lightDamageBase)
-		{
 			LightDamageFXPool.Spawn<ParticlePoolObject>(pPosition, Quaternion.identity);
-		}
 		else if(pDamage <= mediumDamageBase)
-		{
 			HeavyDamageFXPool.Spawn<ParticlePoolObject>(pPosition, Quaternion.identity);
-		}
 		else if(pDamage <= highDamageBase)
-		{
 			HeavyDamageFXPool.Spawn<ParticlePoolObject>(pPosition, Quaternion.identity);
-		}
-
 
 		base.ReceiveDamage (pCauser, pDamage, pDamageType, pPosition);
+
+		PlayerUI.Instance.UpdateLifeBar (Health.MaxHealth, Health.CurrentHealth);
 	}
 
 	public override void Kill ()
@@ -141,6 +130,8 @@ public class PlayerCharacterController : BaseCharacterController
 		base.Kill ();
 
 		stateMachine.changeState<DeadState> ();
+		SceneManager.Instance.OnPlayerDeath();
+
 		CachedGameObject.SetActive (false);
 	}
 

@@ -52,7 +52,7 @@ public class BaseCharacterController : BaseActor
 	{
 	}
 
-	protected override void Reset ()
+	public override void Reset ()
 	{
 		base.Reset ();
 	}
