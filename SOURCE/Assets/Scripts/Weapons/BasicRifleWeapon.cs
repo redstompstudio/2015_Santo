@@ -52,7 +52,7 @@ public class BasicRifleWeapon : BaseWeapon
 
 		ShootFXPool.Spawn<ParticlePoolObject> (weaponPoint.position, weaponPoint.rotation);
 
-		if(Physics.Raycast(ray, out hit, Range))
+		if(Physics.Raycast(ray, out hit, Range, attackLayers))
 		{
 			HitGroundFXPool.Spawn<ParticlePoolObject>(hit.point, Quaternion.LookRotation(hit.normal));
 			BaseActor hitActor = hit.transform.GetComponent<BaseActor> ();

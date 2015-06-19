@@ -8,10 +8,10 @@ public class TriggerHandler : MonoBehaviour
 	private Rigidbody cachedRigidbody;
 	private Collider trigger;
 
-	public delegate void OnTriggerEnterEvent();
+	public delegate void OnTriggerEnterEvent(Collider pCollider);
 	public OnTriggerEnterEvent onTriggerEnterCallback;
 
-	public delegate void OnTriggerExitEvent();
+	public delegate void OnTriggerExitEvent(Collider pCollider);
 	public OnTriggerExitEvent onTriggerExitCallback;
 
 	public List<string> tags;
@@ -34,7 +34,7 @@ public class TriggerHandler : MonoBehaviour
 		if (tags == null || tags.Count == 0 || tags.Contains(pOther.tag)) 
 		{
 			if (onTriggerEnterCallback != null)
-				onTriggerEnterCallback ();
+				onTriggerEnterCallback (pOther);
 		}
 	}
 
@@ -43,7 +43,7 @@ public class TriggerHandler : MonoBehaviour
 		if (tags == null || tags.Count == 0 || tags.Contains (pOther.tag))
 		{
 			if (onTriggerExitCallback != null)
-				onTriggerExitCallback ();
+				onTriggerExitCallback (pOther);
 		}
 	}
 }
