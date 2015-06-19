@@ -3,10 +3,13 @@ using Prime31.StateKit;
 
 public class MonkeyIdleState : SKMecanimState<PossessedMonkeyController>
 {
+	private float timeOnIdle;
+
 	public override void begin ()
 	{
 		base.begin ();
 
+		timeOnIdle = 0.0f;
 		_machine.animator.applyRootMotion = false;
 
 		Vector3 velocity = context.CharacterMotor.Velocity;
@@ -16,24 +19,28 @@ public class MonkeyIdleState : SKMecanimState<PossessedMonkeyController>
 		context.CharacterMotor.UseGravity = true;
 		context.CharacterMotor.IsKinematic = false;
 
-		if(context.HasEnemyOnVisionRange)
-		{
-			if(context.TargetActor == null)
-				context.TargetActor = context.EnemiesOnVision [0];
-
-			_machine.changeState<MonkeyWalkState> ();
-			return;
-		}
-		else
-			context.TargetActor = null;	
-
-		CrossFade ("Idle", 0.1f, 0.0f);
 		context.visionRange.onTriggerEnterCallback += OnEnterVisionRange;
 		context.visionRange.onTriggerExitCallback += OnExitVisionRange;
+
+		if(context.HasEnemyOnVisionRange)
+		{
+			context.TargetActor = context.EnemiesOnVision [0];
+			_machine.changeState<MonkeyChaseState> ();
+			return;
+		}
+
+		CrossFade ("Idle", 0.1f, 0.0f);
 	}
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
+		timeOnIdle += deltaTime;
+
+		if(timeOnIdle >= 3.0f)
+		{
+			_machine.changeState<MonkeyScoutState> ();
+			return;
+		}
 	}
 
 	public override void end ()
@@ -46,16 +53,14 @@ public class MonkeyIdleState : SKMecanimState<PossessedMonkeyController>
 
 	public void OnEnterVisionRange(Collider pOther)
 	{
-		Debug.Log ("Idle: Enter Vision Range");
-
-		BaseActor actor = pOther.GetComponent<BaseActor> ();
-
-		if(actor != null)
+		if (context.TargetActor == null)		//Search for a new target to chase
 		{
-			if (context.TargetActor == null) 
+			BaseActor actor = pOther.GetComponent<BaseActor> ();
+
+			if(actor != null)
 			{
 				context.TargetActor = actor;
-				_machine.changeState<MonkeyWalkState> ();
+				_machine.changeState<MonkeyChaseState> ();
 				return;
 			}
 		}
@@ -63,8 +68,6 @@ public class MonkeyIdleState : SKMecanimState<PossessedMonkeyController>
 
 	public void OnExitVisionRange(Collider pOther)
 	{
-		Debug.Log ("Idle: Exit Vision Range");
-
 		BaseActor actor = pOther.GetComponent<BaseActor> ();
 
 		if(actor != null)
