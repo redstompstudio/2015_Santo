@@ -12,6 +12,8 @@ public class SkullSpitterController : BaseActor
 	public string destroyFXPoolName = "SkullWall_Fire_DestroyFX_Pool";
 
 	public Transform spawnPosition;
+
+	public float startDelay = 0.0f;
 	public float spitInterval = 2.0f;
 
 	#region PROPERTIES
@@ -64,6 +66,8 @@ public class SkullSpitterController : BaseActor
 
 	private IEnumerator Shoot()
 	{
+		yield return new WaitForSeconds (startDelay);
+
 		while (CachedGameObject.activeInHierarchy) 
 		{
 			SkullBulletController skullController = SkullPool.Spawn<SkullBulletController> (spawnPosition.position,

@@ -1,39 +1,49 @@
 ﻿using UnityEngine;
 using Prime31.StateKit;
 
-public class MonkeyIdleState : SKMecanimState<PossessedMonkeyController>
+public class MonkeyWalkState : SKMecanimState<PossessedMonkeyController> 
 {
 	public override void begin ()
 	{
 		base.begin ();
 
 		_machine.animator.applyRootMotion = false;
-
-		Vector3 velocity = context.CharacterMotor.Velocity;
-		velocity.x = 0.0f;
-
-		context.CharacterMotor.SetVelocity (velocity);
 		context.CharacterMotor.UseGravity = true;
 		context.CharacterMotor.IsKinematic = false;
 
-		if(context.HasEnemyOnVisionRange)
-		{
-			if(context.TargetActor == null)
-				context.TargetActor = context.EnemiesOnVision [0];
+		CrossFade ("Walk", 0.0f, 0.0f);
 
-			_machine.changeState<MonkeyWalkState> ();
-			return;
-		}
-		else
-			context.TargetActor = null;	
-
-		CrossFade ("Idle", 0.1f, 0.0f);
 		context.visionRange.onTriggerEnterCallback += OnEnterVisionRange;
 		context.visionRange.onTriggerExitCallback += OnExitVisionRange;
 	}
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)
 	{
+		Vector3 targetPosition = context.TargetPosition;
+
+		if(context.TargetTransform != null)
+		{
+			targetPosition = context.TargetTransform.position;	
+		}
+
+		Vector3 direction = (targetPosition - context.Position).normalized;
+		direction.y = 0.0f;
+		direction.z = 0.0f;
+
+		context.CharacterMotor.Move (direction, context.CharacterSettings.maxRunSpeed * deltaTime);
+
+		if(direction != Vector3.zero)
+			context.CharacterMotor.RotateToDirection (direction);
+
+		targetPosition.y = context.Position.y;
+		targetPosition.z = context.Position.z;
+		float distance = Vector3.Distance (targetPosition, context.Position);
+
+		if(distance < context.stopDistance)
+		{
+			_machine.changeState<MonkeyMeleeAttackState> ();
+			return;
+		}
 	}
 
 	public override void end ()
@@ -52,12 +62,8 @@ public class MonkeyIdleState : SKMecanimState<PossessedMonkeyController>
 
 		if(actor != null)
 		{
-			if (context.TargetActor == null) 
-			{
+			if(context.TargetActor == null)
 				context.TargetActor = actor;
-				_machine.changeState<MonkeyWalkState> ();
-				return;
-			}
 		}
 	}
 
@@ -78,7 +84,7 @@ public class MonkeyIdleState : SKMecanimState<PossessedMonkeyController>
 	public override void OnGizmos ()
 	{
 		base.OnGizmos ();
-		Gizmos.color = Color.green;
+		Gizmos.color = Color.yellow;
 		Gizmos.DrawWireCube (context.Position + Vector3.up * 2, Vector3.one * 0.7f);
 	}
 #endif
