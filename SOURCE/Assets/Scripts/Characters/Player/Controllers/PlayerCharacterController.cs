@@ -4,10 +4,34 @@ using Prime31.StateKit;
 public class PlayerCharacterController : BaseCharacterController 
 {
 	private SKMecanimStateMachine<PlayerCharacterController> stateMachine;
+
+	private SpawnPool lightDamageFXPool;
+	private SpawnPool heavyDamageFXPool;
+
+	public const string lightDamageFXName = "Santo_DamageLight_FX_Pool";
+	public const string heavyDamageFXName = "Santo_DamageHeavy_FX_Pool";
+
 	[HideInInspector]
 	public AttackController attackController;
 
 	#region PROPERTIES
+	protected SpawnPool LightDamageFXPool{
+		get{
+			if (lightDamageFXPool == null)
+				lightDamageFXPool = PoolManager.Instance.GetPool (lightDamageFXName);
+
+			return lightDamageFXPool;
+		}
+	}
+
+	protected SpawnPool HeavyDamageFXPool{
+		get{
+			if (heavyDamageFXPool == null)
+				heavyDamageFXPool = PoolManager.Instance.GetPool (heavyDamageFXName);
+
+			return heavyDamageFXPool;
+		}
+	}
 	#endregion
 
 	protected override void Awake ()
@@ -57,15 +81,6 @@ public class PlayerCharacterController : BaseCharacterController
 #if UNITY_EDITOR
 		if (Input.GetKeyDown (KeyCode.J))
 			Debug.Break ();
-#endif
-
-		if(Input.GetKeyDown(KeyCode.H))
-			Reset ();
-
-		stateMachine.update( Time.deltaTime );
-
-		if (Health.currentHealth <= 0.0f)
-			stateMachine.changeState<DeadState> ();
 
 		if(Input.GetKeyDown(KeyCode.F5))
 		{
@@ -75,6 +90,12 @@ public class PlayerCharacterController : BaseCharacterController
 		{
 			CharacterSettings = XMLSerializer.Load<CharacterSettings> ("Player_CharSettings.xml");
 		}
+#endif
+
+		if(Input.GetKeyDown(KeyCode.H))
+			Reset ();
+
+		stateMachine.update( Time.deltaTime );
 	}
 
 	void FixedUpdate()
@@ -85,14 +106,41 @@ public class PlayerCharacterController : BaseCharacterController
 	protected override void Reset ()
 	{
 		base.Reset ();
-		stateMachine.changeState<IdleState> ();
 
+		stateMachine.changeState<IdleState> ();
 		CachedTransform.position = CheckpointManager.Instance.CurrentCheckpoint.transform.position;
+	}
+
+	public override void ReceiveDamage (BaseActor pCauser, int pDamage, DAMAGE_TYPE pDamageType, Vector3 pPosition)
+	{
+		int lightDamageBase = (int)(Health.MaxHealth * 0.1f);
+		int mediumDamageBase = (int)(Health.MaxHealth * 0.3f);
+		int highDamageBase = (int)(Health.MaxHealth);
+
+		Debug.Log (pDamage);
+
+		if(pDamage <= lightDamageBase)
+		{
+			LightDamageFXPool.Spawn<ParticlePoolObject>(pPosition, Quaternion.identity);
+		}
+		else if(pDamage <= mediumDamageBase)
+		{
+			HeavyDamageFXPool.Spawn<ParticlePoolObject>(pPosition, Quaternion.identity);
+		}
+		else if(pDamage <= highDamageBase)
+		{
+			HeavyDamageFXPool.Spawn<ParticlePoolObject>(pPosition, Quaternion.identity);
+		}
+
+
+		base.ReceiveDamage (pCauser, pDamage, pDamageType, pPosition);
 	}
 
 	public override void Kill ()
 	{
 		base.Kill ();
+
+		stateMachine.changeState<DeadState> ();
 		CachedGameObject.SetActive (false);
 	}
 

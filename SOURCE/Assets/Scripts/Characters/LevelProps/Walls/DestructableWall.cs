@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class SkullWallController : BaseActor
+public class DestructableWall : BaseActor
 {
 	private SpawnPool destroyFXPool;
+
 	public string destroyFXName = "SkullWall_DestroyFX_Pool";
 
 	#region PROPERTIES
@@ -17,11 +19,11 @@ public class SkullWallController : BaseActor
 	}
 	#endregion
 
-	protected override void Awake ()
+	public override void ReceiveDamage (BaseActor pCauser, int pDamage, DAMAGE_TYPE pDamageType, Vector3 pPosition)
 	{
-		base.Awake ();
-
-		Health.onDeathCallback += Kill;
+		if (canReceiveDamageFrom == null || canReceiveDamageFrom.Count == 0 || 
+			canReceiveDamageFrom.Contains (pDamageType))
+			base.ReceiveDamage (pCauser, pDamage, pDamageType, pPosition);
 	}
 
 	public override void Kill ()
@@ -30,5 +32,5 @@ public class SkullWallController : BaseActor
 
 		CachedGameObject.SetActive (false);
 		DestroyFXPool.Spawn<ParticlePoolObject> (CachedTransform.position, Quaternion.identity);
-	}
+	}	
 }

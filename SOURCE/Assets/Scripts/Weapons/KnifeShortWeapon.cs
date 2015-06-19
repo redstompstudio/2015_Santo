@@ -37,8 +37,10 @@ public class KnifeShortWeapon : BaseWeapon
 
 				if(actor)
 				{
-					Debug.Log (actor.name);
-					actor.Health.DoDamage (15);	
+					if (weaponOwner != null)
+						weaponOwner.ApplyDamage (actor, Damage, damageType, weaponPoint.position);
+					else
+						actor.ReceiveDamage (null, Damage, damageType, weaponPoint.position);
 				}
 			}
 		}

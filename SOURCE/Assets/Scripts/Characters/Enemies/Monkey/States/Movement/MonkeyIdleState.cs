@@ -2,7 +2,7 @@
 using System.Collections;
 using Prime31.StateKit;
 
-public class MonkeyIdleState : SKMecanimState<BaseEnemyController>
+public class MonkeyIdleState : SKMecanimState<BaseEnemy>
 {
 	public override void begin ()
 	{

@@ -6,7 +6,9 @@ public class BaseWeapon : MonoBehaviour
 	private Transform cachedTransform;
 	private bool isEquipped;
 
+	public BaseActor weaponOwner;
 	public WEAPON_NAME weaponName;
+	public DAMAGE_TYPE damageType;
 
 	public int baseDamage;
 	public float baseRange;

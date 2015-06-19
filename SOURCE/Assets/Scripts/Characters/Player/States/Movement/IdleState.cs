@@ -50,7 +50,7 @@ public class IdleState : SKMecanimState<PlayerCharacterController>
 			_machine.changeState<KnifeAttackState> ();
 			return;
 		}
-		else if(Input.GetKeyDown(KeyCode.Mouse1))
+		else if(Input.GetKey(KeyCode.Mouse1))
 		{
 			OnAimInput ();
 			return;

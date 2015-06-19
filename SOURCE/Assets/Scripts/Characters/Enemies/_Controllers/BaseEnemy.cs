@@ -3,9 +3,9 @@ using System.Collections;
 using Prime31.StateKit;
 
 [RequireComponent(typeof(AIController))]
-public class BaseEnemyController : BaseCharacterController 
+public class BaseEnemy : BaseCharacterController 
 {
-	protected SKMecanimStateMachine<BaseEnemyController> charStateMachine;
+	protected SKMecanimStateMachine<BaseEnemy> charStateMachine;
 
 	public AIController aiController;
 	[HideInInspector]
@@ -32,7 +32,7 @@ public class BaseEnemyController : BaseCharacterController
 	{
 		base.Start ();
 
-		charStateMachine = new SKMecanimStateMachine<BaseEnemyController> (GetComponent<Animator> (), this, new MonkeyIdleState());
+		charStateMachine = new SKMecanimStateMachine<BaseEnemy> (GetComponent<Animator> (), this, new MonkeyIdleState());
 
 		charStateMachine.addState (new MonkeyOnAirState ());
 		charStateMachine.addState (new MonkeyLandState ());

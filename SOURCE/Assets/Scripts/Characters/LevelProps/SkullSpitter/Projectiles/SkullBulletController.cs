@@ -8,10 +8,12 @@ public class SkullBulletController : MonoBehaviour, IPoolObject
 	protected Transform cachedTransform;
 	protected Rigidbody cachedRigidbody;
 	protected Collider cachedCollider;
-
 	protected SpawnPool myPool;
-
 	protected SpawnPool despawnFXPool;
+
+	public int damage = 20;
+	public DAMAGE_TYPE damageType;
+
 	public string despawnFXName = "SkullProjectile_DestroyFX_Pool";
 
 	public float movementSpeed = 10.0f;
@@ -63,8 +65,8 @@ public class SkullBulletController : MonoBehaviour, IPoolObject
 		{
 			BaseActor actor = pOther.GetComponent<BaseActor> ();
 
-			if (actor)
-				actor.Health.DoDamage (20);
+			if (actor) 
+				actor.ReceiveDamage (null, damage, damageType, cachedTransform.position);
 
 			Despawn ();
 		}

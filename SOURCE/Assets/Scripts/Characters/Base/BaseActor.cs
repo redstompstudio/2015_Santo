@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class BaseActor : MonoBehaviour 
 {
@@ -10,6 +11,7 @@ public class BaseActor : MonoBehaviour
 
 	[SerializeField]
 	private BaseHealth health;
+	public List<DAMAGE_TYPE> canReceiveDamageFrom = new List<DAMAGE_TYPE>();
 
 #region PROPERTIES
 	public Transform CachedTransform {
@@ -61,6 +63,33 @@ public class BaseActor : MonoBehaviour
 
 	protected virtual void Start()
 	{
+	}
+
+	public virtual void ApplyDamage (BaseActor pTarget, int pDamage, 
+									DAMAGE_TYPE pDamageType, Vector3 pPosition)
+	{
+		if(pTarget != null)
+			pTarget.ReceiveDamage (this, pDamage, pDamageType, pPosition);
+	}
+
+	public virtual void ReceiveDamage (BaseActor pCauser, int pDamage, 
+										DAMAGE_TYPE pDamageType, Vector3 pPosition)
+	{
+		if (pCauser != null)
+			pCauser.OnAppliedDamage (this, pDamage, pDamageType, pPosition);
+
+		Health.DoDamage (pDamage);
+
+		if(Health.CurrentHealth <= 0)
+		{
+			Kill ();
+		}
+	}
+
+	protected virtual void OnAppliedDamage (BaseActor pTarget, int pDamage, 
+	                                       DAMAGE_TYPE pDamageType, Vector3 pPosition)
+	{
+		
 	}
 
 	protected virtual void Reset()

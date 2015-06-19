@@ -2,7 +2,7 @@
 using System.Collections;
 using Prime31.StateKit;
 
-public class MonkeyLandState : SKMecanimState<BaseEnemyController> 
+public class MonkeyLandState : SKMecanimState<BaseEnemy> 
 {
 	public Land_Behaviour landBehaviour;
 

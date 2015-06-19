@@ -2,7 +2,7 @@
 using System.Collections;
 using Prime31.StateKit;
 
-public class MonkeyScoutState : SKMecanimState<BaseEnemyController>
+public class MonkeyScoutState : SKMecanimState<BaseEnemy>
 {
 	private int curScoutPointIndex;
 	private Transform[] scoutPoints;

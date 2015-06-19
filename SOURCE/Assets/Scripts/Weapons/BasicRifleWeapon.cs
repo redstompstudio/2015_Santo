@@ -58,7 +58,12 @@ public class BasicRifleWeapon : BaseWeapon
 			BaseActor hitActor = hit.transform.GetComponent<BaseActor> ();
 
 			if(hitActor != null)
-				hitActor.Health.DoDamage ( Damage );
+			{
+				if (weaponOwner != null)
+					weaponOwner.ApplyDamage (hitActor, Damage, damageType, hit.point);
+				else
+					hitActor.ReceiveDamage (null, Damage, damageType, hit.point);
+			}
 		}
 	}
 

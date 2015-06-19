@@ -12,6 +12,7 @@ public class ExplosiveBarrel : BaseActor
 	public int minDamage = 15;
 	public int fullDamage = 50;
 
+	#region PROPERTIES
 	public SpawnPool ExplosionFXPool{
 		get{
 			if (explosionFXPool == null)
@@ -20,13 +21,7 @@ public class ExplosiveBarrel : BaseActor
 			return explosionFXPool;
 		}
 	}
-
-	protected override void Awake ()
-	{
-		base.Awake ();
-
-		Health.onDeathCallback += Kill;
-	}
+	#endregion
 
 	public override void Kill ()
 	{
@@ -40,17 +35,19 @@ public class ExplosiveBarrel : BaseActor
 			BaseActor actor = col.GetComponent<BaseActor> ();
 
 			if (actor)
-				actor.Health.DoDamage (fullDamage);
+			{
+				ApplyDamage (actor, fullDamage, DAMAGE_TYPE.EXPLOSION_SMALL, CachedTransform.position);				
+			}
 		}
 
 		base.Kill ();
 	}
 
-	#if UNITY_EDITOR
+#if UNITY_EDITOR
 	void OnDrawGizmos()
 	{
 		Gizmos.color = Color.red;
 		Gizmos.DrawWireSphere (CachedTransform.position, explosionRadius);
 	}
-	#endif
+#endif
 }
