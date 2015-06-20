@@ -22,6 +22,9 @@ public class LandState : SKMecanimState<PlayerCharacterController>
 			landBehaviour.onStateExitCallback+= OnStateExitLand;
 		}
 
+		DarkTonic.MasterAudio.MasterAudio.PlaySound3DAtVector3AndForget ("Santo_Land", 
+			context.Position);
+
 		float landForce = _machine.animator.GetFloat("airSpeed");
 		float horizontaAir = _machine.animator.GetFloat("airSpeedHorizontal");
 

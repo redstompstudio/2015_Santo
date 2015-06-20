@@ -40,6 +40,8 @@ public class BasicRifleWeapon : BaseWeapon
 	{
 		base.Attack ();
 
+		DarkTonic.MasterAudio.MasterAudio.PlaySound3DAtVector3AndForget ("Rifle_Shoot", weaponPoint.position);
+
 		Vector3 direction = ( GetAimPoint () - weaponPoint.position ).normalized;
 		direction.z = 0.0f;
 
@@ -63,6 +65,8 @@ public class BasicRifleWeapon : BaseWeapon
 					weaponOwner.ApplyDamage (hitActor, Damage, damageType, hit.point);
 				else
 					hitActor.ReceiveDamage (null, Damage, damageType, hit.point);
+
+				DarkTonic.MasterAudio.MasterAudio.PlaySound3DAtVector3AndForget ("Rifle_HitEnemy", weaponPoint.position);
 			}
 		}
 	}

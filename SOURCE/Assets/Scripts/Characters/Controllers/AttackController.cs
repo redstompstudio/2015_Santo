@@ -44,10 +44,10 @@ public class AttackController : MonoBehaviour
 	{
 		if (equippedWeapon != null)
 			equippedWeapon.OnReceivedAttackEvent(pMessage);
-		#if UNITY_EDITOR
+#if UNITY_EDITOR
 		else
 			Debug.LogError("Received an attack event but there is no equipped weapon!?");
-		#endif
+#endif
 	}
 
 	public virtual void OnReceivedAttackEvent(int pParam)

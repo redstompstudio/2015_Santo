@@ -31,6 +31,14 @@ public class PossessedMonkeyController : BaseEnemy
 	}
 	#endregion
 
+	protected override void Awake ()
+	{
+		base.Awake ();
+
+		if (attackController == null)
+			attackController = GetComponent<AttackController> ();
+	}
+
 	protected override void Start ()
 	{
 		base.Start ();

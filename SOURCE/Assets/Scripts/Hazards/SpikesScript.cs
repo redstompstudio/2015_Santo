@@ -18,10 +18,22 @@ public class SpikesScript : MonoBehaviour
 
 	private void Update()
 	{
-		if (lastDamageTime >= 1.0f) {
-			foreach (BaseActor actor in actorsInside) {
+		if (lastDamageTime >= 1.0f) 
+		{
+			bool appliedDamage = false;
+
+			foreach (BaseActor actor in actorsInside) 
+			{
 				actor.ReceiveDamage (null, dps, DAMAGE_TYPE.PIERCE, actor.Position);
+
+				if (actor.Health.CurrentHealth <= 0.0f)
+					actorsInside.Remove (actor);
+				
+				appliedDamage = true;
 			}
+
+			if (appliedDamage)
+				DarkTonic.MasterAudio.MasterAudio.PlaySound ("Spikes");
 
 			lastDamageTime = 0.0f;
 		}

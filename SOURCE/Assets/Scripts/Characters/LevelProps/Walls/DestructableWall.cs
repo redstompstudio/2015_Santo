@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
+using DarkTonic.MasterAudio;
 
 public class DestructableWall : BaseActor
 {
 	private SpawnPool destroyFXPool;
 
 	public string destroyFXName = "SkullWall_DestroyFX_Pool";
+	public string destroySoundName = "BreakableWall_Crashing";
 
 	#region PROPERTIES
 	public SpawnPool DestroyFXPool{
@@ -29,6 +29,8 @@ public class DestructableWall : BaseActor
 	public override void Kill ()
 	{
 		base.Kill ();
+
+		MasterAudio.PlaySound (destroySoundName);
 
 		CachedGameObject.SetActive (false);
 		DestroyFXPool.Spawn<ParticlePoolObject> (CachedTransform.position, Quaternion.identity);

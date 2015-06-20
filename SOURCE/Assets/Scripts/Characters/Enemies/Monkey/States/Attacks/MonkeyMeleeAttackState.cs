@@ -4,6 +4,7 @@ using Prime31.StateKit;
 public class MonkeyMeleeAttackState : SKMecanimState<PossessedMonkeyController>  
 {
 	public Fist_PunchL_Behaviour punchLBehaviour;
+	private BaseWeapon fist;
 
 	public override void begin ()
 	{
@@ -15,7 +16,13 @@ public class MonkeyMeleeAttackState : SKMecanimState<PossessedMonkeyController>
 			punchLBehaviour.onStateExitCallback += OnStateExitPunchL;
 		}
 
+		if (fist == null)
+			fist = context.attackController.GetWeapon (WEAPON_NAME.FIST_PUNCH);
+		
+		context.attackController.EquipWeapon (fist.weaponName);
 		CrossFade ("Attack", 0.1f, 0.0f);
+
+		DarkTonic.MasterAudio.MasterAudio.PlaySound ("Monkey_MeleeAttack");
 	}
 
 	public override void update (float deltaTime, AnimatorStateInfo stateInfo)

@@ -5096,7 +5096,21 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: .0539419129
+        functionName: OnFootStepSound
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: .497925311
+        functionName: OnFootStepSound
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -5106,11 +5120,123 @@ ModelImporter:
         weight: 1
       - path: Santo/Armature
         weight: 1
+      - path: Santo/Armature/Gun
+        weight: 1
+      - path: Santo/Armature/Knife
+        weight: 1
       - path: Santo/Armature/Root
         weight: 1
       - path: Santo/Armature/Root/Main
         weight: 1
       - path: Santo/Armature/Root/Main/Def_Hips
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_Eye_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_Eye_L/Face_PupilDef_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_Eye_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_Eye_R/Face_PupilDef_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_EyeLidBot_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_EyeLidBot_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_EyeLidTop_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_EyeLidTop_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_Jaw
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Index1Def_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Index1Def_L/Index2Def_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Index1Def_L/Index2Def_L/Index3Def_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Item_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Middle1Def_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Middle1Def_L/Middle2Def_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Middle1Def_L/Middle2Def_L/Middle3Def_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Pinky1Def_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Pinky1Def_L/Pinky2Def_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Pinky1Def_L/Pinky2Def_L/Pinky3Def_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Ring1Def_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Ring1Def_L/Ring2Def_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Ring1Def_L/Ring2Def_L/Ring3Def_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Thumb1Def_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Thumb1Def_L/Thumb2Def_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Thumb1Def_L/Thumb2Def_L/Thumb3Def_L
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Index1Def_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Index1Def_R/Index2Def_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Index1Def_R/Index2Def_R/Index3Def_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Item_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Middle1Def_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Middle1Def_R/Middle2Def_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Middle1Def_R/Middle2Def_R/Middle3Def_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Pinky1Def_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Pinky1Def_R/Pinky2Def_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Pinky1Def_R/Pinky2Def_R/Pinky3Def_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Ring1Def_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Ring1Def_R/Ring2Def_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Ring1Def_R/Ring2Def_R/Ring3Def_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Thumb1Def_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Thumb1Def_R/Thumb2Def_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Thumb1Def_R/Thumb2Def_R/Thumb3Def_R
+        weight: 1
+      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Holster_Rifle
         weight: 1
       - path: Santo/Armature/Root/Main/Def_Hips/Def_UprLeg_L
         weight: 1
@@ -5129,118 +5255,6 @@ ModelImporter:
       - path: Santo/Armature/Root/Main/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_Foot_R
         weight: 1
       - path: Santo/Armature/Root/Main/Def_Hips/Def_UprLeg_R/Def_LwrLeg_R/Def_Foot_R/Def_Toe_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_Jaw
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_Eye_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_Eye_L/Face_PupilDef_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_EyeLidTop_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_EyeLidBot_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_Eye_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_Eye_R/Face_PupilDef_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_EyeLidTop_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Neck/Def_Head/Face_EyeLidBot_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Middle1Def_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Middle1Def_L/Middle2Def_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Middle1Def_L/Middle2Def_L/Middle3Def_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Thumb1Def_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Thumb1Def_L/Thumb2Def_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Thumb1Def_L/Thumb2Def_L/Thumb3Def_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Ring1Def_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Ring1Def_L/Ring2Def_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Ring1Def_L/Ring2Def_L/Ring3Def_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Pinky1Def_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Pinky1Def_L/Pinky2Def_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Pinky1Def_L/Pinky2Def_L/Pinky3Def_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Index1Def_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Index1Def_L/Index2Def_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Index1Def_L/Index2Def_L/Index3Def_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_L/Def_UprArm_L/Def_LwrArm_L/Def_Hand_L/Item_L
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Middle1Def_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Middle1Def_R/Middle2Def_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Middle1Def_R/Middle2Def_R/Middle3Def_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Thumb1Def_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Thumb1Def_R/Thumb2Def_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Thumb1Def_R/Thumb2Def_R/Thumb3Def_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Ring1Def_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Ring1Def_R/Ring2Def_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Ring1Def_R/Ring2Def_R/Ring3Def_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Pinky1Def_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Pinky1Def_R/Pinky2Def_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Pinky1Def_R/Pinky2Def_R/Pinky3Def_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Index1Def_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Index1Def_R/Index2Def_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Index1Def_R/Index2Def_R/Index3Def_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Def_Shoulder_R/Def_UprArm_R/Def_LwrArm_R/Def_Hand_R/Item_R
-        weight: 1
-      - path: Santo/Armature/Root/Main/Def_Hips/Def_Spine/Def_Chest/Holster_Rifle
-        weight: 1
-      - path: Santo/Armature/Gun
-        weight: 1
-      - path: Santo/Armature/Knife
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}

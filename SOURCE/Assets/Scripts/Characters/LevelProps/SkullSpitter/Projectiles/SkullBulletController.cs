@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using DarkTonic.MasterAudio;
 
 [RequireComponent(typeof(Rigidbody))]
 public class SkullBulletController : BaseActor, IPoolObject
@@ -13,6 +14,7 @@ public class SkullBulletController : BaseActor, IPoolObject
 	public DAMAGE_TYPE damageType;
 
 	public string despawnFXName = "SkullProjectile_DestroyFX_Pool";
+	public string crashSoundName = "SkullProjectile_Crashing";
 
 	public float movementSpeed = 10.0f;
 	public List<string> tagsList = new List<string>();
@@ -74,7 +76,7 @@ public class SkullBulletController : BaseActor, IPoolObject
 	public virtual void Despawn ()
 	{
 		DespawnFXPool.Spawn<ParticlePoolObject> (Position, Quaternion.identity);
-		myPool.DespawnIn(CachedGameObject, 1.5f);
+		myPool.DespawnIn(CachedGameObject, 1.5f);	
 
 		OnStartDestroy ();
 	}

@@ -156,6 +156,12 @@ public class PlayerCharacterController : BaseCharacterController
 		CachedGameObject.SetActive (false);
 	}
 
+	public void OnFootStepSound()
+	{
+		DarkTonic.MasterAudio.MasterAudio.PlaySound3DAtVector3AndForget ("Santo_Footstep",
+			Position);
+	}
+
 #if UNITY_EDITOR
 	void OnGUI()
 	{

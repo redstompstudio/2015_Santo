@@ -16,6 +16,9 @@ public class KnifeShortWeapon : BaseWeapon
 		Vector3 searchPoint = hand_Left.position;
 		Debug.DrawRay (searchPoint, Vector3.up * 50.0f, Color.red, 3.0f);
 
+		DarkTonic.MasterAudio.MasterAudio.PlaySound3DAtVector3AndForget ("Machete_Slash", 
+			weaponPoint.position);
+		
 		switch(pMessage)
 		{
 		case leftHand:

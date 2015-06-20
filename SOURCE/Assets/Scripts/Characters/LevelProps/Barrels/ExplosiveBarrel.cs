@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using DarkTonic.MasterAudio;
 
 public class ExplosiveBarrel : BaseActor
 {
@@ -9,7 +9,7 @@ public class ExplosiveBarrel : BaseActor
 	public LayerMask damageLayers;
 	public float explosionRadius = 2.0f;
 
-	public int minDamage = 15;
+	public string explosionSoundName = "BreakableWall_Exploding";
 	public int fullDamage = 50;
 
 	#region PROPERTIES
@@ -33,6 +33,8 @@ public class ExplosiveBarrel : BaseActor
 	{
 		ExplosionFXPool.Spawn<ParticlePoolObject> (CachedTransform.position, Quaternion.identity);
 		CachedGameObject.SetActive (false);
+
+		MasterAudio.PlaySound (explosionSoundName);
 
 		Collider[] colliders = Physics.OverlapSphere(CachedTransform.position, explosionRadius, damageLayers);
 

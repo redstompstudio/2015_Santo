@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 public class BaseEnemy : BaseCharacterController
 {
+	[HideInInspector]
+	public AttackController attackController;
+
 	protected BaseActor targetActor;
 	protected Transform targetTransform;
 	protected Vector3 targetPosition;
@@ -12,7 +15,6 @@ public class BaseEnemy : BaseCharacterController
 
 	public Transform[] scoutPoints;
 
-	//[HideInInspector] 
 	public List<BaseActor> enemiesOnVisionRange = new List<BaseActor>();
 
 	#region PROPERTIES
