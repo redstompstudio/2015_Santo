@@ -65,8 +65,6 @@ public class BasicRifleWeapon : BaseWeapon
 					weaponOwner.ApplyDamage (hitActor, Damage, damageType, hit.point);
 				else
 					hitActor.ReceiveDamage (null, Damage, damageType, hit.point);
-
-				DarkTonic.MasterAudio.MasterAudio.PlaySound3DAtVector3AndForget ("Rifle_HitEnemy", weaponPoint.position);
 			}
 		}
 	}

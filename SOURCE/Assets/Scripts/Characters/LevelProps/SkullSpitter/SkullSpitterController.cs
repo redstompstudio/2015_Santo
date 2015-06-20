@@ -6,10 +6,12 @@ public class SkullSpitterController : BaseActor
 	private Collider cachedCollider;
 
 	private SpawnPool skullPool;
-	public string projectilePoolName = "SkullProjectile_Pool";
-
 	private SpawnPool destroyFXPool;
+
+	public string projectilePoolName = "SkullProjectile_Pool";
 	public string destroyFXPoolName = "SkullWall_Fire_DestroyFX_Pool";
+
+	public AudioSource spitSound;
 
 	public Transform spawnPosition;
 
@@ -70,6 +72,8 @@ public class SkullSpitterController : BaseActor
 
 		while (CachedGameObject.activeInHierarchy) 
 		{
+			spitSound.Play ();
+
 			SkullBulletController skullController = SkullPool.Spawn<SkullBulletController> (spawnPosition.position,
 				                                        CachedTransform.rotation);
 			

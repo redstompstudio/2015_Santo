@@ -14,7 +14,8 @@ public class SkullBulletController : BaseActor, IPoolObject
 	public DAMAGE_TYPE damageType;
 
 	public string despawnFXName = "SkullProjectile_DestroyFX_Pool";
-	public string crashSoundName = "SkullProjectile_Crashing";
+
+	public AudioSource crashSound;
 
 	public float movementSpeed = 10.0f;
 	public List<string> tagsList = new List<string>();
@@ -75,6 +76,7 @@ public class SkullBulletController : BaseActor, IPoolObject
 
 	public virtual void Despawn ()
 	{
+		crashSound.Play ();
 		DespawnFXPool.Spawn<ParticlePoolObject> (Position, Quaternion.identity);
 		myPool.DespawnIn(CachedGameObject, 1.5f);	
 

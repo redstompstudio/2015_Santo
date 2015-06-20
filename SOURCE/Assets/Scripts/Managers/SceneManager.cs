@@ -47,7 +47,7 @@ public class SceneManager : MonoBehaviour
 	{
 		if (Input.GetKeyDown (KeyCode.Escape))
 			Application.Quit ();
-
+		
 		if (Input.GetKeyDown (KeyCode.R))
 			Application.LoadLevel (Application.loadedLevelName);
 	}
@@ -62,5 +62,15 @@ public class SceneManager : MonoBehaviour
 		yield return new WaitForSeconds (2.0f);
 
 		player.Reset ();
+	}
+
+	public void StopTime()
+	{
+		Time.timeScale = 0.0f;
+	}
+
+	public void ResumeTime()
+	{
+		Time.timeScale = 1.0f;
 	}
 }
