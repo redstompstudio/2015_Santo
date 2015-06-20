@@ -120,6 +120,8 @@ public class PlayerCharacterController : BaseCharacterController
 		else if(pDamage <= highDamageBase)
 			HeavyDamageFXPool.Spawn<ParticlePoolObject>(pPosition, Quaternion.identity);
 
+		GetComponent<Animator> ().Play ("DAMAGE", 2);
+
 		base.ReceiveDamage (pCauser, pDamage, pDamageType, pPosition);
 
 		if(PlayerUI.Instance != null)

@@ -41,7 +41,7 @@ public class SlideState : SKMecanimState<PlayerCharacterController>
 
 	void OnStateExitSlide ()
 	{
-		if (context.CharacterMotor.IsTouchingCeiling())
+		if (Input.GetKey(KeyCode.S) || context.CharacterMotor.IsTouchingCeiling())
 			_machine.changeState<CrouchState> ();
 		else 
 			_machine.changeState<IdleState> ();
