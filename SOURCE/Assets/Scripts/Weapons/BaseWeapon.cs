@@ -7,6 +7,8 @@ public class BaseWeapon : MonoBehaviour
 	private bool isEquipped;
 
 	public BaseActor weaponOwner;
+	public GameObject weaponRenderer;
+
 	public WEAPON_NAME weaponName;
 	public DAMAGE_TYPE damageType;
 
@@ -52,11 +54,13 @@ public class BaseWeapon : MonoBehaviour
 	public virtual void Equip()
 	{
 		isEquipped = true;
+		weaponRenderer.SetActive (true);
 	}
 
 	public virtual void Unequip()
 	{
 		isEquipped = false;
+		weaponRenderer.SetActive (false);
 	}
 
 	public virtual void Attack()
