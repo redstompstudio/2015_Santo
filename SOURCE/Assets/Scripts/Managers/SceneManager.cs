@@ -33,6 +33,7 @@ public class SceneManager : MonoBehaviour
 		get{
 			if (instance == null)
 				instance = FindObjectOfType (typeof(SceneManager)) as SceneManager;
+			
 			return instance;
 		}
 	}

@@ -52,6 +52,6 @@ public class SplashScreen : MonoBehaviour
 			yield return null;
 		}
 
-		Application.LoadLevel ("Demo_Santo_Cave");
+		Application.LoadLevel ("Main Menu");
 	}
 }
