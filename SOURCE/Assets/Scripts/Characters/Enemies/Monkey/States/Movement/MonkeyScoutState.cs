@@ -39,9 +39,13 @@ public class MonkeyScoutState : SKMecanimState<PossessedMonkeyController>
 		else
 		{
 			Vector3 direction = (pointPosition - context.Position).normalized;
+			direction.y = 0.0f;
+			direction.z = 0.0f;
 
 			context.CharacterMotor.Move (direction, context.CharacterSettings.maxRunSpeed * deltaTime);
-			context.CharacterMotor.RotateToDirection (direction);
+
+			if(direction != Vector3.zero)
+				context.CharacterMotor.RotateToDirection (direction);
 		}
 	}
 

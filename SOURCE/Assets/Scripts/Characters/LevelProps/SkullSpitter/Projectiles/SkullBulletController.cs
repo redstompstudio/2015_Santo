@@ -2,10 +2,8 @@
 using System.Collections.Generic;
 
 [RequireComponent(typeof(Rigidbody))]
-public class SkullBulletController : MonoBehaviour, IPoolObject
+public class SkullBulletController : BaseActor, IPoolObject
 {
-	protected GameObject cachedGameObject;
-	protected Transform cachedTransform;
 	protected Rigidbody cachedRigidbody;
 	protected Collider cachedCollider;
 	protected SpawnPool myPool;
@@ -35,12 +33,6 @@ public class SkullBulletController : MonoBehaviour, IPoolObject
 
 	protected virtual void Awake()
 	{
-		if (cachedGameObject == null)
-			cachedGameObject = gameObject;
-
-		if (cachedTransform == null)
-			cachedTransform = transform;
-
 		if(cachedRigidbody == null)
 			cachedRigidbody = GetComponent<Rigidbody> ();
 
@@ -56,7 +48,7 @@ public class SkullBulletController : MonoBehaviour, IPoolObject
 
 	protected virtual void FixedUpdate()
 	{
-		cachedRigidbody.velocity = cachedTransform.forward * movementSpeed;
+		cachedRigidbody.velocity = Forward * movementSpeed;
 	}
 
 	protected virtual void OnTriggerEnter(Collider pOther)
@@ -66,7 +58,7 @@ public class SkullBulletController : MonoBehaviour, IPoolObject
 			BaseActor actor = pOther.GetComponent<BaseActor> ();
 
 			if (actor) 
-				actor.ReceiveDamage (null, damage, damageType, cachedTransform.position);
+				actor.ReceiveDamage (null, damage, damageType, Position);
 
 			Despawn ();
 		}
@@ -76,13 +68,13 @@ public class SkullBulletController : MonoBehaviour, IPoolObject
 	public virtual void OnSpawn (SpawnPool pMyPool)
 	{
 		myPool = pMyPool;
-		ResetProjectile ();
+		Reset ();
 	}
 
 	public virtual void Despawn ()
 	{
-		DespawnFXPool.Spawn<ParticlePoolObject> (cachedTransform.position, Quaternion.identity);
-		myPool.DespawnIn(cachedGameObject, 1.5f);
+		DespawnFXPool.Spawn<ParticlePoolObject> (Position, Quaternion.identity);
+		myPool.DespawnIn(CachedGameObject, 1.5f);
 
 		OnStartDestroy ();
 	}
@@ -96,8 +88,15 @@ public class SkullBulletController : MonoBehaviour, IPoolObject
 	}
 	#endregion
 
-	protected virtual void ResetProjectile()
+	public override void Kill ()
 	{
+		Despawn ();
+	}
+
+	public override void Reset ()
+	{
+		Health.currentHealth = Health.MaxHealth;
+
 		foreach(GameObject go in goRenderers)
 			go.SetActive (true);
 
