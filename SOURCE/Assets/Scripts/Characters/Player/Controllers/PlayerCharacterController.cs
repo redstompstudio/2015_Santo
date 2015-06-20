@@ -14,6 +14,9 @@ public class PlayerCharacterController : BaseCharacterController
 	[HideInInspector]
 	public AttackController attackController;
 
+	private int curInsanityAmount;
+	private int maxInsanityAmount = 100;
+
 	#region PROPERTIES
 	protected SpawnPool LightDamageFXPool{
 		get{
@@ -40,6 +43,8 @@ public class PlayerCharacterController : BaseCharacterController
 
 		if (attackController == null)
 			attackController = GetComponent<AttackController> ();
+
+		PlayerUI.Instance.UpdateInsanityBar (maxInsanityAmount, curInsanityAmount);
 	}
 
 	protected override void Start ()
@@ -103,8 +108,21 @@ public class PlayerCharacterController : BaseCharacterController
 	{
 		base.Reset ();
 
+		curInsanityAmount = 0;
+
+		PlayerUI.Instance.UpdateInsanityBar (maxInsanityAmount, curInsanityAmount);
+		PlayerUI.Instance.UpdateLifeBar (Health.MaxHealth, Health.CurrentHealth);
+
 		stateMachine.changeState<IdleState> ();
 		CachedTransform.position = CheckpointManager.Instance.CurrentCheckpoint.transform.position;
+	}
+
+	protected override void OnAppliedDamage (BaseActor pTarget, int pDamage, DAMAGE_TYPE pDamageType, Vector3 pPosition)
+	{
+		curInsanityAmount += (int)(pDamage / 2.0f);
+		base.OnAppliedDamage (pTarget, pDamage, pDamageType, pPosition);
+
+		PlayerUI.Instance.UpdateInsanityBar (maxInsanityAmount, curInsanityAmount);
 	}
 
 	public override void ReceiveDamage (BaseActor pCauser, int pDamage, DAMAGE_TYPE pDamageType, Vector3 pPosition)

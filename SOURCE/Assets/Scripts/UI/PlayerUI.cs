@@ -5,8 +5,8 @@ public class PlayerUI : MonoBehaviour
 {
 	private static PlayerUI instance;
 
-	public Slider playerLifeBar;
-	public Slider playerInsanityBar;
+	public Image playerLifeBar;
+	public Image playerInsanityBar;
 
 #region PROPERTIES
 	public static PlayerUI Instance{
@@ -21,11 +21,11 @@ public class PlayerUI : MonoBehaviour
 
 	public void UpdateLifeBar(int pMax, int pCurrent)
 	{
-		playerLifeBar.value = ValuesMapping.Map (pCurrent, 0.0f, pMax, 0.0f, 1.0f);
+		playerLifeBar.fillAmount = ValuesMapping.Map (pCurrent, 0.0f, pMax, 0.0f, 1.0f);
 	}
 
 	public void UpdateInsanityBar(int pMax, int pCurrent)
 	{
-		playerInsanityBar.value = ValuesMapping.Map (pCurrent, 0.0f, pMax, 0.0f, 1.0f);
+		playerInsanityBar.fillAmount = ValuesMapping.Map (pCurrent, 0.0f, pMax, 0.0f, 1.0f);
 	}
 }
